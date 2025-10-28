@@ -54,7 +54,7 @@ export default function Home() {
           Deeni Events Results 2025
         </h1>
         <p className="mt-2 text-sm text-zinc-700">
-          Browse results for Quiz 2025 and Essay 2025. Mobile-friendly and fast.
+          Browse results for Quiz 2025 and Essay 2025.
         </p>
       </header>
 

@@ -6,42 +6,11 @@ import {
   Madrasa_Round2_GroupB,
   Madrasa_Round3_Final,
 } from "@/lib/600MeeladResults";
+import { Round1Scores, Round2Scores } from "@/lib/600MeeladResults/Models";
 
 export const metadata = {
   title: "Quiz 2025 — Inter Madrasa",
   description: "Results list for Inter Madrasa category in Quiz 2025.",
-};
-
-type Round1Row = {
-  team: string;
-  q1: string | number;
-  q2: string | number;
-  q3: string | number;
-  tie: string | number;
-  total: string | number;
-  remarks: string;
-};
-
-type Round2Row = {
-  team: string;
-  q1: string | number;
-  q2: string | number;
-  q3: string | number;
-  q4: string | number;
-  q5: string | number;
-  q6: string | number;
-  q7: string | number;
-  q8: string | number;
-  q9: string | number;
-  q10: string | number;
-  q11: string | number;
-  q12: string | number;
-  q13: string | number;
-  q14: string | number;
-  q15: string | number;
-  tie: string | number;
-  total: string | number;
-  remarks: string;
 };
 
 function GroupTable({
@@ -50,7 +19,7 @@ function GroupTable({
   bgClass = "",
 }: {
   title: string;
-  data: Round1Row[];
+  data: Round1Scores[];
   bgClass?: string;
 }) {
   return (
@@ -98,7 +67,7 @@ function Round2GroupTable({
   bgClass = "",
 }: {
   title: string;
-  data: Round2Row[];
+  data: Round2Scores[];
   bgClass?: string;
 }) {
   const columns = [
@@ -202,8 +171,16 @@ export default function Page() {
         </h2>
       </section>
 
-      <Round2GroupTable title="Group - A" data={Madrasa_Round2_GroupA} bgClass="card-round2" />
-      <Round2GroupTable title="Group - B" data={Madrasa_Round2_GroupB} bgClass="card-round2" />
+      <Round2GroupTable
+        title="Group - A"
+        data={Madrasa_Round2_GroupA}
+        bgClass="card-round2"
+      />
+      <Round2GroupTable
+        title="Group - B"
+        data={Madrasa_Round2_GroupB}
+        bgClass="card-round2"
+      />
 
       <section className="card-surface card-round3 p-5 text-center md:text-left">
         <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
@@ -211,7 +188,11 @@ export default function Page() {
         </h2>
       </section>
 
-      <Round2GroupTable title="Final Round — Teams" data={Madrasa_Round3_Final} bgClass="card-round3" />
+      <Round2GroupTable
+        title="Final Round — Teams"
+        data={Madrasa_Round3_Final}
+        bgClass="card-round3"
+      />
     </div>
   );
 }

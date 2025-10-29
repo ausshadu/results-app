@@ -1,4 +1,4 @@
-import { Result } from "@/lib/600MeeladResults/Essay2025/data";
+import { Result } from "@/lib/600MeeladResults";
 import Link from "next/link";
 
 export function ResultTable({ results }: { results: Result[] }) {

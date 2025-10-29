@@ -9,7 +9,6 @@ export const metadata = {
 };
 
 export default function Page() {
-
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6">
       <header className="card-surface p-5 text-center md:text-left">

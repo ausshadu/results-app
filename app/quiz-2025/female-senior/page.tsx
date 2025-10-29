@@ -1,6 +1,11 @@
 import Link from "next/link";
-import { QUIZ_FEMALE_SENIOR } from "@/lib/600MeeladResults";
-import { ResultTable } from "@/app/components/ResultTable";
+import {
+  Female_Seniors_Round1_GroupA,
+  Female_Seniors_Round2_GroupA,
+  Female_Seniors_Round3_Final,
+} from "@/lib/600MeeladResults";
+import { GroupTable } from "@/app/components/GroupTable";
+import { Round2GroupTable } from "@/app/components/Round2GroupTable";
 
 export const metadata = {
   title: "Quiz 2025 — Female • Senior",
@@ -29,7 +34,41 @@ export default function Page() {
         </div>
       </header>
 
-      <ResultTable results={QUIZ_FEMALE_SENIOR} />
+      <section className="card-surface card-round1 p-5 text-center md:text-left">
+        <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+          Round 1 - Round Robin Style
+        </h2>
+      </section>
+
+      <GroupTable
+        title="Group - A"
+        data={Female_Seniors_Round1_GroupA}
+        bgClass="card-round1"
+      />
+
+      <section className="card-surface card-round2 p-5 text-center md:text-left">
+        <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+          Round 2 - Buzzer Style
+        </h2>
+      </section>
+
+      <Round2GroupTable
+        title="Group - A"
+        data={Female_Seniors_Round2_GroupA}
+        bgClass="card-round2"
+      />
+
+      <section className="card-surface card-round3 p-5 text-center md:text-left">
+        <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+          Round 3 (FINAL ROUND) - Buzzer Style
+        </h2>
+      </section>
+
+      <Round2GroupTable
+        title="Final Round — Teams"
+        data={Female_Seniors_Round3_Final}
+        bgClass="card-round3"
+      />
     </div>
   );
 }

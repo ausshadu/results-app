@@ -578,3 +578,10 @@ export const MALE_SENIOR: Result[] = [
     pdf_link: "/pdf_documents/600M100.pdf",
   },
 ];
+
+
+// Quiz 2025 datasets (to be filled)
+export const QUIZ_INTER_MADRASA: Result[] = [];
+export const QUIZ_MALE_COMBINED: Result[] = [];
+export const QUIZ_FEMALE_JUNIOR: Result[] = [];
+export const QUIZ_FEMALE_SENIOR: Result[] = [];

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { QUIZ_MALE_COMBINED } from "@/lib/data";
+import { QUIZ_MALE_COMBINED } from "@/lib/600MeeladResults";
 import { ResultTable } from "@/app/components/ResultTable";
 
 export const metadata = {

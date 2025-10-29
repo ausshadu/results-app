@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FEMALE_JUNIOR } from "@/lib/data";
+import { FEMALE_JUNIOR } from "@/lib/600MeeladResults";
 import { ResultTable } from "@/app/components/ResultTable";
 
 export const metadata = {

@@ -35,7 +35,10 @@ export function Round2Table({
           </thead>
           <tbody className="text-zinc-800">
             {data.map((r, i) => (
-              <tr key={`${r.team}-${i}`} className="odd:bg-white even:bg-zinc-50">
+              <tr
+                key={`${r.team}-${i}`}
+                className="odd:bg-white even:bg-zinc-50"
+              >
                 <td className="px-3 py-2 border border-zinc-300">{r.team}</td>
                 <td className="px-3 py-2 border border-zinc-300">{r.q1}</td>
                 <td className="px-3 py-2 border border-zinc-300">{r.q2}</td>
@@ -54,7 +57,9 @@ export function Round2Table({
                 <td className="px-3 py-2 border border-zinc-300">{r.q15}</td>
                 <td className="px-3 py-2 border border-zinc-300">{r.tie}</td>
                 <td className="px-3 py-2 border border-zinc-300">{r.total}</td>
-                <td className="px-3 py-2 border border-zinc-300">{r.remarks}</td>
+                <td className="px-3 py-2 border border-zinc-300 text-nowrap">
+                  {r.remarks}
+                </td>
               </tr>
             ))}
           </tbody>

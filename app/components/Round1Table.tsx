@@ -24,7 +24,9 @@ export function Round1Table({
               <th className="px-3 py-2 border border-zinc-300">Q3</th>
               <th className="px-3 py-2 border border-zinc-300">TIE</th>
               <th className="px-3 py-2 border border-zinc-300">Total</th>
-              <th className="px-3 py-2 border border-zinc-300">Remarks</th>
+              <th className="px-3 py-2 border border-zinc-300 text-nowrap">
+                Remarks
+              </th>
             </tr>
           </thead>
           <tbody className="text-zinc-800">
@@ -39,7 +41,7 @@ export function Round1Table({
                 <td className="px-3 py-2 border border-zinc-300">{r.q3}</td>
                 <td className="px-3 py-2 border border-zinc-300">{r.tie}</td>
                 <td className="px-3 py-2 border border-zinc-300">{r.total}</td>
-                <td className="px-3 py-2 border border-zinc-300">
+                <td className="px-3 py-2 border border-zinc-300 text-nowrap">
                   {r.remarks}
                 </td>
               </tr>

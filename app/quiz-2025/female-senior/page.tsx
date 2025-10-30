@@ -35,7 +35,7 @@ export default function Page() {
 
       <section className="card-surface card-round1 p-5 text-center md:text-left">
         <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
-          Round 1 - Round Robin Style
+          ROUND - 1 - ♻️ Round robin style ♻️
         </h2>
       </section>
 
@@ -43,7 +43,7 @@ export default function Page() {
 
       <section className="card-surface card-round2 p-5 text-center md:text-left">
         <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
-          Round 2 - Buzzer Style
+          ROUND 2 - ⚡️ Mixed Style (Buzzer + Individual) 👥
         </h2>
       </section>
 
@@ -51,7 +51,7 @@ export default function Page() {
 
       <section className="card-surface card-round3 p-5 text-center md:text-left">
         <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
-          Round 3 (FINAL ROUND) - Buzzer Style
+          FINAL ROUND - ⚡️ Buzzer style ⚡️
         </h2>
       </section>
 

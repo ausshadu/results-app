@@ -41,16 +41,8 @@ export default function Page() {
         </h2>
       </section>
 
-      <GroupTable
-        title="Group - A"
-        data={Madrasa_Round1_GroupA}
-        bgClass="card-round1"
-      />
-      <GroupTable
-        title="Group - B"
-        data={Madrasa_Round1_GroupB}
-        bgClass="card-round1"
-      />
+      <GroupTable title="Group - A" data={Madrasa_Round1_GroupA} />
+      <GroupTable title="Group - B" data={Madrasa_Round1_GroupB} />
 
       <section className="card-surface card-round2 p-5 text-center md:text-left">
         <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
@@ -58,16 +50,8 @@ export default function Page() {
         </h2>
       </section>
 
-      <Round2GroupTable
-        title="Group - A"
-        data={Madrasa_Round2_GroupA}
-        bgClass="card-round2"
-      />
-      <Round2GroupTable
-        title="Group - B"
-        data={Madrasa_Round2_GroupB}
-        bgClass="card-round2"
-      />
+      <Round2GroupTable title="Group - A" data={Madrasa_Round2_GroupA} />
+      <Round2GroupTable title="Group - B" data={Madrasa_Round2_GroupB} />
 
       <section className="card-surface card-round3 p-5 text-center md:text-left">
         <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
@@ -78,7 +62,6 @@ export default function Page() {
       <Round2GroupTable
         title="Final Round — Teams"
         data={Madrasa_Round3_Final}
-        bgClass="card-round3"
       />
     </div>
   );

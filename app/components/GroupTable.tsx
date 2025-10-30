@@ -3,21 +3,19 @@ import { Round1Scores } from "@/lib/600MeeladResults/Models";
 export function GroupTable({
   title,
   data,
-  bgClass = "",
 }: {
   title: string;
   data: Round1Scores[];
-  bgClass?: string;
 }) {
   return (
-    <section className={`card-surface p-5 ${bgClass}`}>
+    <section className="card-surface p-5">
       <div className="mb-3 flex items-center justify-between gap-3">
         <h2 className="text-xl font-semibold text-zinc-900">{title}</h2>
         <span className="text-xs text-zinc-500">Teams: {data.length}</span>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="min-w-full text-sm">
+        <table className="min-w-full text-sm border border-zinc-200">
           <thead className="text-left text-zinc-600">
             <tr className="border-b border-zinc-200">
               <th className="py-2 pr-3">Team Name</th>

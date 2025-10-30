@@ -12,7 +12,7 @@ export function ResultTable({ results }: { results: Result[] }) {
       </div>
 
       <div className="overflow-x-auto">
-        <table className="min-w-full text-sm">
+        <table className="min-w-full text-sm border border-zinc-200">
           <thead className="text-left text-zinc-600">
             <tr className="border-b border-zinc-200">
               <th className="py-2 pr-3">Reg No</th>

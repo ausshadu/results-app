@@ -1,7 +1,7 @@
 import { Result } from "@/lib/600MeeladResults";
 import Link from "next/link";
 
-export function ResultTable({ results }: { results: Result[] }) {
+export function EssayResultsTable({ results }: { results: Result[] }) {
   return (
     <section className="card-surface p-5">
       <div className="mb-3 flex items-center justify-between gap-3">
@@ -12,23 +12,23 @@ export function ResultTable({ results }: { results: Result[] }) {
       </div>
 
       <div className="overflow-x-auto">
-        <table className="min-w-full text-sm border border-zinc-200">
-          <thead className="text-left text-zinc-600">
-            <tr className="border-b border-zinc-200">
-              <th className="py-2 pr-3">Reg No</th>
-              <th className="py-2 pr-3">Topic</th>
-              <th className="py-2 pr-3">Name</th>
-              <th className="py-2 pr-3">Marks</th>
-              <th className="py-2 pr-3">PDF</th>
+        <table className="min-w-full text-sm border border-zinc-300 border-collapse text-center">
+          <thead className="text-zinc-600 bg-zinc-50">
+            <tr className="border-b border-zinc-300">
+              <th className="px-3 py-2 border border-zinc-300">Reg No</th>
+              <th className="px-3 py-2 border border-zinc-300">Topic</th>
+              <th className="px-3 py-2 border border-zinc-300">Name</th>
+              <th className="px-3 py-2 border border-zinc-300">Marks</th>
+              <th className="px-3 py-2 border border-zinc-300">PDF</th>
             </tr>
           </thead>
           <tbody className="text-zinc-800">
             {results.map((r) => (
-              <tr key={r.reg_number} className="border-b border-zinc-100">
-                <td className="py-2 pr-3 font-mono text-[13px]">
+              <tr key={r.reg_number} className="odd:bg-white even:bg-zinc-50">
+                <td className="px-3 py-2 border border-zinc-300 font-mono text-[13px]">
                   {r.reg_number}
                 </td>
-                <td className="py-2 pr-3">
+                <td className="px-3 py-2 border border-zinc-300">
                   <div className="flex flex-col">
                     <span className="text-[13px] text-zinc-500">
                       Topic #{r.topic_number}
@@ -36,9 +36,13 @@ export function ResultTable({ results }: { results: Result[] }) {
                     <span className="text-[13px]">{r.topic_text}</span>
                   </div>
                 </td>
-                <td className="py-2 pr-3">{r.full_name}</td>
-                <td className="py-2 pr-3">{r.total_marks}</td>
-                <td className="py-2 pr-3">
+                <td className="px-3 py-2 border border-zinc-300">
+                  {r.full_name}
+                </td>
+                <td className="px-3 py-2 border border-zinc-300">
+                  {r.total_marks}
+                </td>
+                <td className="px-3 py-2 border border-zinc-300">
                   <Link
                     href={r.pdf_link}
                     target="_blank"

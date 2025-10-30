@@ -58,6 +58,7 @@ export default function Page() {
         <CategoryCard
           title="Inter Madrasa"
           href="/quiz-2025/inter-madrasa"
+          subtitle="14 Madrasas • Channapatna / Mandya"
         />
         <CategoryCard
           title="Male • Combined"

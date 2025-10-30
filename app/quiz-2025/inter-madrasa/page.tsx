@@ -6,8 +6,7 @@ import {
   Madrasa_Round2_GroupB,
   Madrasa_Round3_Final,
 } from "@/lib/600MeeladResults";
-import { GroupTable } from "@/app/components/GroupTable";
-import { Round2GroupTable } from "@/app/components/Round2GroupTable";
+import { Round1Table, Round2Table } from "@/app/components";
 
 export const metadata = {
   title: "Quiz 2025 — Inter Madrasa",
@@ -41,8 +40,8 @@ export default function Page() {
         </h2>
       </section>
 
-      <GroupTable title="Group - A" data={Madrasa_Round1_GroupA} />
-      <GroupTable title="Group - B" data={Madrasa_Round1_GroupB} />
+      <Round1Table title="Group - A" data={Madrasa_Round1_GroupA} />
+      <Round1Table title="Group - B" data={Madrasa_Round1_GroupB} />
 
       <section className="card-surface card-round2 p-5 text-center md:text-left">
         <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
@@ -50,8 +49,8 @@ export default function Page() {
         </h2>
       </section>
 
-      <Round2GroupTable title="Group - A" data={Madrasa_Round2_GroupA} />
-      <Round2GroupTable title="Group - B" data={Madrasa_Round2_GroupB} />
+      <Round2Table title="Group - A" data={Madrasa_Round2_GroupA} />
+      <Round2Table title="Group - B" data={Madrasa_Round2_GroupB} />
 
       <section className="card-surface card-round3 p-5 text-center md:text-left">
         <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
@@ -59,10 +58,7 @@ export default function Page() {
         </h2>
       </section>
 
-      <Round2GroupTable
-        title="Final Round — Teams"
-        data={Madrasa_Round3_Final}
-      />
+      <Round2Table title="Final Round — Teams" data={Madrasa_Round3_Final} />
     </div>
   );
 }

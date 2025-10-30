@@ -62,7 +62,7 @@ export default function Home() {
         <EventCard
           title="Quiz 2025"
           href="/quiz-2025"
-          subtitle="Coming soon"
+          subtitle="Inter Madrasa • Male/Female • Junior/Senior"
           className="card-quiz"
         />
         <EventCard

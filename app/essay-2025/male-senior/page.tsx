@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MALE_SENIOR } from "@/lib/600MeeladResults";
-import { ResultTable } from "@/app/components/ResultTable";
+import { EssayResultsTable } from "@/app/components";
 
 export const metadata = {
   title: "Essay 2025 — Male • Senior",
@@ -29,7 +29,7 @@ export default function Page() {
         </div>
       </header>
 
-      <ResultTable results={MALE_SENIOR} />
+      <EssayResultsTable results={MALE_SENIOR} />
     </div>
   );
 }

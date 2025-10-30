@@ -7,6 +7,25 @@ export function Round1Table({
   title: string;
   data: Round1Scores[];
 }) {
+  const renderScore = (value: string | number | null | undefined) => {
+    const parts = String(value ?? "")
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean);
+    return (
+      <span className="inline-flex items-center justify-center gap-1">
+        {parts.map((p, idx) => (
+          <span
+            key={idx}
+            className={Number(p) < 0 ? "text-red-600" : undefined}
+          >
+            {p}
+          </span>
+        ))}
+      </span>
+    );
+  };
+
   return (
     <section className="card-surface p-5">
       <div className="mb-3 flex items-center justify-between gap-3">
@@ -35,12 +54,24 @@ export function Round1Table({
                 key={`${r.team}-${i}`}
                 className="odd:bg-white even:bg-zinc-50"
               >
-                <td className="px-3 py-2 border border-zinc-300">{r.team}</td>
-                <td className="px-3 py-2 border border-zinc-300">{r.q1}</td>
-                <td className="px-3 py-2 border border-zinc-300">{r.q2}</td>
-                <td className="px-3 py-2 border border-zinc-300">{r.q3}</td>
-                <td className="px-3 py-2 border border-zinc-300">{r.tie}</td>
-                <td className="px-3 py-2 border border-zinc-300">{r.total}</td>
+                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                  {r.team}
+                </td>
+                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                  {renderScore(r.q1)}
+                </td>
+                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                  {renderScore(r.q2)}
+                </td>
+                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                  {renderScore(r.q3)}
+                </td>
+                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                  {renderScore(r.tie)}
+                </td>
+                <td className="px-3 py-2 border border-zinc-300 font-mono font-bold">
+                  {renderScore(r.total)}
+                </td>
                 <td className="px-3 py-2 border border-zinc-300 text-nowrap">
                   {r.remarks}
                 </td>

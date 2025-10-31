@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Round1Table, Round2Table } from "@/app/components";
 import {
   Female_Juniors_Round1_GroupA,
   Female_Juniors_Round1_GroupB,
@@ -6,12 +7,10 @@ import {
   Female_Juniors_Round2_GroupB,
   Female_Juniors_Round3_Final,
 } from "@/lib/600MeeladResults";
-import { Round1Table, Round2Table } from "@/app/components";
 
 export const metadata = {
-  title: "Quiz 2025 — Female • Junior",
-  description:
-    "Results list for Female • Junior (Age 16 to 35) category in Quiz 2025.",
+  title: "Female • Junior — Results",
+  description: "Results page for Female • Junior (empty for now).",
 };
 
 export default function Page() {
@@ -19,18 +18,23 @@ export default function Page() {
     <div className="mx-auto flex max-w-5xl flex-col gap-6">
       <header className="card-surface p-5 text-center md:text-left">
         <h1 className="text-2xl font-bold text-zinc-900 md:text-3xl">
-          Female • Junior — Quiz 2025
+          Female • Junior — Results
         </h1>
         <p className="mt-2 text-sm text-zinc-700">
-          Browse the results list. Click View PDF to open the scanned answer
-          sheet.
+          This page has placeholder tables. Data will be added later.
         </p>
-        <div className="mt-3">
+        <div className="mt-3 flex flex-wrap gap-2">
           <Link
             href="/quiz-2025"
             className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
           >
             ← Back to Categories
+          </Link>
+          <Link
+            href="/female-junior/participants"
+            className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
+          >
+            View Participants →
           </Link>
         </div>
       </header>

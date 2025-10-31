@@ -1,78 +1,10 @@
 import Link from "next/link";
+import { CategoryCard } from "../components/CategoryCard";
 
 export const metadata = {
   title: "Quiz 2025 Categories",
   description: "Choose a category to view Quiz Results 2025.",
 };
-
-function CategoryCard({
-  title,
-  href,
-  subtitle,
-}: {
-  title: string;
-  href: string;
-  subtitle?: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className="card-surface block w-full rounded-xl p-5 transition-transform hover:scale-[1.02] focus:scale-[1.02] focus:outline-none"
-    >
-      <div className="flex items-center justify-between gap-2">
-        <div>
-          <h3 className="text-lg font-semibold text-zinc-900">{title}</h3>
-          {subtitle ? (
-            <p className="mt-1 text-sm text-zinc-600">{subtitle}</p>
-          ) : null}
-        </div>
-        <span className="cta inline-flex min-w-10 items-center justify-center rounded-full px-3 py-2 text-sm font-medium shadow-sm">
-          View
-        </span>
-      </div>
-    </Link>
-  );
-}
- 
-function DualCtaCard({
-  title,
-  subtitle,
-  participantsHref,
-  resultsHref,
-}: {
-  title: string;
-  subtitle?: string;
-  participantsHref: string;
-  resultsHref: string;
-}) {
-  return (
-    <div className="card-surface block w-full rounded-xl p-5">
-      <div className="flex items-center justify-between gap-2">
-        <div>
-          <h3 className="text-lg font-semibold text-zinc-900">{title}</h3>
-          {subtitle ? (
-            <p className="mt-1 text-sm text-zinc-600">{subtitle}</p>
-          ) : null}
-        </div>
-        <div className="flex items-center gap-2">
-          <Link
-            href={participantsHref}
-            className="cta inline-flex min-w-10 items-center justify-center rounded-full px-3 py-2 text-sm font-medium shadow-sm participantCta"
-          >
-            Participants
-          </Link>
-          <Link
-            href={resultsHref}
-            className="cta inline-flex min-w-10 items-center justify-center rounded-full px-3 py-2 text-sm font-medium shadow-sm"
-          >
-            Results
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
- 
 
 export default function Page() {
   return (
@@ -95,29 +27,29 @@ export default function Page() {
       </header>
 
       <section className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <DualCtaCard
+        <CategoryCard
           title="Inter Madrasa"
           subtitle="14 Madrasas • Channapatna / Mandya"
-          participantsHref="/inter-madrasa/participants"
-          resultsHref="/inter-madrasa/results"
+          participantsHref="/quiz-2025/inter-madrasa/participants"
+          resultsHref="/quiz-2025/inter-madrasa/results"
         />
-        <DualCtaCard
+        <CategoryCard
           title="Male • Combined"
           subtitle="Age 16 to 75"
-          participantsHref="/male-combined/participants"
-          resultsHref="/male-combined/results"
+          participantsHref="/quiz-2025/male-combined/participants"
+          resultsHref="/quiz-2025/male-combined/results"
         />
-        <DualCtaCard
+        <CategoryCard
           title="Female • Junior"
           subtitle="Age 16 to 35"
-          participantsHref="/female-junior/participants"
-          resultsHref="/female-junior/results"
+          participantsHref="/quiz-2025/female-junior/participants"
+          resultsHref="/quiz-2025/female-junior/results"
         />
-        <DualCtaCard
+        <CategoryCard
           title="Female • Senior"
           subtitle="Age 36 to 75"
-          participantsHref="/female-senior/participants"
-          resultsHref="/female-senior/results"
+          participantsHref="/quiz-2025/female-senior/participants"
+          resultsHref="/quiz-2025/female-senior/results"
         />
       </section>
     </div>

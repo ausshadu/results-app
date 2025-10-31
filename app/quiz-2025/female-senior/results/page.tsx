@@ -28,7 +28,7 @@ export default function Page() {
             ← Back to Categories
           </Link>
           <Link
-            href="/female-senior/participants"
+            href="/quiz-2025/female-senior/participants"
             className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
           >
             View Participants →

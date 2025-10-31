@@ -10,8 +10,7 @@ import { Round1Table, Round2Table } from "@/app/components";
 
 export const metadata = {
   title: "Inter Madrasa Results",
-  description:
-    "Results list for Inter Madrasa category in Quiz 2025.",
+  description: "Results list for Inter Madrasa category in Quiz 2025.",
 };
 
 export default function Page() {
@@ -25,12 +24,18 @@ export default function Page() {
           Browse the results list. Click View PDF to open the scanned answer
           sheet.
         </p>
-        <div className="mt-3">
+        <div className="mt-3 flex flex-wrap gap-2">
           <Link
             href="/quiz-2025"
             className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
           >
             ← Back to Categories
+          </Link>
+          <Link
+            href="/quiz-2025/inter-madrasa/participants"
+            className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
+          >
+            View Participants →
           </Link>
         </div>
       </header>

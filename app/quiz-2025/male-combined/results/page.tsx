@@ -31,7 +31,7 @@ export default function Page() {
             ← Back to Categories
           </Link>
           <Link
-            href="/male-combined/participants"
+            href="/quiz-2025/male-combined/participants"
             className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
           >
             View Participants →

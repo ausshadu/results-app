@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { promises as fs } from "fs";
-import path from "path";
+import { InterMadrasaParticipants } from "@/lib/600MeeladResults/Quiz2025/InterMadrasa";
 
 export const metadata = {
   title: "Inter Madrasa Participants",
-  description:
-    "Participants list for Inter Madrasa category in Quiz 2025.",
+  description: "Participants list for Inter Madrasa category in Quiz 2025.",
 };
 
 type ParticipantRow = {
@@ -17,55 +15,17 @@ type ParticipantRow = {
   participant3: string;
 };
 
-function parseCSV(csv: string): ParticipantRow[] {
-  const lines = csv
-    .split(/\r?\n/)
-    .map((l) => l.trim())
-    .filter((l) => l.length > 0);
-
-  if (lines.length === 0) return [];
-
-  // Remove header
-  const [, ...rows] = lines;
-
-  const splitLine = (line: string): string[] => {
-    // Basic CSV split for non-quoted data (sufficient for provided file)
-    // If quotes are added later, replace with a quote-aware parser.
-    return line.split(",").map((s) => s.trim());
-  };
-
-  return rows.map((line) => {
-    const cols = splitLine(line);
-    const [
-      slNo = "",
-      group = "",
-      madrasaName = "",
-      participant1 = "",
-      participant2 = "",
-      participant3 = "",
-    ] = cols;
-
-    return {
-      slNo,
-      group,
-      madrasaName,
-      participant1,
-      participant2,
-      participant3,
-    };
-  });
-}
-
 async function getParticipants(): Promise<ParticipantRow[]> {
-  const csvPath = path.join(
-    process.cwd(),
-    "lib",
-    "600MeeladResults",
-    "Quiz2025",
-    "madrasa_names.csv"
-  );
-  const content = await fs.readFile(csvPath, "utf-8");
-  return parseCSV(content);
+  const entries = Object.values(InterMadrasaParticipants);
+
+  return entries.map((team, idx) => ({
+    slNo: String(idx + 1),
+    group: team.group,
+    madrasaName: team.name,
+    participant1: team.participants[0] || "",
+    participant2: team.participants[1] || "",
+    participant3: team.participants[2] || "",
+  }));
 }
 
 export default async function Page() {
@@ -88,7 +48,7 @@ export default async function Page() {
             ← Back to Categories
           </Link>
           <Link
-            href="/inter-madrasa/results"
+            href="/quiz-2025/inter-madrasa/results"
             className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
           >
             View Results →
@@ -135,7 +95,9 @@ export default async function Page() {
                   <td className="px-3 py-2 border border-zinc-300 font-mono">
                     {p.slNo}
                   </td>
-                  <td className="px-3 py-2 border border-zinc-300">{p.group}</td>
+                  <td className="px-3 py-2 border border-zinc-300">
+                    {p.group}
+                  </td>
                   <td className="px-3 py-2 border border-zinc-300">
                     {p.madrasaName}
                   </td>

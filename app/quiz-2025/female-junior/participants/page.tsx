@@ -27,7 +27,7 @@ export default function Page() {
             ← Back to Categories
           </Link>
           <Link
-            href="/female-junior/results"
+            href="/quiz-2025/female-junior/results"
             className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
           >
             View Results →

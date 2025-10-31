@@ -44,6 +44,7 @@ body {
   --cta: #16a34a; /* primary green */
   --cta-dark: #0d7a37; /* darker hover */
   --accent: #d4af37; /* gold accent */
+  --accent-dark: #b08b2c; /* darker gold hover */
 }
 
 .cta {
@@ -53,6 +54,16 @@ body {
 
 .cta:hover {
   background-color: var(--cta-dark);
+}
+
+/* Participant CTA variant: gold accent */
+.cta.participantCta {
+  background-color: var(--accent);
+  color: #fff; /* better contrast on gold */
+}
+
+.cta.participantCta:hover {
+  background-color: var(--accent-dark);
 }
 
 /* Variant card surfaces for home cards */

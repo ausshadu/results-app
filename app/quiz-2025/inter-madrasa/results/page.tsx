@@ -1,16 +1,21 @@
 import Link from "next/link";
 import {
+  InterMadrasaParticipants,
   Madrasa_Round1_GroupA,
   Madrasa_Round1_GroupB,
   Madrasa_Round2_GroupA,
   Madrasa_Round2_GroupB,
   Madrasa_Round3_Final,
 } from "@/lib/600MeeladResults";
-import { Round1Table, Round2Table } from "@/app/components";
+import { Round1Table, Round2Table, WinnersGallery } from "@/app/components";
+import firstPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter-madrasa/first.webp";
+import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter-madrasa/second.webp";
+import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter-madrasa/third.jpeg";
 
 export const metadata = {
   title: "Inter Madrasa Results",
-  description: "Results list for Inter Madrasa category in Quiz 2025.",
+  description:
+    "Inter Madrasa — winners, runners-up and full results for Quiz 2025.",
 };
 
 export default function Page() {
@@ -21,8 +26,9 @@ export default function Page() {
           Inter Madrasa — Quiz 2025
         </h1>
         <p className="mt-2 text-sm text-zinc-700">
-          Browse the results list. Click View PDF to open the scanned answer
-          sheet.
+          Celebrating the champions of Inter Madrasa Quiz 2025. See winners
+          below and browse full round-wise results. Click View PDF to open the
+          scanned answer sheet.
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
           <Link
@@ -65,6 +71,50 @@ export default function Page() {
       </section>
 
       <Round2Table title="Final Round — Teams" data={Madrasa_Round3_Final} />
+
+      <WinnersGallery
+        items={[
+          {
+            src: firstPhoto,
+            alt: "Winner — Inter Madrasa",
+            caption: [
+              "🏆 — 🥇 Winner",
+              "",
+              `Madrasa: ${InterMadrasaParticipants.B4.name}`,
+              "",
+              InterMadrasaParticipants.B4.participants[0],
+              InterMadrasaParticipants.B4.participants[1],
+              InterMadrasaParticipants.B4.participants[2],
+            ].join("\n"),
+          },
+          {
+            src: secondPhoto,
+            alt: "1st Runner-Up — Inter Madrasa",
+            caption: [
+              "🏆 — 🥈 1st Runner-Up",
+              "",
+              `Madrasa: ${InterMadrasaParticipants.A3.name}`,
+              "",
+              InterMadrasaParticipants.A3.participants[0],
+              InterMadrasaParticipants.A3.participants[1],
+              InterMadrasaParticipants.A3.participants[2],
+            ].join("\n"),
+          },
+          {
+            src: thirdPhoto,
+            alt: "2nd Runner-Up — Inter Madrasa",
+            caption: [
+              "🏆 — 🥉 2nd Runner-Up",
+              "",
+              `Madrasa: ${InterMadrasaParticipants.B5.name}`,
+              "",
+              InterMadrasaParticipants.B5.participants[0],
+              InterMadrasaParticipants.B5.participants[1],
+              InterMadrasaParticipants.B5.participants[2],
+            ].join("\n"),
+          },
+        ]}
+      />
     </div>
   );
 }

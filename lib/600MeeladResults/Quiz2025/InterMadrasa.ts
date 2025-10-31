@@ -1,8 +1,93 @@
 import { FinalRoundScores, Round1Scores, Round2Scores } from "../Models";
 
+export const InterMadrasaParticipants = {
+  A1: {
+    group: "A1",
+    name: "Mehdavia Arabi Madrase Noor-ul-Islam Tajweed-ul-Quran",
+    participants: ["AYERA MARIYAM", "MEER ARFATH", "MEER AZLAN"],
+  },
+  A2: {
+    group: "A2",
+    name: "Mehdavia Arabi Madrasa-e-Mohammedya Tajweed-ul-Quran",
+    participants: ["NASHRA KHANUM", "RABIYA USMANI", "SYEDA HIBA MARIYAM"],
+  },
+  A3: {
+    group: "A3",
+    name: "A3 NAME: TO BE UPDATED",
+    participants: ["NAME 1", "NAME 2", "NAME 3"],
+  },
+  A4: {
+    group: "A4",
+    name: "Mehdavia Arabi Madrasa-e-Ibrahimia",
+    participants: ["FARHAN KHAN", "NEMATH KHAN", "SYED FAIZAN NAQI"],
+  },
+  A5: {
+    group: "A5",
+    name: "Madrasa-e-Baab-ul-Emaan",
+    participants: [
+      "SYEDA SAMAH QAMAR",
+      "SHAMAMAH ANUM",
+      "SYEDA ASRA KHUNDMIRI",
+    ],
+  },
+  A6: {
+    group: "A6",
+    name: "Mehdavia Madrasa-e-Nematiya Hashim Masood",
+    participants: ["AMRA MUJTABA", "SYEDA SAFA KHUNDMIR", "NUMAIRA FATHIMA"],
+  },
+  A7: {
+    group: "A7",
+    name: "A7 NAME: TO BE UPDATED",
+    participants: ["NAME 1", "NAME 2", "NAME 3"],
+  },
+  B1: {
+    group: "B1",
+    name: "Emaan-ul-Quran Madrasa",
+    participants: ["SYED RAYAN MEHDI", "MOHAMMED MAHABOOB", "SYED EFZAN"],
+  },
+  B2: {
+    group: "B2",
+    name: "Mehdavia Arabi Madrasa-e-Chand Bibi Nizamia-o-Niswania Tajweed-ul-Qura",
+    participants: ["FARIYA AFREEN", "AYESHA BANO (ZOYA)", "INSHA SANIYA"],
+  },
+  B3: {
+    group: "B3",
+    name: "B3 NAME: TO BE UPDATED",
+    participants: ["NAME 1", "NAME 2", "NAME 3"],
+  },
+  B4: {
+    group: "B4",
+    name: "Mehdavia Arabi Madrasa-e-Ashrafia",
+    participants: [
+      "SYED IZAAN NAZEER BOKHARI",
+      "SYED MULTAZEEM",
+      "SYED MUFASSIR AMEEN",
+    ],
+  },
+  B5: {
+    group: "B5",
+    name: "Mehdavia Arabi Madrasa-e-Anwariya",
+    participants: ["MEER GUFRAN MEHDI", "SHAISTHA JAVERIYA", "IFRA TASKEEN"],
+  },
+  B6: {
+    group: "B6",
+    name: "Mehdavia Arabi Madrasa Bi Bi Fatima Tajweed-ul-Quran",
+    participants: ["SYEDA IFRA MEHDI", "SYEDA AZHA NAJAM", "SYEDA AIMAN"],
+  },
+  B7: {
+    group: "B7",
+    name: "Madrasa-e-Daar-ul-Mua'rrif",
+    participants: [
+      "SYED KHUDA BAKSH KHURRAM KHUNDMIR",
+      "SYED TAHA MEHDI",
+      "MAHD MIRZA",
+    ],
+  },
+};
+
 export const Madrasa_Round1_GroupA: Round1Scores[] = [
   {
-    team: "Team 1",
+    team: InterMadrasaParticipants.A1.name,
     q1: "10 +2",
     q2: "10 +5",
     q3: "10 +5",
@@ -11,7 +96,7 @@ export const Madrasa_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 2",
+    team: InterMadrasaParticipants.A2.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -20,7 +105,7 @@ export const Madrasa_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 3",
+    team: InterMadrasaParticipants.A3.name,
     q1: "-5",
     q2: "-5",
     q3: "10",
@@ -29,7 +114,7 @@ export const Madrasa_Round1_GroupA: Round1Scores[] = [
     remarks: "",
   },
   {
-    team: "Team 4",
+    team: InterMadrasaParticipants.A4.name,
     q1: "+5 +10",
     q2: "+5 +10",
     q3: "10",
@@ -38,7 +123,7 @@ export const Madrasa_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 5",
+    team: InterMadrasaParticipants.A5.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -47,7 +132,7 @@ export const Madrasa_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 6",
+    team: InterMadrasaParticipants.A6.name,
     q1: "-5",
     q2: "-5",
     q3: "10",
@@ -56,7 +141,7 @@ export const Madrasa_Round1_GroupA: Round1Scores[] = [
     remarks: "",
   },
   {
-    team: "Team 7",
+    team: InterMadrasaParticipants.A7.name,
     q1: "10",
     q2: "+5 -5",
     q3: "-5",
@@ -68,7 +153,7 @@ export const Madrasa_Round1_GroupA: Round1Scores[] = [
 
 export const Madrasa_Round1_GroupB: Round1Scores[] = [
   {
-    team: "Team 1",
+    team: InterMadrasaParticipants.B1.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -77,7 +162,7 @@ export const Madrasa_Round1_GroupB: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 2",
+    team: InterMadrasaParticipants.B2.name,
     q1: "10",
     q2: "-5",
     q3: "10",
@@ -86,7 +171,7 @@ export const Madrasa_Round1_GroupB: Round1Scores[] = [
     remarks: "",
   },
   {
-    team: "Team 3",
+    team: InterMadrasaParticipants.B3.name,
     q1: "10",
     q2: "+5 +10",
     q3: "10",
@@ -95,7 +180,7 @@ export const Madrasa_Round1_GroupB: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 4",
+    team: InterMadrasaParticipants.B4.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -104,7 +189,7 @@ export const Madrasa_Round1_GroupB: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 5",
+    team: InterMadrasaParticipants.B5.name,
     q1: "10",
     q2: "10",
     q3: "-5",
@@ -113,7 +198,7 @@ export const Madrasa_Round1_GroupB: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 6",
+    team: InterMadrasaParticipants.B6.name,
     q1: "10",
     q2: "-5",
     q3: "+5 -5",
@@ -122,7 +207,7 @@ export const Madrasa_Round1_GroupB: Round1Scores[] = [
     remarks: "",
   },
   {
-    team: "Team 7",
+    team: InterMadrasaParticipants.B7.name,
     q1: "10",
     q2: "+5 +10",
     q3: "+5 +10",

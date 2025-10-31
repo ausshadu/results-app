@@ -29,7 +29,7 @@ export default function Page() {
           </Link>
           <Link
             href="/quiz-2025/female-senior/participants"
-            className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
+            className="cta participantCta inline-flex rounded-full px-4 py-2 text-sm font-medium"
           >
             View Participants →
           </Link>
@@ -42,7 +42,7 @@ export default function Page() {
         </h2>
       </section>
 
-      <Round1Table title="Group - A" data={Female_Seniors_Round1_GroupA} />
+      <Round1Table title="" data={Female_Seniors_Round1_GroupA} />
 
       <section className="card-surface card-round2 p-5 text-center md:text-left">
         <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
@@ -50,7 +50,7 @@ export default function Page() {
         </h2>
       </section>
 
-      <Round2Table title="Group - A" data={Female_Seniors_Round2_GroupA} />
+      <Round2Table title="" data={Female_Seniors_Round2_GroupA} />
 
       <section className="card-surface card-round3 p-5 text-center md:text-left">
         <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
@@ -58,10 +58,7 @@ export default function Page() {
         </h2>
       </section>
 
-      <Round2Table
-        title="Final Round — Teams"
-        data={Female_Seniors_Round3_Final}
-      />
+      <Round2Table title="" data={Female_Seniors_Round3_Final} />
     </div>
   );
 }

@@ -32,7 +32,7 @@ export default function Page() {
           </Link>
           <Link
             href="/quiz-2025/male-combined/participants"
-            className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
+            className="cta participantCta inline-flex rounded-full px-4 py-2 text-sm font-medium"
           >
             View Participants →
           </Link>

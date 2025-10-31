@@ -1,5 +1,83 @@
 import { FinalRoundScores, Round1Scores, Round2Scores } from "../Models";
 
+export const FemaleJuniorParticipants = {
+  A1: {
+    group: "A1",
+    name: "Team 1",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  A2: {
+    group: "A2",
+    name: "Team 2",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  A3: {
+    group: "A3",
+    name: "Team 3",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  A4: {
+    group: "A4",
+    name: "Team 4",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  A5: {
+    group: "A5",
+    name: "Team 5",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  A6: {
+    group: "A6",
+    name: "Team 6",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  A7: {
+    group: "A7",
+    name: "Team 7",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  A8: {
+    group: "A8",
+    name: "Team 8",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  B1: {
+    group: "B1",
+    name: "Team 1",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  B2: {
+    group: "B2",
+    name: "Team 2",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  B3: {
+    group: "B3",
+    name: "Team 3",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  B4: {
+    group: "B4",
+    name: "Team 4",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  B5: {
+    group: "B5",
+    name: "Team 5",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  B6: {
+    group: "B6",
+    name: "Team 6",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+  B7: {
+    group: "B7",
+    name: "Team 7",
+    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+  },
+};
+
 export const Female_Juniors_Round1_GroupA: Round1Scores[] = [
   { team: "-", q1: "10", q2: "-", q3: "-", tie: "-", total: "-", remarks: "-" },
   { team: "-", q1: "-", q2: "-", q3: "-", tie: "-", total: "-", remarks: "-" },

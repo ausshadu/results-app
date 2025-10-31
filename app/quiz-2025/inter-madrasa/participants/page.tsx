@@ -6,30 +6,8 @@ export const metadata = {
   description: "Participants list for Inter Madrasa category in Quiz 2025.",
 };
 
-type ParticipantRow = {
-  slNo: string;
-  group: string;
-  madrasaName: string;
-  participant1: string;
-  participant2: string;
-  participant3: string;
-};
-
-async function getParticipants(): Promise<ParticipantRow[]> {
-  const entries = Object.values(InterMadrasaParticipants);
-
-  return entries.map((team, idx) => ({
-    slNo: String(idx + 1),
-    group: team.group,
-    madrasaName: team.name,
-    participant1: team.participants[0] || "",
-    participant2: team.participants[1] || "",
-    participant3: team.participants[2] || "",
-  }));
-}
-
-export default async function Page() {
-  const participants = await getParticipants();
+export default function Page() {
+  const participants = Object.values(InterMadrasaParticipants);
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6">
@@ -87,28 +65,28 @@ export default async function Page() {
               </tr>
             </thead>
             <tbody className="text-zinc-800">
-              {participants.map((p, i) => (
+              {participants.map((participant, index) => (
                 <tr
-                  key={`${p.slNo}-${i}`}
+                  key={`${participant.name}-${index}`}
                   className="odd:bg-white even:bg-zinc-50 align-top"
                 >
                   <td className="px-3 py-2 border border-zinc-300 font-mono">
-                    {p.slNo}
+                    {String(index + 1)}
                   </td>
                   <td className="px-3 py-2 border border-zinc-300">
-                    {p.group}
+                    {participant.group}
                   </td>
                   <td className="px-3 py-2 border border-zinc-300">
-                    {p.madrasaName}
+                    {participant.name}
                   </td>
                   <td className="px-3 py-2 border border-zinc-300">
-                    {p.participant1}
+                    {participant.participants[0]}
                   </td>
                   <td className="px-3 py-2 border border-zinc-300">
-                    {p.participant2}
+                    {participant.participants[1]}
                   </td>
                   <td className="px-3 py-2 border border-zinc-300">
-                    {p.participant3}
+                    {participant.participants[2]}
                   </td>
                 </tr>
               ))}

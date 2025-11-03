@@ -3,7 +3,13 @@ export interface Result {
   topic_number: number;
   topic_text: string;
   full_name: string;
-  total_marks: string;
+  quranic_references?: string | number;
+  ahdees_references?: string | number;
+  naqliyath_references?: string | number;
+  other_references?: string | number;
+  paragraph_marks?: string | number;
+  handwriting_marks?: string | number;
+  total_marks?: string | number;
   pdf_link: string;
 }
 
@@ -526,8 +532,14 @@ export const MALE_SENIOR: Result[] = [
     topic_number: 3,
     topic_text: "Farayaz-e-Wilayat",
     full_name: "SYED NEMATH KHUNDMIRI ",
-    total_marks: "",
     pdf_link: "/pdf_documents/600M010.pdf",
+    quranic_references: 5,
+    ahdees_references: 5,
+    naqliyath_references: 5,
+    other_references: 5,
+    paragraph_marks: 25,
+    handwriting_marks: 5,
+    total_marks: 50,
   },
   {
     reg_number: "600M015",
@@ -578,7 +590,6 @@ export const MALE_SENIOR: Result[] = [
     pdf_link: "/pdf_documents/600M100.pdf",
   },
 ];
-
 
 // Quiz 2025 datasets (to be filled)
 export const QUIZ_INTER_MADRASA: Result[] = [];

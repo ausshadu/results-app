@@ -29,4 +29,6 @@ export type Round2Scores = {
   total: string | number;
   remarks: string;
 };
-export type FinalRoundScores = Round2Scores;
+export type FinalRoundScores = Round2Scores & {
+  win_rank?: number;
+};

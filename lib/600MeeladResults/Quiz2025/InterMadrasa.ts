@@ -516,7 +516,8 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     q15: "10",
     tie: "",
     total: "90",
-    remarks: "🥇 - 🏆 WINNERS",
+    remarks: "",
+    win_rank: 1,
   },
   {
     team: "Team 5",
@@ -538,6 +539,7 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     tie: "10",
     total: "10",
     remarks: "",
+    win_rank: 3,
   },
   {
     team: "Team 6",
@@ -558,6 +560,7 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     q15: "",
     tie: "",
     total: "35",
-    remarks: "🥈 - 🏆 RUNNERS",
+    remarks: "",
+    win_rank: 2,
   },
 ];

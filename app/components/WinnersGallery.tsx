@@ -43,7 +43,7 @@ export default function WinnersGallery({ items }: { items: GalleryItem[] }) {
                 <Image
                   src={it.src}
                   alt={it.alt}
-                  className="h-40 w-full rounded-lg object-cover transition-transform group-hover:scale-[1.02]"
+                  className="h-40 w-full rounded-lg object-contain transition-transform group-hover:scale-[1.02]"
                 />
               </button>
               <div

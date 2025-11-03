@@ -3,39 +3,43 @@ import { FinalRoundScores, Round1Scores, Round2Scores } from "../Models";
 export const FemaleSeniorParticipants = {
   A1: {
     group: "A1",
-    name: "Team 1",
-    participants: ["Sr. NAME 1", "Sr. NAME 2", "Sr. NAME 3"],
+    name: "NAZIYA BANO & Team",
+    participants: ["HASHMATH UNNISA", "NAZIYA BANO", "IRFATH BANO"],
   },
   A2: {
     group: "A2",
-    name: "Team 2",
-    participants: ["Sr. NAME 1", "Sr. NAME 2", "Sr. NAME 3"],
+    name: "AKBARI BANO & Team",
+    participants: ["SYEDA REHANA TAJ", "AKBARI BANO", "ROOHI YASMEEN"],
   },
   A3: {
     group: "A3",
-    name: "Team 3",
-    participants: ["Sr. NAME 1", "Sr. NAME 2", "Sr. NAME 3"],
+    name: "NAHIDA BANU & Team",
+    participants: [
+      "SYEDA NAZNEEN FATHIMA",
+      "SYEDA NAHIDA BANU",
+      "ISHRATH BEGUM",
+    ],
   },
   A4: {
     group: "A4",
-    name: "Team 4",
-    participants: ["Sr. NAME 1", "Sr. NAME 2", "Sr. NAME 3"],
+    name: "FAIROZA BANO & Team",
+    participants: ["SYEDA FAIROZA BANO", "GULZAR BANO", "RUKSANA BANO"],
   },
   A5: {
     group: "A5",
-    name: "Team 5",
-    participants: ["Sr. NAME 1", "Sr. NAME 2", "Sr. NAME 3"],
+    name: "MUMTAZ BANO & Team",
+    participants: ["AKTHAR UNISSA", "AYESHA BANO", "MUMTAZ BANO R M"],
   },
   A6: {
     group: "A6",
-    name: "Team 6",
-    participants: ["Sr. NAME 1", "Sr. NAME 2", "Sr. NAME 3"],
+    name: "TAHERA BANO & Team",
+    participants: ["SYEDA FAHMIDA BANU", "TAHERA BANO", "ATHIYA FATHIMA"],
   },
 };
 
 export const Female_Seniors_Round1_GroupA: Round1Scores[] = [
   {
-    team: "Team 1",
+    team: FemaleSeniorParticipants.A1.name,
     q1: "10",
     q2: "10",
     q3: "10 +5",
@@ -44,7 +48,7 @@ export const Female_Seniors_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 2",
+    team: FemaleSeniorParticipants.A2.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -53,7 +57,7 @@ export const Female_Seniors_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 3",
+    team: FemaleSeniorParticipants.A3.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -62,7 +66,7 @@ export const Female_Seniors_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 4",
+    team: FemaleSeniorParticipants.A4.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -71,7 +75,7 @@ export const Female_Seniors_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 5",
+    team: FemaleSeniorParticipants.A5.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -80,7 +84,7 @@ export const Female_Seniors_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 6",
+    team: FemaleSeniorParticipants.A6.name,
     q1: "10",
     q2: "10",
     q3: "-5",
@@ -92,7 +96,7 @@ export const Female_Seniors_Round1_GroupA: Round1Scores[] = [
 
 export const Female_Seniors_Round2_GroupA: Round2Scores[] = [
   {
-    team: "Team 1",
+    team: FemaleSeniorParticipants.A1.name,
     q1: "-",
     q2: "-5",
     q3: "-",
@@ -113,7 +117,7 @@ export const Female_Seniors_Round2_GroupA: Round2Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 2",
+    team: FemaleSeniorParticipants.A2.name,
     q1: "10",
     q2: "-",
     q3: "-",
@@ -134,7 +138,7 @@ export const Female_Seniors_Round2_GroupA: Round2Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 3",
+    team: FemaleSeniorParticipants.A3.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -155,7 +159,7 @@ export const Female_Seniors_Round2_GroupA: Round2Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 4",
+    team: FemaleSeniorParticipants.A4.name,
     q1: "-",
     q2: "-",
     q3: "10",
@@ -176,7 +180,7 @@ export const Female_Seniors_Round2_GroupA: Round2Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 5",
+    team: FemaleSeniorParticipants.A5.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -200,7 +204,7 @@ export const Female_Seniors_Round2_GroupA: Round2Scores[] = [
 
 export const Female_Seniors_Round3_Final: FinalRoundScores[] = [
   {
-    team: "Team 1",
+    team: FemaleSeniorParticipants.A1.name,
     q1: "-",
     q2: "-5",
     q3: "-",
@@ -218,10 +222,11 @@ export const Female_Seniors_Round3_Final: FinalRoundScores[] = [
     q15: "-",
     tie: "-",
     total: "15",
-    remarks: "🥉 - 🏆 RUNNERS",
+    remarks: "",
+    win_rank: 3,
   },
   {
-    team: "Team 2",
+    team: FemaleSeniorParticipants.A2.name,
     q1: "10",
     q2: "-",
     q3: "10",
@@ -239,10 +244,11 @@ export const Female_Seniors_Round3_Final: FinalRoundScores[] = [
     q15: "-",
     tie: "-",
     total: "35",
-    remarks: "🥇 - 🏆 WINNERS",
+    remarks: "",
+    win_rank: 1,
   },
   {
-    team: "Team 3",
+    team: FemaleSeniorParticipants.A3.name,
     q1: "-",
     q2: "-",
     q3: "-5",
@@ -263,7 +269,7 @@ export const Female_Seniors_Round3_Final: FinalRoundScores[] = [
     remarks: "-",
   },
   {
-    team: "Team 4",
+    team: FemaleSeniorParticipants.A4.name,
     q1: "-",
     q2: "10",
     q3: "-",
@@ -281,6 +287,7 @@ export const Female_Seniors_Round3_Final: FinalRoundScores[] = [
     q15: "-",
     tie: "-",
     total: "30",
-    remarks: "🥈 - 🏆 RUNNERS",
+    remarks: "",
+    win_rank: 2,
   },
 ];

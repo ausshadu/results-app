@@ -1,11 +1,15 @@
-import { Round2Scores } from "@/lib/600MeeladResults/Models";
+import { Round2Scores, FinalRoundScores } from "@/lib/600MeeladResults/Models";
+import Image from "next/image";
+import firstIcon from "@/lib/600MeeladResults/icons/first.png";
+import secondIcon from "@/lib/600MeeladResults/icons/second.png";
+import thirdIcon from "@/lib/600MeeladResults/icons/third.png";
 
 export function Round2Table({
   title,
   data,
 }: {
   title: string;
-  data: Round2Scores[];
+  data: (Round2Scores | FinalRoundScores)[];
 }) {
   const columns = [
     "Team Name",
@@ -32,6 +36,35 @@ export function Round2Table({
         ))}
       </span>
     );
+  };
+
+  const renderRemarks = (r: Round2Scores | FinalRoundScores) => {
+    const rank = (r as FinalRoundScores).win_rank;
+    if (rank === 1) {
+      return (
+        <span className="inline-flex flex-col items-center gap-1 font-semibold text-emerald-700">
+          <Image src={firstIcon} alt="First" width={36} height={36} />
+          <span className="text-[11px] sm:text-xs">FIRST</span>
+        </span>
+      );
+    }
+    if (rank === 2) {
+      return (
+        <span className="inline-flex flex-col items-center gap-1 font-semibold text-amber-700">
+          <Image src={secondIcon} alt="Second" width={36} height={36} />
+          <span className="text-[11px] sm:text-xs">SECOND</span>
+        </span>
+      );
+    }
+    if (rank === 3) {
+      return (
+        <span className="inline-flex flex-col items-center gap-1 font-semibold text-amber-700">
+          <Image src={thirdIcon} alt="Third" width={36} height={36} />
+          <span className="text-[11px] sm:text-xs">THIRD</span>
+        </span>
+      );
+    }
+    return r.remarks;
   };
 
   return (
@@ -112,8 +145,8 @@ export function Round2Table({
                 <td className="px-3 py-2 border border-zinc-300 font-mono font-bold">
                   {renderScore(r.total)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 text-nowrap">
-                  {r.remarks}
+                <td className="px-3 py-2 border border-zinc-300 whitespace-normal">
+                  {renderRemarks(r)}
                 </td>
               </tr>
             ))}

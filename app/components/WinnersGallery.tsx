@@ -29,7 +29,7 @@ export default function WinnersGallery({ items }: { items: GalleryItem[] }) {
           Winners — Inter Madrasa Quiz 2025
         </h2>
         <p className="mt-1 text-sm text-zinc-700">
-          Congratulations to the Winner, 1st Runner-Up and 2nd Runner-Up teams.
+          Congratulations to the FIRST, SECOND and THIRD teams.
         </p>
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {items.map((it, i) => (

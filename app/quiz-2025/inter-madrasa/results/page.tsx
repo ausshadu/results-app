@@ -78,7 +78,7 @@ export default function Page() {
             src: firstPhoto,
             alt: "Winner — Inter Madrasa",
             caption: [
-              "🏆 — 🥇 Winner",
+              "🏆 — 🥇 FIRST",
               "",
               `Madrasa: ${InterMadrasaParticipants.B4.name}`,
               "",
@@ -89,9 +89,9 @@ export default function Page() {
           },
           {
             src: secondPhoto,
-            alt: "1st Runner-Up — Inter Madrasa",
+            alt: "Second — Inter Madrasa",
             caption: [
-              "🏆 — 🥈 1st Runner-Up",
+              "🏆 — 🥈 SECOND",
               "",
               `Madrasa: ${InterMadrasaParticipants.A3.name}`,
               "",
@@ -102,9 +102,9 @@ export default function Page() {
           },
           {
             src: thirdPhoto,
-            alt: "2nd Runner-Up — Inter Madrasa",
+            alt: "Third — Inter Madrasa",
             caption: [
-              "🏆 — 🥉 2nd Runner-Up",
+              "🏆 — 🥉 THIRD",
               "",
               `Madrasa: ${InterMadrasaParticipants.B5.name}`,
               "",

@@ -3,6 +3,7 @@ import Image from "next/image";
 import firstIcon from "@/lib/600MeeladResults/icons/first.png";
 import secondIcon from "@/lib/600MeeladResults/icons/second.png";
 import thirdIcon from "@/lib/600MeeladResults/icons/third.png";
+import celebrate2Gif from "@/lib/600MeeladResults/icons/celebrate2.gif";
 
 export function Round2Table({
   title,
@@ -42,26 +43,59 @@ export function Round2Table({
     const rank = (r as FinalRoundScores).win_rank;
     if (rank === 1) {
       return (
-        <span className="inline-flex flex-col items-center gap-1 font-semibold text-emerald-700">
-          <Image src={firstIcon} alt="First" width={36} height={36} />
-          <span className="text-[11px] sm:text-xs">FIRST</span>
-        </span>
+        <div className="relative">
+          <div
+            className="absolute inset-0 opacity-60"
+            style={{
+              backgroundImage: `url(${celebrate2Gif.src})`,
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+          <span className="relative z-10 inline-flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
+            <Image src={firstIcon} alt="First" width={36} height={36} />
+            <span className="text-[11px] sm:text-xs">FIRST</span>
+          </span>
+        </div>
       );
     }
     if (rank === 2) {
       return (
-        <span className="inline-flex flex-col items-center gap-1 font-semibold text-amber-700">
-          <Image src={secondIcon} alt="Second" width={36} height={36} />
-          <span className="text-[11px] sm:text-xs">SECOND</span>
-        </span>
+        <div className="relative">
+          <div
+            className="absolute inset-0 opacity-60"
+            style={{
+              backgroundImage: `url(${celebrate2Gif.src})`,
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+          <span className="relative z-10 inline-flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
+            <Image src={secondIcon} alt="Second" width={36} height={36} />
+            <span className="text-[11px] sm:text-xs">SECOND</span>
+          </span>
+        </div>
       );
     }
     if (rank === 3) {
       return (
-        <span className="inline-flex flex-col items-center gap-1 font-semibold text-amber-700">
-          <Image src={thirdIcon} alt="Third" width={36} height={36} />
-          <span className="text-[11px] sm:text-xs">THIRD</span>
-        </span>
+        <div className="relative">
+          <div
+            className="absolute inset-0 opacity-60"
+            style={{
+              backgroundImage: `url(${celebrate2Gif.src})`,
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+          <span className="relative z-10 inline-flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
+            <Image src={thirdIcon} alt="Third" width={36} height={36} />
+            <span className="text-[11px] sm:text-xs">THIRD</span>
+          </span>
+        </div>
       );
     }
     return r.remarks;
@@ -145,7 +179,7 @@ export function Round2Table({
                 <td className="px-3 py-2 border border-zinc-300 font-mono font-bold">
                   {renderScore(r.total)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 whitespace-normal">
+                <td className="p-0 border border-zinc-300">
                   {renderRemarks(r)}
                 </td>
               </tr>

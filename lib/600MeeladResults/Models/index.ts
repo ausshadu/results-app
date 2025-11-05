@@ -47,6 +47,6 @@ export type Round2Scores = {
   remarks: string;
 };
 export type FinalRoundScores = Round2Scores & {
-  participants?: ParticipantsData;
+  participants?: string[];
   win_rank?: number;
 };

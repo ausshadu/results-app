@@ -1,96 +1,83 @@
-import {
-  FinalRoundScores,
-  ParticipantsDetails,
-  Round1Scores,
-  Round2Scores,
-} from "../Models";
+import { FinalRoundScores, Round1Scores, Round2Scores } from "../Models";
 
-export const MaleCombinedParticipants: ParticipantsDetails = {
+export const MaleCombinedParticipants = {
   A1: {
     group: "A1",
-    name: "Team 1",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "ASIM PASHA & Team",
+    participants: ["ASIM PASHA ", "MOHAMMAD FAZIL", "ZAHIR ULLA"],
   },
   A2: {
     group: "A2",
-    name: "Team 2",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "MOHAMMED ATHEEQ & Team",
+    participants: ["MOHAMMED ATHEEQ", "MOHAMMED FAIZAN", "SYED AFAQ MEHDI"],
   },
   A3: {
     group: "A3",
-    name: "Team 3",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "AADIL MAHDI & Team",
+    participants: ["ZABIULLA SALEEM", "AADIL MAHDI", "MOHAMMED HANNAN MEHDI"],
   },
   A4: {
     group: "A4",
-    name: "Team 4",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "ADNAN KHUNDMIRI & Team",
+    participants: ["ADNAN KHUNDMIRI ", "SHIRAZ KHUNDMIRI", "NEMATH KHUNDMIRI"],
   },
   A5: {
     group: "A5",
-    name: "Team 5",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "SYED YASEEN & Team",
+    participants: [
+      "SYED YASEEN AINAN KHUNDMIRI ",
+      "MOHAMMAD QUDUS",
+      "SYED ZUBER",
+    ],
   },
   A6: {
     group: "A6",
-    name: "Team 6",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
-  },
-  A7: {
-    group: "A7",
-    name: "Team 7",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
-  },
-  A8: {
-    group: "A8",
-    name: "Team 8",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "MOHAMMED AMEEN & Team",
+    participants: [
+      "MOHAMMED AMEEN USMANI",
+      "ISMAIL ZABI ULLA RAHIM",
+      "MOHAMMED ZAID USMANI",
+    ],
   },
   B1: {
     group: "B1",
-    name: "Team 1",
+    name: "Team B1",
     participants: ["NAME 1", "NAME 2", "NAME 3"],
   },
   B2: {
     group: "B2",
-    name: "Team 2",
+    name: "Team B2",
     participants: ["NAME 1", "NAME 2", "NAME 3"],
   },
   B3: {
     group: "B3",
-    name: "Team 3",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "SYED SHAHID & Team",
+    participants: ["SYED SHAHID MEHDI ", "MOHAMMAD KAIF", "SHEEYAM MAHBOOB"],
   },
   B4: {
     group: "B4",
-    name: "Team 4",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "SYED FARHAN & Team",
+    participants: [
+      "SYED FARHAN BUKHARI ",
+      "SYED VIQHAR MEHDI",
+      "SYED ANSAR MEHDI",
+    ],
   },
   B5: {
     group: "B5",
-    name: "Team 5",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "DANIYAL MEHDI & Team",
+    participants: ["DANIYAL MEHDI", "HANNAN MEHDI", "ANFAL MEHDI"],
   },
   B6: {
     group: "B6",
-    name: "Team 6",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
-  },
-  B7: {
-    group: "B7",
-    name: "Team 7",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
-  },
-  B8: {
-    group: "B8",
-    name: "Team 8",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "KHIZER MEHDI & Team",
+    participants: ["KHIZER MEHDI", "MOIZUDDIN SYED", "ROSHAN RAFI ULLA. S"],
   },
 };
 
 export const Male_Combined_Round1_GroupA: Round1Scores[] = [
   {
-    team: "-",
+    team: MaleCombinedParticipants.A1.name,
     q1: "-5 +5",
     q2: "10",
     q3: "10",
@@ -99,7 +86,7 @@ export const Male_Combined_Round1_GroupA: Round1Scores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A2.name,
     q1: "+5 +10",
     q2: "10",
     q3: "10",
@@ -108,7 +95,7 @@ export const Male_Combined_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A3.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -117,7 +104,7 @@ export const Male_Combined_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A4.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -126,7 +113,7 @@ export const Male_Combined_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A5.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -135,7 +122,7 @@ export const Male_Combined_Round1_GroupA: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A6.name,
     q1: "-5",
     q2: "10",
     q3: "10",
@@ -147,7 +134,7 @@ export const Male_Combined_Round1_GroupA: Round1Scores[] = [
 
 export const Male_Combined_Round1_GroupB: Round1Scores[] = [
   {
-    team: "-",
+    team: MaleCombinedParticipants.B1.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -156,7 +143,7 @@ export const Male_Combined_Round1_GroupB: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.B2.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -165,7 +152,7 @@ export const Male_Combined_Round1_GroupB: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.B3.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -174,7 +161,7 @@ export const Male_Combined_Round1_GroupB: Round1Scores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.B4.name,
     q1: "10",
     q2: "10",
     q3: "10",
@@ -183,7 +170,7 @@ export const Male_Combined_Round1_GroupB: Round1Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.B5.name,
     q1: "10",
     q2: "-5",
     q3: "10",
@@ -192,7 +179,7 @@ export const Male_Combined_Round1_GroupB: Round1Scores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.B6.name,
     q1: "10",
     q2: "+5 +10",
     q3: "10",
@@ -204,7 +191,7 @@ export const Male_Combined_Round1_GroupB: Round1Scores[] = [
 
 export const Male_Combined_Round2_GroupA: Round2Scores[] = [
   {
-    team: "-",
+    team: MaleCombinedParticipants.B1.name,
     q1: "-5",
     q2: "-",
     q3: "-5",
@@ -225,7 +212,7 @@ export const Male_Combined_Round2_GroupA: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A2.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -246,7 +233,7 @@ export const Male_Combined_Round2_GroupA: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A4.name,
     q1: "-",
     q2: "10",
     q3: "-5",
@@ -267,7 +254,7 @@ export const Male_Combined_Round2_GroupA: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.B6.name,
     q1: "-",
     q2: "-5",
     q3: "-5",
@@ -291,7 +278,7 @@ export const Male_Combined_Round2_GroupA: Round2Scores[] = [
 
 export const Male_Combined_Round2_GroupB: Round2Scores[] = [
   {
-    team: "-",
+    team: MaleCombinedParticipants.B2.name,
     q1: "10",
     q2: "-",
     q3: "-",
@@ -312,7 +299,7 @@ export const Male_Combined_Round2_GroupB: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A3.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -333,7 +320,7 @@ export const Male_Combined_Round2_GroupB: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A5.name,
     q1: "-",
     q2: "-",
     q3: "10",
@@ -354,7 +341,7 @@ export const Male_Combined_Round2_GroupB: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.B4.name,
     q1: "-",
     q2: "10",
     q3: "-",
@@ -378,7 +365,7 @@ export const Male_Combined_Round2_GroupB: Round2Scores[] = [
 
 export const Male_Combined_Round3_Final: FinalRoundScores[] = [
   {
-    team: "-",
+    team: MaleCombinedParticipants.B6.name,
     q1: "-",
     q2: "-",
     q3: "10",
@@ -399,7 +386,7 @@ export const Male_Combined_Round3_Final: FinalRoundScores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A2.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -419,9 +406,10 @@ export const Male_Combined_Round3_Final: FinalRoundScores[] = [
     total: "35",
     remarks: "-",
     win_rank: 2,
+    participants: MaleCombinedParticipants.A2.participants,
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A4.name,
     q1: "-",
     q2: "10",
     q3: "-",
@@ -441,9 +429,10 @@ export const Male_Combined_Round3_Final: FinalRoundScores[] = [
     total: "20",
     remarks: "-",
     win_rank: 3,
+    participants: MaleCombinedParticipants.A4.participants,
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.A5.name,
     q1: "10",
     q2: "-",
     q3: "-",
@@ -464,7 +453,7 @@ export const Male_Combined_Round3_Final: FinalRoundScores[] = [
     remarks: "-",
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.B4.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -484,9 +473,10 @@ export const Male_Combined_Round3_Final: FinalRoundScores[] = [
     total: "50",
     remarks: "-",
     win_rank: 1,
+    participants: MaleCombinedParticipants.B4.participants,
   },
   {
-    team: "-",
+    team: MaleCombinedParticipants.B2.name,
     q1: "-",
     q2: "-",
     q3: "-",

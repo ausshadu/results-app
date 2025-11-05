@@ -435,7 +435,7 @@ export const Madrasa_Round2_GroupB: Round2Scores[] = [
 
 export const Madrasa_Round3_Final: FinalRoundScores[] = [
   {
-    team: "Team 1",
+    team: InterMadrasaParticipants.A5.name,
     q1: "",
     q2: "",
     q3: "",
@@ -456,7 +456,7 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     remarks: "",
   },
   {
-    team: "Team 2",
+    team: InterMadrasaParticipants.A4.name,
     q1: "-5",
     q2: "",
     q3: "",
@@ -477,7 +477,7 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     remarks: "",
   },
   {
-    team: "Team 3",
+    team: InterMadrasaParticipants.A2.name,
     q1: "",
     q2: "",
     q3: "",
@@ -498,7 +498,7 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     remarks: "",
   },
   {
-    team: "Team 4",
+    team: InterMadrasaParticipants.B4.name,
     q1: "",
     q2: "",
     q3: "10",
@@ -521,7 +521,7 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     participants: InterMadrasaParticipants.B4.participants,
   },
   {
-    team: "Team 5",
+    team: InterMadrasaParticipants.B5.name,
     q1: "",
     q2: "",
     q3: "",
@@ -544,7 +544,7 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     participants: InterMadrasaParticipants.B5.participants,
   },
   {
-    team: "Team 6",
+    team: InterMadrasaParticipants.A3.name,
     q1: "10",
     q2: "10",
     q3: "",

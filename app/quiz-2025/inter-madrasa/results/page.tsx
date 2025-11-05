@@ -78,17 +78,32 @@ export default function Page() {
           {
             src: firstPhoto,
             alt: "Winner — Inter Madrasa",
-            caption: "🏆 — 🥇 FIRST",
+            caption: [
+              "",
+              `Madrasa — ${InterMadrasaParticipants.B4.name}`,
+              "",
+              InterMadrasaParticipants.B4.participants.join("\n"),
+            ].join("\n"),
           },
           {
             src: secondPhoto,
             alt: "Second — Inter Madrasa",
-            caption: "🏆 — 🥈 SECOND",
+            caption: [
+              "",
+              `Madrasa — ${InterMadrasaParticipants.A3.name}`,
+              "",
+              InterMadrasaParticipants.A3.participants.join("\n"),
+            ].join("\n"),
           },
           {
             src: thirdPhoto,
             alt: "Third — Inter Madrasa",
-            caption: "🏆 — 🥉 THIRD",
+            caption: [
+              "",
+              `Madrasa — ${InterMadrasaParticipants.B5.name}`,
+              "",
+              InterMadrasaParticipants.B5.participants.join("\n"),
+            ].join("\n"),
           },
         ]}
       />

@@ -6,6 +6,7 @@ import {
   Male_Combined_Round2_GroupA,
   Male_Combined_Round2_GroupB,
   Male_Combined_Round3_Final,
+  MaleCombinedParticipants,
 } from "@/lib/600MeeladResults";
 import firstPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/first.webp";
 import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/second.webp";
@@ -77,17 +78,17 @@ export default function Page() {
           {
             src: firstPhoto,
             alt: "Winner — Male Combined",
-            caption: "🏆 — 🥇 FIRST",
+            caption: MaleCombinedParticipants.B4.participants.join("\n"),
           },
           {
             src: secondPhoto,
             alt: "Second — Male Combined",
-            caption: "🏆 — 🥈 SECOND",
+            caption: MaleCombinedParticipants.A2.participants.join("\n"),
           },
           {
             src: thirdPhoto,
             alt: "Third — Male Combined",
-            caption: "🏆 — 🥉 THIRD",
+            caption: MaleCombinedParticipants.A4.participants.join("\n"),
           },
         ]}
       />

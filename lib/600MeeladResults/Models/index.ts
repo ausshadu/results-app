@@ -4,6 +4,7 @@ export type GalleryItem = {
   src: StaticImageData;
   alt: string;
   caption: string;
+  participants?: string[];
 };
 
 export interface ParticipantsData {

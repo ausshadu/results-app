@@ -3,6 +3,9 @@
 import { GalleryItem } from "@/lib/600MeeladResults/Models";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import firstIcon from "@/lib/600MeeladResults/icons/first.png";
+import secondIcon from "@/lib/600MeeladResults/icons/second.png";
+import thirdIcon from "@/lib/600MeeladResults/icons/third.png";
 
 export default function WinnersGallery({
   items,
@@ -39,6 +42,21 @@ export default function WinnersGallery({
                 className="group relative cursor-zoom-in"
                 aria-label={`Open ${it.caption} photo`}
               >
+                <div className="absolute left-2 top-2 z-10">
+                  <Image
+                    src={i === 0 ? firstIcon : i === 1 ? secondIcon : thirdIcon}
+                    alt={
+                      i === 0
+                        ? "First place"
+                        : i === 1
+                        ? "Second place"
+                        : "Third place"
+                    }
+                    width={40}
+                    height={40}
+                    className="drop-shadow-2xl"
+                  />
+                </div>
                 <Image
                   src={it.src}
                   alt={it.alt}
@@ -46,7 +64,7 @@ export default function WinnersGallery({
                 />
               </button>
               <div
-                className="text-sm font-medium text-zinc-800"
+                className="text-sm font-medium text-zinc-800 text-center"
                 style={{ whiteSpace: "pre-wrap" }}
               >
                 {it.caption}
@@ -86,6 +104,15 @@ export default function WinnersGallery({
             >
               {items[openIndex].caption}
             </div>
+            {items[openIndex].participants &&
+            items[openIndex].participants.length > 0 ? (
+              <div
+                className="mt-1 text-center text-xs text-white/90"
+                style={{ whiteSpace: "pre-wrap" }}
+              >
+                {items[openIndex].participants!.join("\n")}
+              </div>
+            ) : null}
           </div>
         </div>
       ) : null}

@@ -90,8 +90,8 @@ export function EssayResultsTable({ results }: { results: Result[] }) {
                       className="px-4 py-3 border border-zinc-300 text-left"
                       colSpan={8}
                     >
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                        <div className="flex items-center justify-between rounded border border-zinc-200 bg-zinc-50 px-3 py-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
                           <span className="text-zinc-600">
                             Qur'an References
                           </span>
@@ -99,7 +99,7 @@ export function EssayResultsTable({ results }: { results: Result[] }) {
                             {formatMarks(r.quranic_references)} marks
                           </span>
                         </div>
-                        <div className="flex items-center justify-between rounded border border-zinc-200 bg-zinc-50 px-3 py-2">
+                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
                           <span className="text-zinc-600">
                             Ahadees References
                           </span>
@@ -107,7 +107,7 @@ export function EssayResultsTable({ results }: { results: Result[] }) {
                             {formatMarks(r.ahdees_references)} marks
                           </span>
                         </div>
-                        <div className="flex items-center justify-between rounded border border-zinc-200 bg-zinc-50 px-3 py-2">
+                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
                           <span className="text-zinc-600">
                             Naqliyath References
                           </span>
@@ -115,7 +115,7 @@ export function EssayResultsTable({ results }: { results: Result[] }) {
                             {formatMarks(r.naqliyath_references)} marks
                           </span>
                         </div>
-                        <div className="flex items-center justify-between rounded border border-zinc-200 bg-zinc-50 px-3 py-2">
+                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
                           <span className="text-zinc-600">
                             Other References
                           </span>
@@ -123,13 +123,13 @@ export function EssayResultsTable({ results }: { results: Result[] }) {
                             {formatMarks(r.other_references)} marks
                           </span>
                         </div>
-                        <div className="flex items-center justify-between rounded border border-zinc-200 bg-zinc-50 px-3 py-2">
+                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
                           <span className="text-zinc-600">Paragraph Marks</span>
                           <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
                             {formatMarks(r.paragraph_marks)} marks
                           </span>
                         </div>
-                        <div className="flex items-center justify-between rounded border border-zinc-200 bg-zinc-50 px-3 py-2">
+                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
                           <span className="text-zinc-600">
                             Good Handwriting
                           </span>
@@ -139,16 +139,14 @@ export function EssayResultsTable({ results }: { results: Result[] }) {
                         </div>
                       </div>
 
-                      <div className="mt-4 border-t pt-3 text-right">
-                        <span className="text-sm text-zinc-500 mr-2">
-                          Total:
-                        </span>
-                        <span className="text-2xl font-extrabold text-zinc-900">
-                          {formatMarks(r.total_marks)}
-                        </span>
-                        <span className="ml-1 text-sm text-zinc-500">
-                          marks
-                        </span>
+                      <div className="mt-4 flex justify-end">
+                        <div className="inline-flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
+                          <span className="text-sm text-zinc-500">Total:</span>
+                          <span className="text-2xl font-extrabold text-zinc-900">
+                            {formatMarks(r.total_marks)}
+                          </span>
+                          <span className="text-sm text-zinc-500">marks</span>
+                        </div>
                       </div>
                     </td>
                   </tr>

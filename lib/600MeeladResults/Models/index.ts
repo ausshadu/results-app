@@ -1,3 +1,20 @@
+import { StaticImageData } from "next/image";
+
+export type GalleryItem = {
+  src: StaticImageData;
+  alt: string;
+  caption: string;
+};
+
+export interface ParticipantsData {
+  group: string;
+  name: string;
+  participants: string[];
+}
+export interface ParticipantsDetails {
+  [key: string]: ParticipantsData;
+}
+
 export type Round1Scores = {
   team: string;
   q1: string | number;
@@ -30,5 +47,6 @@ export type Round2Scores = {
   remarks: string;
 };
 export type FinalRoundScores = Round2Scores & {
+  participants?: ParticipantsData;
   win_rank?: number;
 };

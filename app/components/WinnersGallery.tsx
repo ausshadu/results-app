@@ -1,15 +1,16 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import { GalleryItem } from "@/lib/600MeeladResults/Models";
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
-type GalleryItem = {
-  src: StaticImageData;
-  alt: string;
-  caption: string;
-};
-
-export default function WinnersGallery({ items }: { items: GalleryItem[] }) {
+export default function WinnersGallery({
+  items,
+  title,
+}: {
+  items: GalleryItem[];
+  title?: string;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setOpenIndex(null), []);
@@ -25,9 +26,7 @@ export default function WinnersGallery({ items }: { items: GalleryItem[] }) {
   return (
     <>
       <section className="card-surface p-5">
-        <h2 className="text-xl font-semibold text-zinc-900">
-          Winners — Inter Madrasa Quiz 2025
-        </h2>
+        <h2 className="text-xl font-semibold text-zinc-900">{title}</h2>
         <p className="mt-1 text-sm text-zinc-700">
           Congratulations to the FIRST, SECOND and THIRD teams.
         </p>

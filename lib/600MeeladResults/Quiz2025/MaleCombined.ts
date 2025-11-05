@@ -1,6 +1,11 @@
-import { FinalRoundScores, Round1Scores, Round2Scores } from "../Models";
+import {
+  FinalRoundScores,
+  ParticipantsDetails,
+  Round1Scores,
+  Round2Scores,
+} from "../Models";
 
-export const MaleCombinedParticipants = {
+export const MaleCombinedParticipants: ParticipantsDetails = {
   A1: {
     group: "A1",
     name: "Team 1",

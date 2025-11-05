@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Round1Table, Round2Table } from "@/app/components";
+import { Round1Table, Round2Table, WinnersGallery } from "@/app/components";
 import {
   Male_Combined_Round1_GroupA,
   Male_Combined_Round1_GroupB,
@@ -7,6 +7,9 @@ import {
   Male_Combined_Round2_GroupB,
   Male_Combined_Round3_Final,
 } from "@/lib/600MeeladResults";
+import firstPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/first.webp";
+import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/second.webp";
+import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/third.webp";
 
 export const metadata = {
   title: "Male • Combined — Results",
@@ -66,6 +69,27 @@ export default function Page() {
       <Round2Table
         title="Final Round — Teams"
         data={Male_Combined_Round3_Final}
+      />
+
+      <WinnersGallery
+        title="Winners — Male Combined Quiz 2025"
+        items={[
+          {
+            src: firstPhoto,
+            alt: "Winner — Male Combined",
+            caption: ["🏆 — 🥇 FIRST"].join("\n"),
+          },
+          {
+            src: secondPhoto,
+            alt: "Second — Male Combined",
+            caption: ["🏆 — 🥈 SECOND"].join("\n"),
+          },
+          {
+            src: thirdPhoto,
+            alt: "Third — Male Combined",
+            caption: ["🏆 — 🥉 THIRD"].join("\n"),
+          },
+        ]}
       />
     </div>
   );

@@ -8,9 +8,9 @@ import {
   Madrasa_Round3_Final,
 } from "@/lib/600MeeladResults";
 import { Round1Table, Round2Table, WinnersGallery } from "@/app/components";
-import firstPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter-madrasa/first.webp";
-import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter-madrasa/second.webp";
-import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter-madrasa/third.jpeg";
+import firstPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/first.webp";
+import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/second.webp";
+import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/third.jpeg";
 
 export const metadata = {
   title: "Inter Madrasa Results",

@@ -518,6 +518,7 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     total: "90",
     remarks: "",
     win_rank: 1,
+    participants: InterMadrasaParticipants.B4.participants,
   },
   {
     team: "Team 5",
@@ -540,6 +541,7 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     total: "10",
     remarks: "",
     win_rank: 3,
+    participants: InterMadrasaParticipants.B5.participants,
   },
   {
     team: "Team 6",
@@ -562,5 +564,6 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     total: "35",
     remarks: "",
     win_rank: 2,
+    participants: InterMadrasaParticipants.A3.participants,
   },
 ];

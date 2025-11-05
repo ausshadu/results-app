@@ -77,17 +77,17 @@ export default function Page() {
           {
             src: firstPhoto,
             alt: "Winner — Male Combined",
-            caption: ["🏆 — 🥇 FIRST"].join("\n"),
+            caption: "🏆 — 🥇 FIRST",
           },
           {
             src: secondPhoto,
             alt: "Second — Male Combined",
-            caption: ["🏆 — 🥈 SECOND"].join("\n"),
+            caption: "🏆 — 🥈 SECOND",
           },
           {
             src: thirdPhoto,
             alt: "Third — Male Combined",
-            caption: ["🏆 — 🥉 THIRD"].join("\n"),
+            caption: "🏆 — 🥉 THIRD",
           },
         ]}
       />

@@ -230,7 +230,7 @@ export const Male_Combined_Round2_GroupA: Round2Scores[] = [
     q15: "-",
     tie: "-",
     total: "-5",
-    remarks: "-",
+    remarks: "✅ QUALIFIED",
   },
   {
     team: MaleCombinedParticipants.A4.name,
@@ -251,7 +251,7 @@ export const Male_Combined_Round2_GroupA: Round2Scores[] = [
     q15: "-",
     tie: "-",
     total: "30",
-    remarks: "-",
+    remarks: "✅ QUALIFIED",
   },
   {
     team: MaleCombinedParticipants.B6.name,
@@ -272,7 +272,7 @@ export const Male_Combined_Round2_GroupA: Round2Scores[] = [
     q15: "-5",
     tie: "-",
     total: "-5",
-    remarks: "-",
+    remarks: "✅ QUALIFIED",
   },
 ];
 
@@ -296,7 +296,7 @@ export const Male_Combined_Round2_GroupB: Round2Scores[] = [
     q15: "-",
     tie: "-",
     total: "25",
-    remarks: "-",
+    remarks: "✅ QUALIFIED",
   },
   {
     team: MaleCombinedParticipants.A3.name,
@@ -338,7 +338,7 @@ export const Male_Combined_Round2_GroupB: Round2Scores[] = [
     q15: "",
     tie: "-",
     total: "45",
-    remarks: "-",
+    remarks: "✅ QUALIFIED",
   },
   {
     team: MaleCombinedParticipants.B4.name,
@@ -359,7 +359,7 @@ export const Male_Combined_Round2_GroupB: Round2Scores[] = [
     q15: "20",
     tie: "-",
     total: "60",
-    remarks: "-",
+    remarks: "✅ QUALIFIED",
   },
 ];
 

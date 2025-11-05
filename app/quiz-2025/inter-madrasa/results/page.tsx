@@ -73,45 +73,22 @@ export default function Page() {
       <Round2Table title="Final Round — Teams" data={Madrasa_Round3_Final} />
 
       <WinnersGallery
+        title="Winners — Inter Madrasa Quiz 2025"
         items={[
           {
             src: firstPhoto,
             alt: "Winner — Inter Madrasa",
-            caption: [
-              "🏆 — 🥇 FIRST",
-              "",
-              `Madrasa: ${InterMadrasaParticipants.B4.name}`,
-              "",
-              InterMadrasaParticipants.B4.participants[0],
-              InterMadrasaParticipants.B4.participants[1],
-              InterMadrasaParticipants.B4.participants[2],
-            ].join("\n"),
+            caption: "🏆 — 🥇 FIRST",
           },
           {
             src: secondPhoto,
             alt: "Second — Inter Madrasa",
-            caption: [
-              "🏆 — 🥈 SECOND",
-              "",
-              `Madrasa: ${InterMadrasaParticipants.A3.name}`,
-              "",
-              InterMadrasaParticipants.A3.participants[0],
-              InterMadrasaParticipants.A3.participants[1],
-              InterMadrasaParticipants.A3.participants[2],
-            ].join("\n"),
+            caption: "🏆 — 🥈 SECOND",
           },
           {
             src: thirdPhoto,
             alt: "Third — Inter Madrasa",
-            caption: [
-              "🏆 — 🥉 THIRD",
-              "",
-              `Madrasa: ${InterMadrasaParticipants.B5.name}`,
-              "",
-              InterMadrasaParticipants.B5.participants[0],
-              InterMadrasaParticipants.B5.participants[1],
-              InterMadrasaParticipants.B5.participants[2],
-            ].join("\n"),
+            caption: "🏆 — 🥉 THIRD",
           },
         ]}
       />

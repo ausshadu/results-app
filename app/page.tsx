@@ -19,14 +19,12 @@ export default function Home() {
       </div>
       <Card>
         <h1 className="text-2xl font-bold md:text-3xl">
-          Deeni Events Results 2025
+          600th Meelad-e-Mehdi-e-Maoud (AHS) - Deeni Events 2025
         </h1>
-        <p className="text-sm">
-          Browse results for Quiz 2025 and Essay 2025.
-        </p>
+        <p className="text-sm">Browse results for Quiz 2025 and Essay 2025.</p>
       </Card>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <Card className="hover:shadow-lg transition-shadow">
           <h3 className="text-lg font-semibold">Quiz 2025</h3>
           <p className="text-sm">Inter Madrasa • Male/Female • Junior/Senior</p>
@@ -38,6 +36,13 @@ export default function Home() {
           <h3 className="text-lg font-semibold">Essay 2025</h3>
           <p className="text-sm">Male/Female • Junior/Senior</p>
           <Link href="/essay-2025" className="link">
+            View
+          </Link>
+        </Card>
+        <Card className="hover:shadow-lg transition-shadow">
+          <h3 className="text-lg font-semibold">Cricket 2025</h3>
+          <p className="text-sm">12 Teams • 4 Cities</p>
+          <Link href="/cricket" className="link">
             View
           </Link>
         </Card>

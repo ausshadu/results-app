@@ -40,7 +40,6 @@ export default function Header() {
   return (
     <Navbar
       fluid
-      rounded
       className="bg-white/70 dark:bg-gray-900/70 backdrop-blur"
     >
       <NavbarBrand as={Link} href="/">
@@ -58,6 +57,9 @@ export default function Header() {
         </NavbarLink>
         <NavbarLink as={Link} href="/essay-2025">
           Essay 2025
+        </NavbarLink>
+        <NavbarLink as={Link} href="/cricket">
+          Cricket 2025
         </NavbarLink>
       </NavbarCollapse>
     </Navbar>

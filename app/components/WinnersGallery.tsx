@@ -2,8 +2,8 @@
 
 import { GalleryItem } from "@/lib/600MeeladResults/Models";
 import Image from "next/image";
-import { useState } from "react";
-import { Card, Modal, ModalBody, ModalHeader } from "flowbite-react";
+import { useState, useEffect } from "react";
+import { Card } from "flowbite-react";
 import firstIcon from "@/lib/600MeeladResults/icons/first.png";
 import secondIcon from "@/lib/600MeeladResults/icons/second.png";
 import thirdIcon from "@/lib/600MeeladResults/icons/third.png";
@@ -16,6 +16,19 @@ export default function WinnersGallery({
   title?: string;
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenIndex(null);
+      }
+    };
+
+    if (openIndex !== null) {
+      window.addEventListener("keydown", handleEsc);
+      return () => window.removeEventListener("keydown", handleEsc);
+    }
+  }, [openIndex]);
 
   return (
     <>
@@ -59,25 +72,18 @@ export default function WinnersGallery({
       </Card>
 
       {openIndex !== null && (
-        <Modal show={true} onClose={() => setOpenIndex(null)} size="4xl">
-          <ModalHeader className="whitespace-pre-wrap">
-            {items[openIndex].caption}
-          </ModalHeader>
-          <ModalBody>
-            <Image
-              src={items[openIndex].src}
-              alt={items[openIndex].alt}
-              className="w-full h-auto rounded-lg"
-            />
-            {items[openIndex].participants &&
-              items[openIndex].participants.length > 0 && (
-                <p className="mt-4 text-sm whitespace-pre-wrap">
-                  {items[openIndex].participants!.join("\n")}
-                </p>
-              )}
-          </ModalBody>
-        </Modal>
-      )}
+      <div
+        className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center"
+        onClick={() => setOpenIndex(null)}
+      >
+        <Image
+          src={items[openIndex].src}
+          alt={items[openIndex].alt}
+          className="max-w-full max-h-full object-contain"
+          onClick={(e) => e.stopPropagation()}
+        />
+      </div>
+    )}
     </>
   );
 }

@@ -30,14 +30,14 @@ export default function Home() {
         <Card className="hover:shadow-lg transition-shadow">
           <h3 className="text-lg font-semibold">Quiz 2025</h3>
           <p className="text-sm">Inter Madrasa • Male/Female • Junior/Senior</p>
-          <Link href="/quiz-2025" className="text-blue-600 hover:underline">
+          <Link href="/quiz-2025" className="link">
             View
           </Link>
         </Card>
         <Card className="hover:shadow-lg transition-shadow">
           <h3 className="text-lg font-semibold">Essay 2025</h3>
           <p className="text-sm">Male/Female • Junior/Senior</p>
-          <Link href="/essay-2025" className="text-blue-600 hover:underline">
+          <Link href="/essay-2025" className="link">
             View
           </Link>
         </Card>

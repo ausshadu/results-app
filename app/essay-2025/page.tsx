@@ -21,7 +21,7 @@ function CategoryCard({
     <Card className="hover:shadow-lg transition-shadow">
       <h3 className="text-lg font-semibold">{title}</h3>
       {subtitle && <p className="text-sm">{subtitle}</p>}
-      <Link href={href} className="text-blue-600 hover:underline">
+      <Link href={href} className="link">
         View
       </Link>
     </Card>
@@ -38,7 +38,7 @@ export default function Page() {
         <p className="text-sm">
           Select a category to view the results list.
         </p>
-        <Link href="/" className="text-blue-600 hover:underline">
+        <Link href="/" className="link">
           ← Back to Home
         </Link>
       </Card>

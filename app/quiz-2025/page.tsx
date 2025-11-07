@@ -24,10 +24,10 @@ function CategoryCard({
       <h3 className="text-lg font-semibold">{title}</h3>
       {subtitle && <p className="text-sm">{subtitle}</p>}
       <div className="flex gap-2">
-        <Link href={participantsHref} className="text-blue-600 hover:underline">
+        <Link href={participantsHref} className="link">
           Participants
         </Link>
-        <Link href={resultsHref} className="text-blue-600 hover:underline">
+        <Link href={resultsHref} className="link">
           Results
         </Link>
       </div>
@@ -45,7 +45,7 @@ export default function Page() {
         <p className="text-sm">
           Select a category to view the results list.
         </p>
-        <Link href="/" className="text-blue-600 hover:underline">
+        <Link href="/" className="link">
           ← Back to Home
         </Link>
       </Card>

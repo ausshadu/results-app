@@ -6,3 +6,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .link {
+    @apply text-blue-600 dark:text-blue-400 hover:underline;
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));

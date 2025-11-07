@@ -20,10 +20,10 @@ export default function Page() {
           List of all teams and their participants.
         </p>
         <div className="flex flex-wrap gap-2">
-          <Link href="/quiz-2025" className="text-blue-600 hover:underline">
+          <Link href="/quiz-2025" className="link">
             ← Back to Categories
           </Link>
-          <Link href="/quiz-2025/male-combined/results" className="text-blue-600 hover:underline">
+          <Link href="/quiz-2025/male-combined/results" className="link">
             View Results →
           </Link>
         </div>

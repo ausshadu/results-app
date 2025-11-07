@@ -22,7 +22,7 @@ export default function Page() {
           Browse the results list. Click View PDF to open the scanned answer
           sheet.
         </p>
-        <Link href="/essay-2025" className="text-blue-600 hover:underline">
+        <Link href="/essay-2025" className="link">
           ← Back to Categories
         </Link>
       </Card>

@@ -20,10 +20,10 @@ export default function Page() {
           List of all participating Madrasas and their participants.
         </p>
         <div className="flex flex-wrap gap-2">
-          <Link href="/quiz-2025" className="text-blue-600 hover:underline">
+          <Link href="/quiz-2025" className="link">
             ← Back to Categories
           </Link>
-          <Link href="/quiz-2025/inter-madrasa/results" className="text-blue-600 hover:underline">
+          <Link href="/quiz-2025/inter-madrasa/results" className="link">
             View Results →
           </Link>
         </div>

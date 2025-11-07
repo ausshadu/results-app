@@ -1,7 +1,9 @@
+"use client";
+
 import { Card } from "flowbite-react";
 import Link from "next/link";
 
-export const metadata = {
+const metadata = {
   title: "Quiz 2025 Categories",
   description: "Choose a category to view Quiz Results 2025.",
 };

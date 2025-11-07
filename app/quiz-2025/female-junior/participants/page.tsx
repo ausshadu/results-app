@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FemaleJuniorParticipants } from "@/lib/600MeeladResults/Quiz2025/FemaleJuniors";
 import { Card } from "flowbite-react";
 
-export const metadata = {
+const metadata = {
   title: "Female • Junior — Participants",
   description: "Participants list for Female • Junior category in Quiz 2025.",
 };

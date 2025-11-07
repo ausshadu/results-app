@@ -15,7 +15,7 @@ import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/se
 import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/third.jpeg";
 import { Card, Button } from "flowbite-react";
 
-export const metadata = {
+const metadata = {
   title: "Inter Madrasa Results",
   description:
     "Inter Madrasa — winners, runners-up and full results for Quiz 2025.",

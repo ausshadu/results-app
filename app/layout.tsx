@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Deeni Events Results 2025",
   description:
     "Results for Quiz 2025 and Essay 2025 (Male/Female, Junior/Senior) with PDF links.",

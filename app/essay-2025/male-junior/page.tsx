@@ -5,7 +5,7 @@ import { MALE_JUNIOR } from "@/lib/600MeeladResults";
 import { EssayResultsTable } from "@/app/components";
 import { Card } from "flowbite-react";
 
-export const metadata = {
+const metadata = {
   title: "Essay 2025 — Male • Junior",
   description:
     "Results list for Male • Junior category in Essay Competition 2025.",

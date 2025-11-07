@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MaleCombinedParticipants } from "@/lib/600MeeladResults/Quiz2025/MaleCombined";
 import { Card } from "flowbite-react";
 
-export const metadata = {
+const metadata = {
   title: "Male • Combined — Participants",
   description: "Participants list for Male • Combined category in Quiz 2025.",
 };

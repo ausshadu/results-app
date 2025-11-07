@@ -2,7 +2,7 @@ import Link from "next/link";
 import { InterMadrasaParticipants } from "@/lib/600MeeladResults/Quiz2025/InterMadrasa";
 import { Card } from "flowbite-react";
 
-export const metadata = {
+const metadata = {
   title: "Inter Madrasa Participants",
   description: "Participants list for Inter Madrasa category in Quiz 2025.",
 };

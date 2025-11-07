@@ -15,7 +15,7 @@ import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/se
 import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/third.webp";
 import { Card, Button } from "flowbite-react";
 
-export const metadata = {
+const metadata = {
   title: "Male • Combined — Results",
   description: "Results page for Male • Combined (empty for now).",
 };

@@ -11,7 +11,7 @@ import {
 } from "@/lib/600MeeladResults";
 import { Card, Button } from "flowbite-react";
 
-export const metadata = {
+const metadata = {
   title: "Female • Junior — Results",
   description: "Results page for Female • Junior (empty for now).",
 };

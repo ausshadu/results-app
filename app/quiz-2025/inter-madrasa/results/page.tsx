@@ -37,7 +37,12 @@ export default function Page() {
           <Button color="light" as={Link} href="/quiz-2025" pill>
             ← Back to Categories
           </Button>
-          <Button color="primary" as={Link} href="/quiz-2025/inter-madrasa/participants" pill>
+          <Button
+            color="primary"
+            as={Link}
+            href="/quiz-2025/inter-madrasa/participants"
+            pill
+          >
             View Participants →
           </Button>
         </div>

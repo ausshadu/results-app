@@ -1,44 +1,48 @@
 "use client";
 
 import Link from "next/link";
-import { Button, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle, Navbar } from "flowbite-react";
+import {
+  NavbarBrand,
+  NavbarCollapse,
+  NavbarLink,
+  NavbarToggle,
+  Navbar,
+} from "flowbite-react";
 import { useEffect, useState } from "react";
 
 function ThemeToggle() {
-  const getInitial = () => {
-    try {
-      const ls = localStorage.getItem("theme");
-      if (ls === "dark") return true;
-      if (ls === "light") return false;
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
-    } catch {
-      return false;
-    }
-  };
-
-  const [isDark, setIsDark] = useState<boolean>(() => getInitial());
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === "undefined") return false;
+    const ls = localStorage.getItem("theme");
+    return ls
+      ? ls === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
-    try {
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    } catch {
-      // no-op
-    }
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
 
   const toggle = () => setIsDark((v) => !v);
 
   return (
-    <Button color="gray" onClick={toggle} size="sm" pill>
+    <button
+      onClick={toggle}
+      className="px-3 py-1 text-sm font-medium text-gray-900 bg-gray-200 rounded-full hover:bg-gray-300 dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600"
+    >
       {isDark ? "Light" : "Dark"}
-    </Button>
+    </button>
   );
 }
 
 export default function Header() {
   return (
-    <Navbar fluid rounded className="bg-white/70 dark:bg-gray-900/70 backdrop-blur">
+    <Navbar
+      fluid
+      rounded
+      className="bg-white/70 dark:bg-gray-900/70 backdrop-blur"
+    >
       <NavbarBrand as={Link} href="/">
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Deeni Events 2025
@@ -54,9 +58,6 @@ export default function Header() {
         </NavbarLink>
         <NavbarLink as={Link} href="/essay-2025">
           Essay 2025
-        </NavbarLink>
-        <NavbarLink href="https://github.com/ausshadu/results-app" target="_blank" rel="noreferrer">
-          GitHub
         </NavbarLink>
       </NavbarCollapse>
     </Navbar>

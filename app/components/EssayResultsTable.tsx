@@ -1,8 +1,8 @@
 "use client";
 
 import { Result } from "@/lib/600MeeladResults";
-import Link from "next/link";
 import { Fragment, useState } from "react";
+import { Button, Badge, Card } from "flowbite-react";
 
 export function EssayResultsTable({ results }: { results: Result[] }) {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
@@ -14,139 +14,95 @@ export function EssayResultsTable({ results }: { results: Result[] }) {
     v === undefined || v === null || v === "" ? "-" : v;
 
   return (
-    <section className="card-surface p-5">
-      <div className="mb-3 flex items-center justify-between gap-3">
-        <h2 className="text-xl font-semibold text-zinc-900">Results</h2>
-        <span className="text-xs text-zinc-500">
+    <Card>
+      <div className="flex items-center justify-between mb-3">
+        <h2 className="text-xl font-semibold">Results</h2>
+        <span className="text-sm text-gray-500 dark:text-gray-400">
           Total: {results?.length ?? 0}
         </span>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="min-w-full text-sm border border-zinc-300 border-collapse text-center">
-          <thead className="text-zinc-600 bg-zinc-50">
-            <tr className="border-b border-zinc-300">
-              <th className="px-3 py-2 border border-zinc-300">Sl. No.</th>
-              <th className="px-3 py-2 border border-zinc-300">Reg No</th>
-              <th className="px-3 py-2 border border-zinc-300">Topic</th>
-              <th className="px-3 py-2 border border-zinc-300">Name</th>
-              <th className="px-3 py-2 border border-zinc-300">Marks</th>
-              <th className="px-3 py-2 border border-zinc-300">View</th>
-              <th className="px-3 py-2 border border-zinc-300">PDF</th>
-              <th className="px-3 py-2 border border-zinc-300">Remarks</th>
+        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+          <thead className="bg-gray-50 dark:bg-gray-700">
+            <tr>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Sl. No.</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Reg No</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Topic</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Name</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Marks</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">View</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">PDF</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Remarks</th>
             </tr>
           </thead>
-          <tbody className="text-zinc-800">
+          <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
             {results.map((r, idx) => (
               <Fragment key={r.reg_number}>
-                <tr key={r.reg_number} className="odd:bg-white even:bg-zinc-50">
-                  <td className="px-3 py-2 border border-zinc-300">
-                    {idx + 1}
-                  </td>
-                  <td className="px-3 py-2 border border-zinc-300 font-mono text-[13px]">
-                    {r.reg_number}
-                  </td>
-                  <td className="px-3 py-2 border border-zinc-300">
+                <tr>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">{idx + 1}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-900 dark:text-gray-100">{r.reg_number}</td>
+                  <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-100">
                     <div className="flex flex-col">
-                      <span className="text-[13px] text-zinc-500 text-left">
-                        Topic #{r.topic_number}
-                      </span>
-                      <span className="text-[13px] text-left">
-                        {r.topic_text}
-                      </span>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">Topic #{r.topic_number}</span>
+                      <span>{r.topic_text}</span>
                     </div>
                   </td>
-                  <td className="px-3 py-2 border border-zinc-300">
-                    {r.full_name}
-                  </td>
-                  <td className="px-3 py-2 border border-zinc-300">
-                    {formatMarks(r.total_marks)}
-                  </td>
-                  <td className="px-3 py-2 border border-zinc-300">
-                    <button
-                      type="button"
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">{r.full_name}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">{formatMarks(r.total_marks)}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <Button
+                      color="light"
+                      size="xs"
                       onClick={() => toggle(r.reg_number)}
-                      className="cta participantCta inline-flex items-center rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap"
+                      pill
                     >
                       {expanded[r.reg_number] ? "View less" : "View more"}
-                    </button>
+                    </Button>
                   </td>
-                  <td className="px-3 py-2 border border-zinc-300">
-                    <Link
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <Button
+                      color="primary"
+                      size="xs"
                       href={r.pdf_link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="cta inline-flex items-center rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap"
+                      as="a"
+                      pill
                     >
                       View PDF
-                    </Link>
+                    </Button>
                   </td>
-                  <td className="px-3 py-2 border border-zinc-300"></td>
+                  <td className="px-6 py-4 whitespace-nowrap"></td>
                 </tr>
 
                 {expanded[r.reg_number] && (
-                  <tr key={`${r.reg_number}-details`} className="bg-zinc-50">
-                    <td
-                      className="px-4 py-3 border border-zinc-300 text-left"
-                      colSpan={8}
-                    >
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">
-                            Qur'an References
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.quranic_references)} marks
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">
-                            Ahadees References
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.ahdees_references)} marks
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">
-                            Naqliyath References
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.naqliyath_references)} marks
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">
-                            Other References
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.other_references)} marks
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">Paragraph Marks</span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.paragraph_marks)} marks
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">
-                            Good Handwriting
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.handwriting_marks)} marks
-                          </span>
-                        </div>
+                  <tr>
+                    <td colSpan={8} className="px-6 py-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                        <Badge color="success" className="justify-between p-2">
+                          Qur'an References: {formatMarks(r.quranic_references)} marks
+                        </Badge>
+                        <Badge color="success" className="justify-between p-2">
+                          Ahadees References: {formatMarks(r.ahdees_references)} marks
+                        </Badge>
+                        <Badge color="success" className="justify-between p-2">
+                          Naqliyath References: {formatMarks(r.naqliyath_references)} marks
+                        </Badge>
+                        <Badge color="success" className="justify-between p-2">
+                          Other References: {formatMarks(r.other_references)} marks
+                        </Badge>
+                        <Badge color="success" className="justify-between p-2">
+                          Paragraph Marks: {formatMarks(r.paragraph_marks)} marks
+                        </Badge>
+                        <Badge color="success" className="justify-between p-2">
+                          Good Handwriting: {formatMarks(r.handwriting_marks)} marks
+                        </Badge>
                       </div>
-
                       <div className="mt-4 flex justify-end">
-                        <div className="inline-flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-sm text-zinc-500">Total:</span>
-                          <span className="text-2xl font-extrabold text-zinc-900">
-                            {formatMarks(r.total_marks)}
-                          </span>
-                          <span className="text-sm text-zinc-500">marks</span>
-                        </div>
+                        <Badge color="info" size="xl" className="p-2">
+                          Total: {formatMarks(r.total_marks)} marks
+                        </Badge>
                       </div>
                     </td>
                   </tr>
@@ -156,6 +112,6 @@ export function EssayResultsTable({ results }: { results: Result[] }) {
           </tbody>
         </table>
       </div>
-    </section>
+    </Card>
   );
 }

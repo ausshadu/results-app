@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Card, Button } from "flowbite-react";
 
 export function CategoryCard({
   title,
@@ -12,29 +13,17 @@ export function CategoryCard({
   resultsHref: string;
 }) {
   return (
-    <div className="card-surface block w-full rounded-xl p-5">
-      <div className="flex items-center justify-between gap-2">
-        <div>
-          <h3 className="text-lg font-semibold text-zinc-900">{title}</h3>
-          {subtitle ? (
-            <p className="mt-1 text-sm text-zinc-600">{subtitle}</p>
-          ) : null}
-        </div>
-        <div className="flex items-center gap-2">
-          <Link
-            href={participantsHref}
-            className="cta inline-flex min-w-10 items-center justify-center rounded-full px-3 py-2 text-sm font-medium shadow-sm participantCta"
-          >
-            Participants
-          </Link>
-          <Link
-            href={resultsHref}
-            className="cta inline-flex min-w-10 items-center justify-center rounded-full px-3 py-2 text-sm font-medium shadow-sm"
-          >
-            Results
-          </Link>
-        </div>
+    <Card className="hover:shadow-lg transition-shadow">
+      <h3 className="text-lg font-semibold">{title}</h3>
+      {subtitle ? <p className="text-sm text-gray-600 dark:text-gray-400">{subtitle}</p> : null}
+      <div className="flex items-center gap-2">
+        <Button color="light" as={Link} href={participantsHref} pill>
+          Participants
+        </Button>
+        <Button color="primary" as={Link} href={resultsHref} pill>
+          Results
+        </Button>
       </div>
-    </div>
+    </Card>
   );
 }

@@ -4,6 +4,7 @@ import firstIcon from "@/lib/600MeeladResults/icons/first.png";
 import secondIcon from "@/lib/600MeeladResults/icons/second.png";
 import thirdIcon from "@/lib/600MeeladResults/icons/third.png";
 import celebrate2Gif from "@/lib/600MeeladResults/icons/celebrate2.gif";
+import { Card } from "flowbite-react";
 
 export function Round2Table({
   title,
@@ -30,7 +31,7 @@ export function Round2Table({
         {parts.map((p, idx) => (
           <span
             key={idx}
-            className={Number(p) < 0 ? "text-red-600" : undefined}
+            className={Number(p) < 0 ? "text-red-600 dark:text-red-400" : ""}
           >
             {p}
           </span>
@@ -43,57 +44,42 @@ export function Round2Table({
     const rank = (r as FinalRoundScores).win_rank;
     if (rank === 1) {
       return (
-        <div className="relative">
+        <div className="relative flex items-center justify-center h-full">
           <div
-            className="absolute inset-0 opacity-60"
-            style={{
-              backgroundImage: `url(${celebrate2Gif.src})`,
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
+            className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${celebrate2Gif.src})` }}
           />
-          <span className="relative z-10 inline-flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
+          <span className="relative z-10 flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
             <Image src={firstIcon} alt="First" width={36} height={36} />
-            <span className="text-[11px] sm:text-xs">FIRST</span>
+            <span className="text-xs">FIRST</span>
           </span>
         </div>
       );
     }
     if (rank === 2) {
       return (
-        <div className="relative">
+        <div className="relative flex items-center justify-center h-full">
           <div
-            className="absolute inset-0 opacity-60"
-            style={{
-              backgroundImage: `url(${celebrate2Gif.src})`,
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
+            className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${celebrate2Gif.src})` }}
           />
-          <span className="relative z-10 inline-flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
+          <span className="relative z-10 flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
             <Image src={secondIcon} alt="Second" width={36} height={36} />
-            <span className="text-[11px] sm:text-xs">SECOND</span>
+            <span className="text-xs">SECOND</span>
           </span>
         </div>
       );
     }
     if (rank === 3) {
       return (
-        <div className="relative">
+        <div className="relative flex items-center justify-center h-full">
           <div
-            className="absolute inset-0 opacity-60"
-            style={{
-              backgroundImage: `url(${celebrate2Gif.src})`,
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
+            className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${celebrate2Gif.src})` }}
           />
-          <span className="relative z-10 inline-flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
+          <span className="relative z-10 flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
             <Image src={thirdIcon} alt="Third" width={36} height={36} />
-            <span className="text-[11px] sm:text-xs">THIRD</span>
+            <span className="text-xs">THIRD</span>
           </span>
         </div>
       );
@@ -102,84 +88,81 @@ export function Round2Table({
   };
 
   return (
-    <section className="card-surface p-5">
-      <div className="mb-3 flex items-center justify-between gap-3">
-        <h2 className="text-xl font-semibold text-zinc-900">{title}</h2>
-        <span className="text-xs text-zinc-500">Teams: {data.length}</span>
+    <Card>
+      <div className="flex items-center justify-between mb-3">
+        <h2 className="text-xl font-semibold">{title}</h2>
+        <span className="text-sm text-gray-500 dark:text-gray-400">Teams: {data.length}</span>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="min-w-full text-sm border border-zinc-300 border-collapse text-center">
-          <thead className="text-zinc-600 bg-zinc-50">
-            <tr className="border-b border-zinc-300">
+        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 text-sm">
+          <thead className="bg-gray-50 dark:bg-gray-700">
+            <tr>
               {columns.map((c) => (
-                <th key={c} className="px-3 py-2 border border-zinc-300">
+                <th key={c} className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
                   {c}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="text-zinc-800">
+          <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
             {data.map((r, i) => (
-              <tr
-                key={`${r.team}-${i}`}
-                className="odd:bg-white even:bg-zinc-50"
-              >
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+              <tr key={`${r.team}-${i}`}>
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {r.team}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q1)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q2)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q3)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q4)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q5)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q6)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q7)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q8)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q9)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q10)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q11)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q12)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q13)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q14)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.q15)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {renderScore(r.tie)}
                 </td>
-                <td className="px-3 py-2 border border-zinc-300 font-mono font-bold">
+                <td className="px-3 py-2 whitespace-nowrap font-mono font-bold text-gray-900 dark:text-gray-100">
                   {renderScore(r.total)}
                 </td>
-                <td className="p-0 border border-zinc-300">
+                <td className="p-0">
                   {renderRemarks(r)}
                 </td>
               </tr>
@@ -187,6 +170,6 @@ export function Round2Table({
           </tbody>
         </table>
       </div>
-    </section>
+    </Card>
   );
 }

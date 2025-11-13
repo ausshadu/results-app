@@ -1,23 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Card } from "flowbite-react";
-import { matches, MatchType, Match } from "@/lib/600MeeladResults/Cricket/matches";
+import {
+  matches,
+  MatchType,
+  Match,
+} from "@/lib/600MeeladResults/Cricket/matches";
 import { Team } from "@/lib/600MeeladResults/Cricket/teams";
 
 function TeamCell({ team }: { team: Team }) {
   return (
     <div className="flex flex-col items-center gap-2">
-      {team.jerseyImage ? (
-        <Image
-          src={team.jerseyImage}
-          alt={`${team.name} jersey`}
-          width={300}
-          height={300}
-          className="h-[300px] w-[300px] object-contain"
-        />
-      ) : (
-        <div className="h-[300px] w-[300px] rounded bg-gray-200 dark:bg-gray-700" />
-      )}
+      <div className="relative h-[120px] w-[120px] md:h-[200px] md:w-[200px]">
+        {team.jerseyImage ? (
+          <Image
+            src={team.jerseyImage}
+            alt={`${team.name} jersey`}
+            fill
+            sizes="(min-width: 768px) 200px, 120px"
+            className="object-contain"
+          />
+        ) : (
+          <div className="h-full w-full rounded bg-gray-200 dark:bg-gray-700" />
+        )}
+      </div>
       <Link href={`/cricket/teams/${team.slug}`} className="link font-medium">
         {team.name}
       </Link>
@@ -49,9 +55,7 @@ function formatMatchType(type: MatchType) {
 }
 
 function formatMatchResult(m: Match) {
-  if (m.matchTied) return "Match Tied";
-  if (m.matchWinner) return `${m.matchWinner.name} won`;
-  return "—";
+  return m.matchResult;
 }
 
 export default function MatchesPage() {
@@ -76,7 +80,7 @@ export default function MatchesPage() {
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="min-w-full text-left">
+            <table className="min-w-full text-center">
               <thead>
                 <tr className="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
                   <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
@@ -120,8 +124,12 @@ export default function MatchesPage() {
                       <TeamCell team={m.teamB} />
                     </td>
                     <td className="px-4 py-3">{m.tossWonBy.name}</td>
-                    <td className="px-4 py-3">{formatElectedTo(m.electedTo)}</td>
-                    <td className="px-4 py-3">{formatMatchType(m.matchType)}</td>
+                    <td className="px-4 py-3">
+                      {formatElectedTo(m.electedTo)}
+                    </td>
+                    <td className="px-4 py-3">
+                      {formatMatchType(m.matchType)}
+                    </td>
                     <td className="px-4 py-3">{formatMatchResult(m)}</td>
                   </tr>
                 ))}

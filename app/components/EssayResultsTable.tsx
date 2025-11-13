@@ -2,7 +2,7 @@
 
 import { Result } from "@/lib/600MeeladResults";
 import { useMemo, useState } from "react";
-import { Button, Card } from "flowbite-react";
+import { Button, Card, TextInput } from "flowbite-react";
 
 type Row = Result & { category?: "Male" | "Female" | string };
 type SortKey = "reg_number" | "full_name" | "total_marks" | "topic" | "category";
@@ -44,6 +44,7 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
     key: "reg_number",
     dir: "asc",
   });
+  const [query, setQuery] = useState<string>("");
 
   const showCategory = useMemo(
     () => (results ?? []).some((r: Row) => typeof r.category === "string"),
@@ -52,6 +53,16 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
 
   const formatted = useMemo(() => {
     const data = [...(results ?? [])];
+
+    const q = query.trim().toLowerCase();
+    const filtered = q
+      ? data.filter((r) => {
+          const name = (r.full_name ?? "").toLowerCase();
+          const topicText = (r.topic_text ?? "").toLowerCase();
+          const topicNum = String(r.topic_number ?? "");
+          return name.includes(q) || topicText.includes(q) || topicNum.includes(q);
+        })
+      : data;
 
     const getVal = (r: Row, key: SortKey): CompareVal => {
       switch (key) {
@@ -80,8 +91,8 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
       return String(va).localeCompare(String(vb)) * dirFactor;
     };
 
-    return data.sort(compare);
-  }, [results, sort]);
+    return filtered.sort(compare);
+  }, [results, sort, query]);
 
   const toggleSort = (key: SortKey) => {
     setSort((prev) =>
@@ -99,6 +110,14 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
         <span className="text-sm text-gray-500 dark:text-gray-400">
           Total: {formatted?.length ?? 0}
         </span>
+      </div>
+
+      <div className="mb-3">
+        <TextInput
+          placeholder="Search by name or topic..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
       </div>
 
       <div className="overflow-x-auto">

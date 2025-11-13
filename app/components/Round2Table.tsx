@@ -99,7 +99,7 @@ export function Round2Table({
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
               {columns.map((c) => (
-                <th key={c} className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                <th key={c} className={`px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 ${c === "Team Name" ? "text-left" : "text-center"}`}>
                   {c}
                 </th>
               ))}
@@ -111,58 +111,58 @@ export function Round2Table({
                 <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
                   {r.team}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q1)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q2)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q3)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q4)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q5)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q6)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q7)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q8)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q9)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q10)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q11)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q12)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q13)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q14)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.q15)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.tie)}
                 </td>
-                <td className="px-3 py-2 whitespace-nowrap font-mono font-bold text-gray-900 dark:text-gray-100">
+                <td className="px-3 py-2 whitespace-nowrap font-mono font-bold text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.total)}
                 </td>
-                <td className="p-0">
+                <td className="p-0 text-center">
                   {renderRemarks(r)}
                 </td>
               </tr>

@@ -1,17 +1,17 @@
 import { StaticImageData } from "next/image";
 
-import armania from "@/lib/600MeeladResults/Cricket/jerseys/armania.png";
-import elahi from "@/lib/600MeeladResults/Cricket/jerseys/elahi.png";
 import gm_star from "@/lib/600MeeladResults/Cricket/jerseys/gm_star.png";
-import gmcc from "@/lib/600MeeladResults/Cricket/jerseys/gmcc.png";
-import hyderabad from "@/lib/600MeeladResults/Cricket/jerseys/hyderabad.png";
-import kirgaval from "@/lib/600MeeladResults/Cricket/jerseys/kirgaval.png";
-import lucky_star from "@/lib/600MeeladResults/Cricket/jerseys/lucky_star.png";
 import new_star from "@/lib/600MeeladResults/Cricket/jerseys/new_star.png";
+import armania from "@/lib/600MeeladResults/Cricket/jerseys/armania.png";
+import young_gems from "@/lib/600MeeladResults/Cricket/jerseys/young_gems.png";
+import elahi from "@/lib/600MeeladResults/Cricket/jerseys/elahi.png";
+import lucky_star from "@/lib/600MeeladResults/Cricket/jerseys/lucky_star.png";
+import gmcc from "@/lib/600MeeladResults/Cricket/jerseys/gmcc.png";
 import spartans from "@/lib/600MeeladResults/Cricket/jerseys/spartans.png";
 import tigers from "@/lib/600MeeladResults/Cricket/jerseys/tigers.png";
 import yorkers from "@/lib/600MeeladResults/Cricket/jerseys/yorkers.png";
-import young_gems from "@/lib/600MeeladResults/Cricket/jerseys/young_gems.png";
+import kirgaval from "@/lib/600MeeladResults/Cricket/jerseys/kirgaval.png";
+import hyderabad from "@/lib/600MeeladResults/Cricket/jerseys/hyderabad.png";
 
 export type Team = {
   slug: string;
@@ -22,8 +22,8 @@ export type Team = {
   teamMembers: string[];
 };
 
-export const TEAMS: Team[] = [
-  {
+export const ALL_TEAMS = {
+  GM_STAR: {
     slug: "gm-star",
     name: "GM STAR",
     location: "Channapatna",
@@ -47,7 +47,7 @@ export const TEAMS: Team[] = [
       "MAZHER",
     ],
   },
-  {
+  NEW_STAR_CC: {
     slug: "new-star-cc",
     name: "NEW STAR CC",
     location: "Channapatna",
@@ -71,7 +71,7 @@ export const TEAMS: Team[] = [
       "AHMED KHAN",
     ],
   },
-  {
+  ARMANIA_CC: {
     slug: "armania-cc",
     name: "ARMANIA CC",
     location: "Channapatna",
@@ -94,7 +94,7 @@ export const TEAMS: Team[] = [
       "YOUSUF",
     ],
   },
-  {
+  YOUNG_GEMS_CC: {
     slug: "young-gems-cc",
     name: "YOUNG GEMS CC",
     location: "Channapatna",
@@ -118,7 +118,7 @@ export const TEAMS: Team[] = [
       "MALIK",
     ],
   },
-  {
+  ELAHI_CC: {
     slug: "elahi-cc",
     name: "ELAHI CC",
     location: "Mandya",
@@ -142,7 +142,7 @@ export const TEAMS: Team[] = [
       "SHAHID",
     ],
   },
-  {
+  LUCKY_STAR: {
     slug: "lucky-star",
     name: "LUCKY STAR",
     location: "Bannur",
@@ -163,7 +163,7 @@ export const TEAMS: Team[] = [
       "LUKMAN",
     ],
   },
-  {
+  GMCC: {
     slug: "gmcc",
     name: "GMCC",
     location: "Channapatna",
@@ -186,7 +186,7 @@ export const TEAMS: Team[] = [
       "ZAHANATH",
     ],
   },
-  {
+  SPARTANS_CRICKET: {
     slug: "spartans-cricket",
     name: "SPARTANS CRICKET",
     location: "Channapatna",
@@ -210,7 +210,7 @@ export const TEAMS: Team[] = [
       "AHMED",
     ],
   },
-  {
+  TIGERS_CC: {
     slug: "tigers-cc",
     name: "TIGERS CC",
     location: "Channapatna",
@@ -234,7 +234,7 @@ export const TEAMS: Team[] = [
       "UMAIR",
     ],
   },
-  {
+  YORKERS: {
     slug: "yorkers",
     name: "YORKERS",
     location: "Channapatna",
@@ -258,7 +258,7 @@ export const TEAMS: Team[] = [
       "ZEESHAN",
     ],
   },
-  {
+  SHIBBAN_E_MAHDAVIA: {
     slug: "shibban-e-mahdavia",
     name: "SHIBBAN E MAHDAVIA",
     location: "Kirgaval",
@@ -279,7 +279,7 @@ export const TEAMS: Team[] = [
       "NAVEED",
     ],
   },
-  {
+  MEHDAVIA_CRICKET_CLUB: {
     slug: "mehdavia-cricket-club",
     name: "MEHDAVIA CRICKET CLUB",
     location: "Hyderabad",
@@ -303,12 +303,12 @@ export const TEAMS: Team[] = [
       "ARAFATH KHAN",
     ],
   },
-];
+};
 
 export function getTeams(): Team[] {
-  return TEAMS;
+  return Object.values(ALL_TEAMS);
 }
 
 export function getTeamBySlug(slug: string): Team | undefined {
-  return TEAMS.find((t) => t.slug === slug);
+  return Object.values(ALL_TEAMS).find((t) => t.slug === slug);
 }

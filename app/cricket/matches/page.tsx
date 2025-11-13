@@ -1,24 +1,134 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Card } from "flowbite-react";
+import { matches, MatchType, Match } from "@/lib/600MeeladResults/Cricket/matches";
+import { Team } from "@/lib/600MeeladResults/Cricket/teams";
 
-export default function MatchesComingSoonPage() {
+function TeamCell({ team }: { team: Team }) {
+  return (
+    <div className="flex flex-col items-center gap-2">
+      {team.jerseyImage ? (
+        <Image
+          src={team.jerseyImage}
+          alt={`${team.name} jersey`}
+          width={300}
+          height={300}
+          className="h-[300px] w-[300px] object-contain"
+        />
+      ) : (
+        <div className="h-[300px] w-[300px] rounded bg-gray-200 dark:bg-gray-700" />
+      )}
+      <Link href={`/cricket/teams/${team.slug}`} className="link font-medium">
+        {team.name}
+      </Link>
+    </div>
+  );
+}
+
+function formatElectedTo(value: Match["electedTo"]) {
+  if (value === "bat") return "Bat";
+  if (value === "bowl") return "Bowl";
+  return value;
+}
+
+function formatMatchType(type: MatchType) {
+  switch (type) {
+    case MatchType.QUALIFIER:
+      return "Qualifier";
+    case MatchType.QUARTER_FINAL:
+      return "Quarter Final";
+    case MatchType.SEMI_FINAL:
+      return "Semi Final";
+    case MatchType.SUPER_OVER:
+      return "Super Over";
+    case MatchType.FINAL:
+      return "Final";
+    default:
+      return String(type);
+  }
+}
+
+function formatMatchResult(m: Match) {
+  if (m.matchTied) return "Match Tied";
+  if (m.matchWinner) return `${m.matchWinner.name} won`;
+  return "—";
+}
+
+export default function MatchesPage() {
   return (
     <div className="flex flex-col gap-6">
       <Card>
-        <h1 className="text-2xl font-bold md:text-3xl">Cricket Matches</h1>
-        <p className="text-sm">
-          Coming soon. Schedule and results will be published here.
-        </p>
-        <Link href="/cricket" className="link">
-          ← Back to Cricket
-        </Link>
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-bold md:text-3xl">Cricket Matches</h1>
+          <Link href="/cricket" className="link">
+            ← Back to Cricket
+          </Link>
+        </div>
       </Card>
 
-      <Card className="text-center">
-        <div className="text-3xl font-semibold mb-2">Coming Soon</div>
-        <p className="text-gray-600 dark:text-gray-300">
-          Please check back later for match fixtures and results.
-        </p>
+      <Card>
+        {matches.length === 0 ? (
+          <div className="text-center py-10">
+            <div className="text-3xl font-semibold mb-2">No Matches Yet</div>
+            <p className="text-gray-600 dark:text-gray-300">
+              Please check back later for match fixtures and results.
+            </p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-left">
+              <thead>
+                <tr className="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                    Match ID
+                  </th>
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                    Team A
+                  </th>
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                    VS
+                  </th>
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                    Team B
+                  </th>
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                    TOSS - Team Name
+                  </th>
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                    ELECTED TO
+                  </th>
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                    MATCH TYPE
+                  </th>
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                    MATCH RESULT
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {matches.map((m) => (
+                  <tr
+                    key={m.id}
+                    className="border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50/50 dark:hover:bg-gray-800/30"
+                  >
+                    <td className="px-4 py-3 font-mono text-sm">{m.id}</td>
+                    <td className="px-4 py-3">
+                      <TeamCell team={m.teamA} />
+                    </td>
+                    <td className="px-4 py-3">VS</td>
+                    <td className="px-4 py-3">
+                      <TeamCell team={m.teamB} />
+                    </td>
+                    <td className="px-4 py-3">{m.tossWonBy.name}</td>
+                    <td className="px-4 py-3">{formatElectedTo(m.electedTo)}</td>
+                    <td className="px-4 py-3">{formatMatchType(m.matchType)}</td>
+                    <td className="px-4 py-3">{formatMatchResult(m)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </Card>
     </div>
   );

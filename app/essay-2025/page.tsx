@@ -32,12 +32,8 @@ export default function Page() {
   return (
     <div className="flex flex-col gap-6">
       <Card>
-        <h1 className="text-2xl font-bold md:text-3xl">
-          Essay Results 2025
-        </h1>
-        <p className="text-sm">
-          Select a category to view the results list.
-        </p>
+        <h1 className="text-2xl font-bold md:text-3xl">Essay Results 2025</h1>
+        <p className="text-sm">Select a category to view the results list.</p>
         <Link href="/" className="link">
           ← Back to Home
         </Link>
@@ -45,6 +41,16 @@ export default function Page() {
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <CategoryCard
+          title="Juniors"
+          href="/essay-2025/juniors"
+          subtitle="Male & Female • Age 13 to 18"
+        />
+        <CategoryCard
+          title="Seniors"
+          href="/essay-2025/seniors"
+          subtitle="Male & Female • Age 19 to 30"
+        />
+        {/* <CategoryCard
           title="Female • Junior"
           href="/essay-2025/female-junior"
           subtitle="Age 13 to 18"
@@ -63,7 +69,7 @@ export default function Page() {
           title="Male • Senior"
           href="/essay-2025/male-senior"
           subtitle="Age 19 to 30"
-        />
+        /> */}
       </div>
     </div>
   );

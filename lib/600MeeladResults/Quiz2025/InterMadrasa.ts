@@ -52,8 +52,12 @@ export const InterMadrasaParticipants = {
   },
   B3: {
     group: "B3",
-    name: "B3 NAME: TO BE UPDATED",
-    participants: ["NAME 1", "NAME 2", "NAME 3"],
+    name: "Mehdavia Arabi Madrasa-e-Sadath Masjid",
+    participants: [
+      "MOHAMMED HASNAIN GHORI",
+      "SYED MOOSA SUNAIN",
+      "SYED SAMEEULLA ASHRAFI",
+    ],
   },
   B4: {
     group: "B4",
@@ -544,7 +548,7 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     participants: InterMadrasaParticipants.B5.participants,
   },
   {
-    team: InterMadrasaParticipants.A3.name,
+    team: InterMadrasaParticipants.B3.name,
     q1: "10",
     q2: "10",
     q3: "-",
@@ -564,6 +568,6 @@ export const Madrasa_Round3_Final: FinalRoundScores[] = [
     total: "35",
     remarks: "-",
     win_rank: 2,
-    participants: InterMadrasaParticipants.A3.participants,
+    participants: InterMadrasaParticipants.B3.participants,
   },
 ];

@@ -92,9 +92,9 @@ export default function Page() {
             alt: "Second — Inter Madrasa",
             caption: [
               "",
-              `Madrasa — ${InterMadrasaParticipants.A3.name}`,
+              `Madrasa — ${InterMadrasaParticipants.B3.name}`,
               "",
-              InterMadrasaParticipants.A3.participants.join("\n"),
+              InterMadrasaParticipants.B3.participants.join("\n"),
             ].join("\n"),
           },
           {

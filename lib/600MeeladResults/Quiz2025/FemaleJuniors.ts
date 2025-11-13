@@ -3,8 +3,8 @@ import { FinalRoundScores, Round1Scores, Round2Scores } from "../Models";
 export const FemaleJuniorParticipants = {
   A1: {
     group: "A1",
-    name: "Team 1",
-    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+    name: "NAHID & Team",
+    participants: ["SYEDA NAHID AFREEN", "HINA AFREEN", "UZMA TABASSUM"],
   },
   A2: {
     group: "A2",
@@ -36,13 +36,13 @@ export const FemaleJuniorParticipants = {
   },
   A6: {
     group: "A6",
-    name: "Team 6",
-    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+    name: "SABA & Team",
+    participants: ["SABA AFREEN", "LUBNA BANU", "NAHIDA MEHDI"],
   },
   A7: {
     group: "A7",
-    name: "Team 7",
-    participants: ["Jr. NAME 1", "Jr. NAME 2", "Jr. NAME 3"],
+    name: "ZAYBA & Team",
+    participants: ["SYEDA ZAYBA", "SYEDA UMDA", "SYEDA NUZNAIN"],
   },
   A8: {
     group: "A8",
@@ -233,7 +233,7 @@ export const Female_Juniors_Round1_GroupB: Round1Scores[] = [
 
 export const Female_Juniors_Round2_GroupA: Round2Scores[] = [
   {
-    team: "Team 1",
+    team: FemaleJuniorParticipants.B3.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -254,7 +254,7 @@ export const Female_Juniors_Round2_GroupA: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "Team 2",
+    team: FemaleJuniorParticipants.B4.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -275,7 +275,7 @@ export const Female_Juniors_Round2_GroupA: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "Team 3",
+    team: FemaleJuniorParticipants.B1.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -296,7 +296,7 @@ export const Female_Juniors_Round2_GroupA: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "Team 4",
+    team: FemaleJuniorParticipants.B6.name,
     q1: "10",
     q2: "-5",
     q3: "-",
@@ -317,7 +317,7 @@ export const Female_Juniors_Round2_GroupA: Round2Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 5",
+    team: FemaleJuniorParticipants.A4.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -338,7 +338,7 @@ export const Female_Juniors_Round2_GroupA: Round2Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 6",
+    team: FemaleJuniorParticipants.A5.name,
     q1: "-",
     q2: "-5",
     q3: "10",
@@ -362,7 +362,7 @@ export const Female_Juniors_Round2_GroupA: Round2Scores[] = [
 
 export const Female_Juniors_Round2_GroupB: Round2Scores[] = [
   {
-    team: "Team 1",
+    team: FemaleJuniorParticipants.A1.name,
     q1: "-",
     q2: "-",
     q3: "-5",
@@ -383,7 +383,7 @@ export const Female_Juniors_Round2_GroupB: Round2Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 2",
+    team: FemaleJuniorParticipants.A7.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -404,7 +404,7 @@ export const Female_Juniors_Round2_GroupB: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "Team 3",
+    team: FemaleJuniorParticipants.B5.name,
     q1: "-5",
     q2: "-",
     q3: "-5",
@@ -425,7 +425,7 @@ export const Female_Juniors_Round2_GroupB: Round2Scores[] = [
     remarks: "-",
   },
   {
-    team: "Team 4",
+    team: FemaleJuniorParticipants.A6.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -446,7 +446,7 @@ export const Female_Juniors_Round2_GroupB: Round2Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 5",
+    team: FemaleJuniorParticipants.B2.name,
     q1: "-",
     q2: "10",
     q3: "-",
@@ -467,7 +467,7 @@ export const Female_Juniors_Round2_GroupB: Round2Scores[] = [
     remarks: "✅ QUALIFIED",
   },
   {
-    team: "Team 6",
+    team: FemaleJuniorParticipants.A2.name,
     q1: "-",
     q2: "-",
     q3: "-5",
@@ -491,7 +491,7 @@ export const Female_Juniors_Round2_GroupB: Round2Scores[] = [
 
 export const Female_Juniors_Round3_Final: FinalRoundScores[] = [
   {
-    team: "",
+    team: FemaleJuniorParticipants.B2.name,
     q1: "-",
     q2: "-",
     q3: "10",
@@ -513,7 +513,7 @@ export const Female_Juniors_Round3_Final: FinalRoundScores[] = [
     win_rank: 1,
   },
   {
-    team: "",
+    team: FemaleJuniorParticipants.A1.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -534,7 +534,7 @@ export const Female_Juniors_Round3_Final: FinalRoundScores[] = [
     remarks: "-",
   },
   {
-    team: "",
+    team: FemaleJuniorParticipants.A6.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -555,7 +555,7 @@ export const Female_Juniors_Round3_Final: FinalRoundScores[] = [
     remarks: "-",
   },
   {
-    team: "",
+    team: FemaleJuniorParticipants.B6.name,
     q1: "-",
     q2: "10",
     q3: "-",
@@ -577,7 +577,7 @@ export const Female_Juniors_Round3_Final: FinalRoundScores[] = [
     win_rank: 3,
   },
   {
-    team: "",
+    team: FemaleJuniorParticipants.A4.name,
     q1: "-",
     q2: "-",
     q3: "-",
@@ -598,7 +598,7 @@ export const Female_Juniors_Round3_Final: FinalRoundScores[] = [
     remarks: "-",
   },
   {
-    team: "",
+    team: FemaleJuniorParticipants.A5.name,
     q1: "-",
     q2: "-",
     q3: "-",

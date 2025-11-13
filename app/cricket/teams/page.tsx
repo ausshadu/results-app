@@ -8,17 +8,15 @@ export default function TeamsPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="rounded-lg border bg-white dark:bg-gray-800 p-4 shadow">
+      <Card>
         <h1 className="text-2xl font-bold md:text-3xl">Cricket Teams</h1>
-        <p className="text-sm text-gray-700 dark:text-gray-300">
+        <p className="text-sm">
           List of 12 teams with their jersey, location, and captain.
         </p>
-        <div className="mt-2">
-          <Link href="/cricket" className="link">
-            ← Back to Cricket
-          </Link>
-        </div>
-      </div>
+        <Link href="/cricket" className="link">
+          ← Back to Cricket
+        </Link>
+      </Card>
 
       <Card>
         <div className="overflow-x-auto">

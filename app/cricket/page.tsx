@@ -19,9 +19,9 @@ export default function Cricket() {
           <h3 className="text-lg font-semibold">Teams</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">View all teams, jersey, location, and captain.</p>
           <div>
-            <Button as={Link} href="/cricket/teams" color="primary" pill>
+            <Link href="/cricket/teams" className="link">
               Open Teams
-            </Button>
+            </Link>
           </div>
         </Card>
 
@@ -29,9 +29,9 @@ export default function Cricket() {
           <h3 className="text-lg font-semibold">Matches</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">Schedule and results coming soon.</p>
           <div>
-            <Button as={Link} href="/cricket/matches" color="light" pill>
+            <Link href="/cricket/matches" className="link">
               Coming Soon
-            </Button>
+            </Link>
           </div>
         </Card>
       </div>

@@ -69,7 +69,7 @@ export default function Header() {
         <NavbarLink as={Link} href="/essay-2025">
           Essay 2025
         </NavbarLink>
-        <NavbarLink as={Link} href="/cricket">
+        <NavbarLink as={Link} href="/cricket-2025">
           Cricket 2025
         </NavbarLink>
       </NavbarCollapse>

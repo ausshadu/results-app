@@ -13,7 +13,7 @@ export default function TeamsPage() {
         <p className="text-sm">
           List of 12 teams with their jersey, location, and captain.
         </p>
-        <Link href="/cricket" className="link">
+        <Link href="/cricket-2025" className="link">
           ← Back to Cricket
         </Link>
       </Card>
@@ -75,7 +75,7 @@ export default function TeamsPage() {
                   </td>
                   <td className="px-6 py-4">
                     <Link
-                      href={`/cricket/teams/${team.slug}`}
+                      href={`/cricket-2025/teams/${team.slug}`}
                       className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
                     >
                       {team.name}

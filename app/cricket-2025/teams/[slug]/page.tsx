@@ -29,7 +29,7 @@ export default async function TeamPage({ params }: TeamPageProps) {
       {/* Header Section */}
       <div className="rounded-lg bg-white dark:bg-gray-800 p-4 shadow border-0">
         <div className="mb-4">
-          <Link href="/cricket/teams" className="link">
+          <Link href="/cricket-2025/teams" className="link">
             ← Back to Teams
           </Link>
         </div>

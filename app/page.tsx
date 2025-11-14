@@ -41,8 +41,8 @@ export default function Home() {
         </Card>
         <Card className="hover:shadow-lg transition-shadow">
           <h3 className="text-lg font-semibold">Cricket 2025</h3>
-          <p className="text-sm">12 Teams • 4 Cities</p>
-          <Link href="/cricket" className="link">
+          <p className="text-sm">12 Teams • 5 cities • Nail biting tournament • 1 winner</p>
+          <Link href="/cricket-2025" className="link">
             View
           </Link>
         </Card>

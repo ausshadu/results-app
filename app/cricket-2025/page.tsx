@@ -8,12 +8,12 @@ export default function Cricket() {
     <div className="flex flex-col gap-6">
       <Card>
         <h1 className="text-2xl font-bold md:text-3xl">Cricket</h1>
-        <p className="text-sm">Explore teams and matches.</p>
+        <p className="text-sm">12 Teams • 5 cities • Nail biting tournament • 1 winner</p>
         <div className="flex flex-wrap gap-2">
           <Button color="light" as={Link} href="/" pill>
             ← Back to Home
           </Button>
-          <Button color="primary" as={Link} href="/cricket/matches" pill>
+          <Button color="primary" as={Link} href="/cricket-2025/matches" pill>
             View Matches →
           </Button>
         </div>
@@ -24,7 +24,7 @@ export default function Cricket() {
           <h3 className="text-lg font-semibold">Teams</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">View all teams, jersey, location, and captain.</p>
           <div>
-            <Link href="/cricket/teams" className="link">
+            <Link href="/cricket-2025/teams" className="link">
               Open Teams
             </Link>
           </div>
@@ -34,7 +34,7 @@ export default function Cricket() {
           <h3 className="text-lg font-semibold">Matches</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">View schedule and results.</p>
           <div>
-            <Link href="/cricket/matches" className="link">
+            <Link href="/cricket-2025/matches" className="link">
               View
             </Link>
           </div>

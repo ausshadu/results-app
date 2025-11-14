@@ -15,9 +15,6 @@ export default function Cricket() {
           <Link href="/" className="link">
             ← Back to Home
           </Link>
-          <Link href="/cricket-2025/matches" className="link">
-            View Matches →
-          </Link>
         </div>
       </Card>
 

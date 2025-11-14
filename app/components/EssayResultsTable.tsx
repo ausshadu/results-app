@@ -3,9 +3,15 @@
 import { Result } from "@/lib/600MeeladResults";
 import { useMemo, useState } from "react";
 import { Button, Card, TextInput } from "flowbite-react";
+import Link from "next/link";
 
 type Row = Result & { category?: "Male" | "Female" | string };
-type SortKey = "reg_number" | "full_name" | "total_marks" | "topic" | "category";
+type SortKey =
+  | "reg_number"
+  | "full_name"
+  | "total_marks"
+  | "topic"
+  | "category";
 type SortState = { key: SortKey; dir: "asc" | "desc" };
 type CompareVal = string | number;
 
@@ -23,7 +29,13 @@ type SortHeaderProps = {
   enabled?: boolean;
 };
 
-function SortHeader({ label, sortKey, current, onToggle, enabled = true }: SortHeaderProps) {
+function SortHeader({
+  label,
+  sortKey,
+  current,
+  onToggle,
+  enabled = true,
+}: SortHeaderProps) {
   return (
     <button
       type="button"
@@ -60,7 +72,9 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
           const name = (r.full_name ?? "").toLowerCase();
           const topicText = (r.topic_text ?? "").toLowerCase();
           const topicNum = String(r.topic_number ?? "");
-          return name.includes(q) || topicText.includes(q) || topicNum.includes(q);
+          return (
+            name.includes(q) || topicText.includes(q) || topicNum.includes(q)
+          );
         })
       : data;
 
@@ -77,7 +91,9 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
         case "category":
           return r.category ?? "";
         case "topic":
-          return `${String(r.topic_number ?? "").padStart(3, "0")}|${r.topic_text ?? ""}`;
+          return `${String(r.topic_number ?? "").padStart(3, "0")}|${
+            r.topic_text ?? ""
+          }`;
       }
     };
 
@@ -96,7 +112,9 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
 
   const toggleSort = (key: SortKey) => {
     setSort((prev) =>
-      prev.key === key ? { key, dir: prev.dir === "asc" ? "desc" : "asc" } : { key, dir: "asc" }
+      prev.key === key
+        ? { key, dir: prev.dir === "asc" ? "desc" : "asc" }
+        : { key, dir: "asc" }
     );
   };
 
@@ -128,24 +146,49 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
                 Sl. No.
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
-                <SortHeader label="Reg No" sortKey="reg_number" current={sort} onToggle={toggleSort} />
+                <SortHeader
+                  label="REG NO"
+                  sortKey="reg_number"
+                  current={sort}
+                  onToggle={toggleSort}
+                />
               </th>
               {showCategory && (
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
-                  <SortHeader label="Category" sortKey="category" current={sort} onToggle={toggleSort} />
+                  <SortHeader
+                    label="CATEGORY"
+                    sortKey="category"
+                    current={sort}
+                    onToggle={toggleSort}
+                  />
                 </th>
               )}
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
-                <SortHeader label="Topic" sortKey="topic" current={sort} onToggle={toggleSort} />
+                <SortHeader
+                  label="TOPIC"
+                  sortKey="topic"
+                  current={sort}
+                  onToggle={toggleSort}
+                />
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
-                <SortHeader label="Name" sortKey="full_name" current={sort} onToggle={toggleSort} />
+                <SortHeader
+                  label="NAME"
+                  sortKey="full_name"
+                  current={sort}
+                  onToggle={toggleSort}
+                />
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
-                <SortHeader label="Marks" sortKey="total_marks" current={sort} onToggle={toggleSort} />
+                <SortHeader
+                  label="MARKS"
+                  sortKey="total_marks"
+                  current={sort}
+                  onToggle={toggleSort}
+                />
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
-                PDF
+                View Essay
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
                 Remarks
@@ -168,7 +211,9 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
                 )}
                 <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-100">
                   <div className="flex flex-col">
-                    <span className="text-sm text-gray-500 dark:text-gray-400">Topic #{r.topic_number}</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      Topic #{r.topic_number}
+                    </span>
                     <span>{r.topic_text}</span>
                   </div>
                 </td>
@@ -179,17 +224,14 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
                   {formatMarks(r.total_marks)}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <Button
-                    color="primary"
-                    size="xs"
+                  <Link
                     href={r.pdf_link}
+                    className="link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    as="a"
-                    pill
                   >
                     View PDF
-                  </Button>
+                  </Link>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap"></td>
               </tr>

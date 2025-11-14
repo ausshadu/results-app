@@ -9,9 +9,14 @@ export default function Cricket() {
       <Card>
         <h1 className="text-2xl font-bold md:text-3xl">Cricket</h1>
         <p className="text-sm">Explore teams and matches.</p>
-        <Link href="/" className="link">
-          ← Back to Home
-        </Link>
+        <div className="flex flex-wrap gap-2">
+          <Button color="light" as={Link} href="/" pill>
+            ← Back to Home
+          </Button>
+          <Button color="primary" as={Link} href="/cricket/matches" pill>
+            View Matches →
+          </Button>
+        </div>
       </Card>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

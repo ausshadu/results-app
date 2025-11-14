@@ -24,7 +24,10 @@ function TeamCell({ team }: { team: Team }) {
           <div className="h-full w-full rounded bg-gray-200 dark:bg-gray-700" />
         )}
       </div>
-      <Link href={`/cricket-2025/teams/${team.slug}`} className="link font-medium">
+      <Link
+        href={`/cricket-2025/teams/${team.slug}`}
+        className="link font-medium"
+      >
         {team.name}
       </Link>
     </div>
@@ -70,12 +73,15 @@ export default function MatchesPage() {
   return (
     <div className="flex flex-col gap-6">
       <Card>
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold md:text-3xl">Cricket Matches</h1>
-          <Link href="/cricket-2025" className="link">
-            ← Back to Cricket
-          </Link>
-        </div>
+        <h1 className="text-2xl font-bold md:text-3xl">
+          Matches — Cricket 2025
+        </h1>
+        <p className="text-sm">
+          Matches fixtures and results for Cricket 2025 tournament.
+        </p>
+        <Link href="/cricket-2025" className="link">
+          ← Back to Cricket 2025
+        </Link>
       </Card>
 
       {matches.length === 0 ? (

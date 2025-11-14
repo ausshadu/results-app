@@ -9,12 +9,12 @@ export default function TeamsPage() {
   return (
     <div className="flex flex-col gap-6">
       <Card>
-        <h1 className="text-2xl font-bold md:text-3xl">Cricket Teams</h1>
+        <h1 className="text-2xl font-bold md:text-3xl">Teams — Cricket 2025</h1>
         <p className="text-sm">
           List of 12 teams with their jersey, location, and captain.
         </p>
         <Link href="/cricket-2025" className="link">
-          ← Back to Cricket
+          ← Back to Cricket 2025
         </Link>
       </Card>
 

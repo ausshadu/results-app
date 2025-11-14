@@ -54,7 +54,7 @@ export const ALL_TEAMS = {
     captain: "SYED ISHAQ",
     jerseyImage: new_star,
     teamMembers: [
-      "SYED ISAQ",
+      "SYED ISHAQ",
       "ABDUL FAREED",
       "HASNATH KHAN",
       "ASHFAQ KHAN",
@@ -78,7 +78,7 @@ export const ALL_TEAMS = {
     captain: "SYED BASHA",
     jerseyImage: armania,
     teamMembers: [
-      "BASHA",
+      "SYED BASHA",
       "YOUSUF",
       "MAQSOOD",
       "ASIF",
@@ -98,7 +98,7 @@ export const ALL_TEAMS = {
     slug: "young-gems-cc",
     name: "YOUNG GEMS CC",
     location: "Channapatna",
-    captain: "MD MUDASSIR",
+    captain: "MOHAMMED MUDASSIR",
     jerseyImage: young_gems,
     teamMembers: [
       "MOHAMMED MUDASSIR",
@@ -150,7 +150,7 @@ export const ALL_TEAMS = {
     jerseyImage: lucky_star,
     teamMembers: [
       "ZAIN A",
-      "RAYAN MT",
+      "RAYAN MEHDI",
       "SHOAIB",
       "HARIES",
       "TAUSEEF",
@@ -242,7 +242,7 @@ export const ALL_TEAMS = {
     jerseyImage: yorkers,
     teamMembers: [
       "KHASIM",
-      "SYED ATAN",
+      "ATAN ROOHI",
       "AZHAR",
       "FAYAZ",
       "ANSAR",

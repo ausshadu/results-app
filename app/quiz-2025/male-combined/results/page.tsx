@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Round1Table, Round2Table, WinnersGallery } from "@/app/components";
 import {
@@ -11,61 +13,56 @@ import {
 import firstPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/first.webp";
 import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/second.webp";
 import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/third.webp";
+import { Card, Button } from "flowbite-react";
 
-export const metadata = {
+const metadata = {
   title: "Male • Combined — Results",
   description: "Results page for Male • Combined (empty for now).",
 };
 
 export default function Page() {
   return (
-    <div className="mx-auto flex max-w-5xl flex-col gap-6">
-      <header className="card-surface p-5 text-center md:text-left">
-        <h1 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+    <div className="flex flex-col gap-6">
+      <Card>
+        <h1 className="text-2xl font-bold md:text-3xl">
           Male • Combined — Results
         </h1>
-        <p className="mt-2 text-sm text-zinc-700">
+        <p className="text-sm">
           This page has placeholder tables. Data will be added later.
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <Link
-            href="/quiz-2025"
-            className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
-          >
+        <div className="flex flex-wrap gap-2">
+          <Button color="light" as={Link} href="/quiz-2025" pill>
             ← Back to Categories
-          </Link>
-          <Link
-            href="/quiz-2025/male-combined/participants"
-            className="cta participantCta inline-flex rounded-full px-4 py-2 text-sm font-medium"
-          >
+          </Button>
+          <Button color="primary" as={Link} href="/quiz-2025/male-combined/participants" pill>
             View Participants →
-          </Link>
+          </Button>
         </div>
-      </header>
+      </Card>
 
-      <section className="card-surface card-round1 p-5 text-center md:text-left">
-        <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+      <Card className="text-center md:text-left">
+        <h2 className="text-2xl font-bold md:text-3xl">
           ROUND - 1 - ♻️ Round robin style ♻️
         </h2>
-      </section>
+      </Card>
 
       <Round1Table title="Group - A" data={Male_Combined_Round1_GroupA} />
       <Round1Table title="Group - B" data={Male_Combined_Round1_GroupB} />
 
-      <section className="card-surface card-round2 p-5 text-center md:text-left">
-        <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+      <Card className="text-center md:text-left">
+        <h2 className="text-2xl font-bold md:text-3xl">
           ROUND 2 - ⚡️ Mixed Style (Buzzer + Individual) 👥
         </h2>
-      </section>
+      </Card>
 
       <Round2Table title="Group - A" data={Male_Combined_Round2_GroupA} />
       <Round2Table title="Group - B" data={Male_Combined_Round2_GroupB} />
 
-      <section className="card-surface card-round3 p-5 text-center md:text-left">
-        <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+      <Card className="text-center md:text-left">
+        <h2 className="text-2xl font-bold md:text-3xl">
           FINAL ROUND - ⚡️ Buzzer style ⚡️
         </h2>
-      </section>
+      </Card>
 
       <Round2Table
         title="Final Round — Teams"

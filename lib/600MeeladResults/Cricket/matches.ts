@@ -1,0 +1,167 @@
+import { ALL_TEAMS, Team } from "./teams";
+
+export enum MatchType {
+  QUALIFIER = "QUALIFIER",
+  QUARTER_FINAL = "QUARTER_FINAL",
+  SEMI_FINAL = "SEMI_FINAL",
+  SUPER_OVER = "SUPER_OVER",
+  FINAL = "FINAL",
+}
+
+export type Match = {
+  id: number;
+  teamA: Team;
+  teamB: Team;
+  tossWonBy: Team;
+  electedTo: "bat" | "bowl";
+  matchType: MatchType;
+  matchWinner: Team;
+  matchResult: string;
+  matchTied: boolean;
+};
+
+export const matches: Match[] = [
+  {
+    id: 1,
+    teamA: ALL_TEAMS.GMCC,
+    teamB: ALL_TEAMS.SPARTANS_CRICKET,
+    tossWonBy: ALL_TEAMS.SPARTANS_CRICKET,
+    electedTo: "bowl",
+    matchType: MatchType.QUALIFIER,
+    matchWinner: ALL_TEAMS.SPARTANS_CRICKET,
+    matchResult: "SPARTANS CRICKET WON BY 5 WICKETS",
+    matchTied: false,
+  },
+  {
+    id: 2,
+    teamA: ALL_TEAMS.ARMANIA_CC,
+    teamB: ALL_TEAMS.ELAHI_CC,
+    tossWonBy: ALL_TEAMS.ELAHI_CC,
+    electedTo: "bowl",
+    matchType: MatchType.QUALIFIER,
+    matchWinner: ALL_TEAMS.ARMANIA_CC,
+    matchResult: "ARMANIA CC WON BY 16 RUNS",
+    matchTied: false,
+  },
+  {
+    id: 3,
+    teamA: ALL_TEAMS.NEW_STAR_CC,
+    teamB: ALL_TEAMS.SHIBBAN_E_MAHDAVIA,
+    tossWonBy: ALL_TEAMS.SHIBBAN_E_MAHDAVIA,
+    electedTo: "bowl",
+    matchType: MatchType.QUALIFIER,
+    matchWinner: ALL_TEAMS.NEW_STAR_CC,
+    matchResult: "NEW STAR CC WON BY 46 RUNS",
+    matchTied: false,
+  },
+  {
+    id: 4,
+    teamA: ALL_TEAMS.MEHDAVIA_CRICKET_CLUB,
+    teamB: ALL_TEAMS.YOUNG_GEMS_CC,
+    tossWonBy: ALL_TEAMS.YOUNG_GEMS_CC,
+    electedTo: "bowl",
+    matchType: MatchType.QUALIFIER,
+    matchWinner: ALL_TEAMS.YOUNG_GEMS_CC,
+    matchResult: "YOUNG GEMS CC WON BY 5 WICKETS",
+    matchTied: false,
+  },
+  {
+    id: 5,
+    teamA: ALL_TEAMS.GM_STAR,
+    teamB: ALL_TEAMS.LUCKY_STAR,
+    tossWonBy: ALL_TEAMS.LUCKY_STAR,
+    electedTo: "bowl",
+    matchType: MatchType.QUALIFIER,
+    matchWinner: ALL_TEAMS.GM_STAR,
+    matchResult: "GM STAR WON BY 17 RUNS",
+    matchTied: false,
+  },
+  {
+    id: 6,
+    teamA: ALL_TEAMS.YORKERS,
+    teamB: ALL_TEAMS.TIGERS_CC,
+    tossWonBy: ALL_TEAMS.TIGERS_CC,
+    electedTo: "bowl",
+    matchType: MatchType.QUALIFIER,
+    matchWinner: ALL_TEAMS.TIGERS_CC,
+    matchResult: "TIGERS CC WON BY 7 WICKETS",
+    matchTied: false,
+  },
+  {
+    id: 7,
+    teamA: ALL_TEAMS.ARMANIA_CC,
+    teamB: ALL_TEAMS.YOUNG_GEMS_CC,
+    tossWonBy: ALL_TEAMS.ARMANIA_CC,
+    electedTo: "bat",
+    matchType: MatchType.QUARTER_FINAL,
+    matchWinner: ALL_TEAMS.YOUNG_GEMS_CC,
+    matchResult: "YOUNG GEMS CC WON BY 9 WICKETS",
+    matchTied: false,
+  },
+  {
+    id: 8,
+    teamA: ALL_TEAMS.NEW_STAR_CC,
+    teamB: ALL_TEAMS.TIGERS_CC,
+    tossWonBy: ALL_TEAMS.TIGERS_CC,
+    electedTo: "bowl",
+    matchType: MatchType.QUARTER_FINAL,
+    matchWinner: ALL_TEAMS.TIGERS_CC,
+    matchResult: "TIGERS CC WON BY 6 WICKETS",
+    matchTied: false,
+  },
+  {
+    id: 9,
+    teamA: ALL_TEAMS.GM_STAR,
+    teamB: ALL_TEAMS.SPARTANS_CRICKET,
+    tossWonBy: ALL_TEAMS.GM_STAR,
+    electedTo: "bat",
+    matchType: MatchType.QUARTER_FINAL,
+    matchWinner: ALL_TEAMS.SPARTANS_CRICKET,
+    matchResult: "SPARTANS CRICKET WON BY 8 WICKETS",
+    matchTied: false,
+  },
+  {
+    id: 10,
+    teamA: ALL_TEAMS.YOUNG_GEMS_CC,
+    teamB: ALL_TEAMS.NEW_STAR_CC,
+    tossWonBy: ALL_TEAMS.NEW_STAR_CC,
+    electedTo: "bowl",
+    matchType: MatchType.SEMI_FINAL,
+    matchWinner: ALL_TEAMS.YOUNG_GEMS_CC,
+    matchResult: "YOUNG GEMS CC WON BY 27 RUNS",
+    matchTied: false,
+  },
+  {
+    id: 11,
+    teamA: ALL_TEAMS.SPARTANS_CRICKET,
+    teamB: ALL_TEAMS.TIGERS_CC,
+    tossWonBy: ALL_TEAMS.TIGERS_CC,
+    electedTo: "bowl",
+    matchType: MatchType.SEMI_FINAL,
+    matchWinner: ALL_TEAMS.TIGERS_CC,
+    matchResult: "MATCH TIED",
+    matchTied: true,
+  },
+  {
+    id: 12,
+    teamA: ALL_TEAMS.TIGERS_CC,
+    teamB: ALL_TEAMS.SPARTANS_CRICKET,
+    tossWonBy: ALL_TEAMS.TIGERS_CC,
+    electedTo: "bat",
+    matchType: MatchType.SUPER_OVER,
+    matchWinner: ALL_TEAMS.TIGERS_CC,
+    matchResult: "TIGERS CC WON BY 4 RUNS",
+    matchTied: false,
+  },
+  {
+    id: 13,
+    teamA: ALL_TEAMS.TIGERS_CC,
+    teamB: ALL_TEAMS.YOUNG_GEMS_CC,
+    tossWonBy: ALL_TEAMS.YOUNG_GEMS_CC,
+    electedTo: "bowl",
+    matchType: MatchType.FINAL,
+    matchWinner: ALL_TEAMS.TIGERS_CC,
+    matchResult: "TIGERS CC WON BY 45 RUNS",
+    matchTied: false,
+  },
+];

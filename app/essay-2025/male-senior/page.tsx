@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { MALE_SENIOR } from "@/lib/600MeeladResults";
 import { EssayResultsTable } from "@/app/components";
+import { Card } from "flowbite-react";
 
-export const metadata = {
+const metadata = {
   title: "Essay 2025 — Male • Senior",
   description:
     "Results list for Male • Senior category in Essay Competition 2025.",
@@ -10,24 +13,19 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="mx-auto flex max-w-5xl flex-col gap-6">
-      <header className="card-surface p-5 text-center md:text-left">
-        <h1 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+    <div className="flex flex-col gap-6">
+      <Card>
+        <h1 className="text-2xl font-bold md:text-3xl">
           Male • Senior — Essay 2025
         </h1>
-        <p className="mt-2 text-sm text-zinc-700">
+        <p className="text-sm">
           Browse the results list. Click View PDF to open the scanned answer
           sheet.
         </p>
-        <div className="mt-3">
-          <Link
-            href="/essay-2025"
-            className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
-          >
-            ← Back to Categories
-          </Link>
-        </div>
-      </header>
+        <Link href="/essay-2025" className="link">
+          ← Back to Categories
+        </Link>
+      </Card>
 
       <EssayResultsTable results={MALE_SENIOR} />
     </div>

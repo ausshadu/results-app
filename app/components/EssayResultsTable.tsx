@@ -1,161 +1,202 @@
 "use client";
 
 import { Result } from "@/lib/600MeeladResults";
-import Link from "next/link";
-import { Fragment, useState } from "react";
+import { useMemo, useState } from "react";
+import { Button, Card, TextInput } from "flowbite-react";
 
-export function EssayResultsTable({ results }: { results: Result[] }) {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+type Row = Result & { category?: "Male" | "Female" | string };
+type SortKey = "reg_number" | "full_name" | "total_marks" | "topic" | "category";
+type SortState = { key: SortKey; dir: "asc" | "desc" };
+type CompareVal = string | number;
 
-  const toggle = (id: string) =>
-    setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
+function normalizeNumber(v: string | number | undefined | null): number | null {
+  if (v === undefined || v === null || v === "") return null;
+  const n = Number(v);
+  return Number.isFinite(n) ? n : null;
+}
+
+type SortHeaderProps = {
+  label: string;
+  sortKey: SortKey;
+  current: SortState;
+  onToggle: (key: SortKey) => void;
+  enabled?: boolean;
+};
+
+function SortHeader({ label, sortKey, current, onToggle, enabled = true }: SortHeaderProps) {
+  return (
+    <button
+      type="button"
+      onClick={enabled ? () => onToggle(sortKey) : undefined}
+      className={`flex items-center gap-1 ${enabled ? "hover:underline" : ""}`}
+    >
+      <span>{label}</span>
+      {current.key === sortKey && (
+        <span aria-hidden="true">{current.dir === "asc" ? "↑" : "↓"}</span>
+      )}
+    </button>
+  );
+}
+
+export function EssayResultsTable({ results }: { results: Row[] }) {
+  // Default sort by Reg No ascending
+  const [sort, setSort] = useState<SortState>({
+    key: "reg_number",
+    dir: "asc",
+  });
+  const [query, setQuery] = useState<string>("");
+
+  const showCategory = useMemo(
+    () => (results ?? []).some((r: Row) => typeof r.category === "string"),
+    [results]
+  );
+
+  const formatted = useMemo(() => {
+    const data = [...(results ?? [])];
+
+    const q = query.trim().toLowerCase();
+    const filtered = q
+      ? data.filter((r) => {
+          const name = (r.full_name ?? "").toLowerCase();
+          const topicText = (r.topic_text ?? "").toLowerCase();
+          const topicNum = String(r.topic_number ?? "");
+          return name.includes(q) || topicText.includes(q) || topicNum.includes(q);
+        })
+      : data;
+
+    const getVal = (r: Row, key: SortKey): CompareVal => {
+      switch (key) {
+        case "reg_number":
+          return r.reg_number ?? "";
+        case "full_name":
+          return r.full_name ?? "";
+        case "total_marks": {
+          const n = normalizeNumber(r.total_marks);
+          return n === null ? Number.NEGATIVE_INFINITY : n;
+        }
+        case "category":
+          return r.category ?? "";
+        case "topic":
+          return `${String(r.topic_number ?? "").padStart(3, "0")}|${r.topic_text ?? ""}`;
+      }
+    };
+
+    const compare = (a: Row, b: Row) => {
+      const dirFactor = sort.dir === "asc" ? 1 : -1;
+      const va = getVal(a, sort.key);
+      const vb = getVal(b, sort.key);
+      if (typeof va === "number" && typeof vb === "number") {
+        return (va - vb) * dirFactor;
+      }
+      return String(va).localeCompare(String(vb)) * dirFactor;
+    };
+
+    return filtered.sort(compare);
+  }, [results, sort, query]);
+
+  const toggleSort = (key: SortKey) => {
+    setSort((prev) =>
+      prev.key === key ? { key, dir: prev.dir === "asc" ? "desc" : "asc" } : { key, dir: "asc" }
+    );
+  };
 
   const formatMarks = (v: string | number | undefined) =>
     v === undefined || v === null || v === "" ? "-" : v;
 
   return (
-    <section className="card-surface p-5">
-      <div className="mb-3 flex items-center justify-between gap-3">
-        <h2 className="text-xl font-semibold text-zinc-900">Results</h2>
-        <span className="text-xs text-zinc-500">
-          Total: {results?.length ?? 0}
+    <Card>
+      <div className="flex items-center justify-between mb-3">
+        <h2 className="text-xl font-semibold">Results</h2>
+        <span className="text-sm text-gray-500 dark:text-gray-400">
+          Total: {formatted?.length ?? 0}
         </span>
       </div>
 
+      <div className="mb-3">
+        <TextInput
+          placeholder="Search by name or topic..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </div>
+
       <div className="overflow-x-auto">
-        <table className="min-w-full text-sm border border-zinc-300 border-collapse text-center">
-          <thead className="text-zinc-600 bg-zinc-50">
-            <tr className="border-b border-zinc-300">
-              <th className="px-3 py-2 border border-zinc-300">Sl. No.</th>
-              <th className="px-3 py-2 border border-zinc-300">Reg No</th>
-              <th className="px-3 py-2 border border-zinc-300">Topic</th>
-              <th className="px-3 py-2 border border-zinc-300">Name</th>
-              <th className="px-3 py-2 border border-zinc-300">Marks</th>
-              <th className="px-3 py-2 border border-zinc-300">View</th>
-              <th className="px-3 py-2 border border-zinc-300">PDF</th>
-              <th className="px-3 py-2 border border-zinc-300">Remarks</th>
+        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+          <thead className="bg-gray-50 dark:bg-gray-700">
+            <tr>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                Sl. No.
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                <SortHeader label="Reg No" sortKey="reg_number" current={sort} onToggle={toggleSort} />
+              </th>
+              {showCategory && (
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                  <SortHeader label="Category" sortKey="category" current={sort} onToggle={toggleSort} />
+                </th>
+              )}
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                <SortHeader label="Topic" sortKey="topic" current={sort} onToggle={toggleSort} />
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                <SortHeader label="Name" sortKey="full_name" current={sort} onToggle={toggleSort} />
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                <SortHeader label="Marks" sortKey="total_marks" current={sort} onToggle={toggleSort} />
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                PDF
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                Remarks
+              </th>
             </tr>
           </thead>
-          <tbody className="text-zinc-800">
-            {results.map((r, idx) => (
-              <Fragment key={r.reg_number}>
-                <tr key={r.reg_number} className="odd:bg-white even:bg-zinc-50">
-                  <td className="px-3 py-2 border border-zinc-300">
-                    {idx + 1}
+          <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+            {formatted.map((r, idx) => (
+              <tr key={r.reg_number}>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
+                  {idx + 1}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-900 dark:text-gray-100">
+                  {r.reg_number}
+                </td>
+                {showCategory && (
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
+                    {r.category ?? "-"}
                   </td>
-                  <td className="px-3 py-2 border border-zinc-300 font-mono text-[13px]">
-                    {r.reg_number}
-                  </td>
-                  <td className="px-3 py-2 border border-zinc-300">
-                    <div className="flex flex-col">
-                      <span className="text-[13px] text-zinc-500 text-left">
-                        Topic #{r.topic_number}
-                      </span>
-                      <span className="text-[13px] text-left">
-                        {r.topic_text}
-                      </span>
-                    </div>
-                  </td>
-                  <td className="px-3 py-2 border border-zinc-300">
-                    {r.full_name}
-                  </td>
-                  <td className="px-3 py-2 border border-zinc-300">
-                    {formatMarks(r.total_marks)}
-                  </td>
-                  <td className="px-3 py-2 border border-zinc-300">
-                    <button
-                      type="button"
-                      onClick={() => toggle(r.reg_number)}
-                      className="cta participantCta inline-flex items-center rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap"
-                    >
-                      {expanded[r.reg_number] ? "View less" : "View more"}
-                    </button>
-                  </td>
-                  <td className="px-3 py-2 border border-zinc-300">
-                    <Link
-                      href={r.pdf_link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cta inline-flex items-center rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap"
-                    >
-                      View PDF
-                    </Link>
-                  </td>
-                  <td className="px-3 py-2 border border-zinc-300"></td>
-                </tr>
-
-                {expanded[r.reg_number] && (
-                  <tr key={`${r.reg_number}-details`} className="bg-zinc-50">
-                    <td
-                      className="px-4 py-3 border border-zinc-300 text-left"
-                      colSpan={8}
-                    >
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">
-                            Qur'an References
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.quranic_references)} marks
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">
-                            Ahadees References
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.ahdees_references)} marks
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">
-                            Naqliyath References
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.naqliyath_references)} marks
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">
-                            Other References
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.other_references)} marks
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">Paragraph Marks</span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.paragraph_marks)} marks
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-zinc-600">
-                            Good Handwriting
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-xs font-semibold">
-                            {formatMarks(r.handwriting_marks)} marks
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className="mt-4 flex justify-end">
-                        <div className="inline-flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                          <span className="text-sm text-zinc-500">Total:</span>
-                          <span className="text-2xl font-extrabold text-zinc-900">
-                            {formatMarks(r.total_marks)}
-                          </span>
-                          <span className="text-sm text-zinc-500">marks</span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
                 )}
-              </Fragment>
+                <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-100">
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500 dark:text-gray-400">Topic #{r.topic_number}</span>
+                    <span>{r.topic_text}</span>
+                  </div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
+                  {r.full_name}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
+                  {formatMarks(r.total_marks)}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <Button
+                    color="primary"
+                    size="xs"
+                    href={r.pdf_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    as="a"
+                    pill
+                  >
+                    View PDF
+                  </Button>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap"></td>
+              </tr>
             ))}
           </tbody>
         </table>
       </div>
-    </section>
+    </Card>
   );
 }

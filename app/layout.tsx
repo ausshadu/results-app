@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Deeni Events Results 2025",
   description:
     "Results for Quiz 2025 and Essay 2025 (Male/Female, Junior/Senior) with PDF links.",
@@ -26,9 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen text-gray-900 dark:text-gray-100`}
       >
-        <main className="min-h-screen p-4 md:p-8">{children}</main>
+        <div className="fixed inset-0 bg-gray-50 dark:bg-gray-900 bg-[url('/BG.png')] bg-cover bg-center bg-no-repeat grayscale-0 dark:grayscale dark:brightness-50 -z-10 pointer-events-none" />
+        <Header />
+        <main className="container mx-auto p-4 md:p-8">{children}</main>
       </body>
     </html>
   );

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   InterMadrasaParticipants,
@@ -11,8 +13,9 @@ import { Round1Table, Round2Table, WinnersGallery } from "@/app/components";
 import firstPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/first.webp";
 import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/second.webp";
 import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/third.jpeg";
+import { Card, Button } from "flowbite-react";
 
-export const metadata = {
+const metadata = {
   title: "Inter Madrasa Results",
   description:
     "Inter Madrasa — winners, runners-up and full results for Quiz 2025.",
@@ -20,55 +23,54 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="mx-auto flex max-w-5xl flex-col gap-6">
-      <header className="card-surface p-5 text-center md:text-left">
-        <h1 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+    <div className="flex flex-col gap-6">
+      <Card>
+        <h1 className="text-2xl font-bold md:text-3xl">
           Inter Madrasa — Quiz 2025
         </h1>
-        <p className="mt-2 text-sm text-zinc-700">
+        <p className="text-sm">
           Celebrating the champions of Inter Madrasa Quiz 2025. See winners
           below and browse full round-wise results. Click View PDF to open the
           scanned answer sheet.
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <Link
-            href="/quiz-2025"
-            className="cta inline-flex rounded-full px-4 py-2 text-sm font-medium"
-          >
+        <div className="flex flex-wrap gap-2">
+          <Button color="light" as={Link} href="/quiz-2025" pill>
             ← Back to Categories
-          </Link>
-          <Link
+          </Button>
+          <Button
+            color="primary"
+            as={Link}
             href="/quiz-2025/inter-madrasa/participants"
-            className="cta participantCta inline-flex rounded-full px-4 py-2 text-sm font-medium"
+            pill
           >
             View Participants →
-          </Link>
+          </Button>
         </div>
-      </header>
+      </Card>
 
-      <section className="card-surface card-round1 p-5 text-center md:text-left">
-        <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+      <Card className="text-center md:text-left">
+        <h2 className="text-2xl font-bold md:text-3xl">
           ROUND - 1 - ♻️ Round robin style ♻️
         </h2>
-      </section>
+      </Card>
 
       <Round1Table title="Group - A" data={Madrasa_Round1_GroupA} />
       <Round1Table title="Group - B" data={Madrasa_Round1_GroupB} />
 
-      <section className="card-surface card-round2 p-5 text-center md:text-left">
-        <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+      <Card className="text-center md:text-left">
+        <h2 className="text-2xl font-bold md:text-3xl">
           ROUND 2 - ⚡️ Mixed Style (Buzzer + Individual) 👥
         </h2>
-      </section>
+      </Card>
 
       <Round2Table title="Group - A" data={Madrasa_Round2_GroupA} />
       <Round2Table title="Group - B" data={Madrasa_Round2_GroupB} />
 
-      <section className="card-surface card-round3 p-5 text-center md:text-left">
-        <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+      <Card className="text-center md:text-left">
+        <h2 className="text-2xl font-bold md:text-3xl">
           FINAL ROUND - ⚡️ Buzzer style ⚡️
         </h2>
-      </section>
+      </Card>
 
       <Round2Table title="Final Round — Teams" data={Madrasa_Round3_Final} />
 
@@ -90,9 +92,9 @@ export default function Page() {
             alt: "Second — Inter Madrasa",
             caption: [
               "",
-              `Madrasa — ${InterMadrasaParticipants.A3.name}`,
+              `Madrasa — ${InterMadrasaParticipants.B3.name}`,
               "",
-              InterMadrasaParticipants.A3.participants.join("\n"),
+              InterMadrasaParticipants.B3.participants.join("\n"),
             ].join("\n"),
           },
           {

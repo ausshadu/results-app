@@ -2,9 +2,9 @@ import { ALL_TEAMS, Team } from "./teams";
 
 export enum MatchType {
   QUALIFIER = "QUALIFIER",
-  QUARTER_FINAL = "QUARTER_FINAL Final",
-  SEMI_FINAL = "SEMI_FINAL Final",
-  SUPER_OVER = "SUPER_OVER Over",
+  QUARTER_FINAL = "QUARTER_FINAL",
+  SEMI_FINAL = "SEMI_FINAL",
+  SUPER_OVER = "SUPER_OVER",
   FINAL = "FINAL",
 }
 

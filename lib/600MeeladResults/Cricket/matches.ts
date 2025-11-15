@@ -140,6 +140,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.YOUNG_GEMS_CC,
     matchResult: "YOUNG GEMS CC WON BY 27 RUNS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=U_IywOjOEV4&t=1271s",
   },
   {
     id: 11,
@@ -151,6 +152,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.TIGERS_CC,
     matchResult: "MATCH TIED",
     matchTied: true,
+    youtubeLink: "https://www.youtube.com/watch?v=U_IywOjOEV4&t=7193s",
   },
   {
     id: 12,
@@ -162,6 +164,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.TIGERS_CC,
     matchResult: "TIGERS CC WON BY 4 RUNS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=U_IywOjOEV4&t=14813s",
   },
   {
     id: 13,
@@ -173,5 +176,6 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.TIGERS_CC,
     matchResult: "TIGERS CC WON BY 45 RUNS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=U_IywOjOEV4&t=19333s",
   },
 ];

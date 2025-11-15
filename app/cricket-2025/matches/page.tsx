@@ -7,6 +7,10 @@ import {
   Match,
 } from "@/lib/600MeeladResults/Cricket/matches";
 import { Team } from "@/lib/600MeeladResults/Cricket/teams";
+import youngGemsPhoto from "@/lib/600MeeladResults/Cricket/photos/TeamYoungGems.jpg";
+import tigersPhoto from "@/lib/600MeeladResults/Cricket/photos/TeamTigers.jpg";
+import ocPhoto from "@/lib/600MeeladResults/Cricket/photos/TeamOrganizingCommittee.jpg";
+import LightboxPhoto from "@/app/components/LightboxPhoto";
 
 function TeamCell({ team }: { team: Team }) {
   return (
@@ -61,12 +65,38 @@ function formatMatchResult(m: Match) {
   return m.matchResult;
 }
 
+function parseYouTubeTimeToSeconds(t: string) {
+  // Supports formats like "1704s", "5m12s", "1h2m3s" or "1704"
+  if (!t) return 0;
+  if (/^\d+$/.test(t)) return parseInt(t, 10);
+  const match = t.match(/(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$/);
+  if (!match) return 0;
+  const hours = match[1] ? parseInt(match[1], 10) : 0;
+  const minutes = match[2] ? parseInt(match[2], 10) : 0;
+  const seconds = match[3] ? parseInt(match[3], 10) : 0;
+  return hours * 3600 + minutes * 60 + seconds;
+}
+
+function getYouTubeEmbedUrl(link: string) {
+  try {
+    const url = new URL(link);
+    const v = url.searchParams.get("v");
+    if (!v) return link;
+    const t = url.searchParams.get("t") || "";
+    const start = parseYouTubeTimeToSeconds(t);
+    const startQuery = start > 0 ? `?start=${start}` : "";
+    return `https://www.youtube.com/embed/${v}${startQuery}`;
+  } catch {
+    return link;
+  }
+}
+
 const MATCH_SECTIONS = [
   { type: MatchType.QUALIFIER, title: "Qualifier Matches" },
   { type: MatchType.QUARTER_FINAL, title: "Quarter Final Matches" },
   { type: MatchType.SEMI_FINAL, title: "Semi Final Matches" },
-  { type: MatchType.SUPER_OVER, title: "Super Over Matches" },
-  { type: MatchType.FINAL, title: "Final Matches" },
+  { type: MatchType.SUPER_OVER, title: "Super Over Match" },
+  { type: MatchType.FINAL, title: "Final" },
 ] as const;
 
 export default function MatchesPage() {
@@ -130,6 +160,9 @@ export default function MatchesPage() {
                       <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
                         MATCH RESULT
                       </th>
+                      <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                        WATCH
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -154,6 +187,21 @@ export default function MatchesPage() {
                           {formatMatchType(m.matchType)}
                         </td>
                         <td className="px-4 py-3">{formatMatchResult(m)}</td>
+                        <td className="px-4 py-3">
+                          {m.youtubeLink ? (
+                            <div className="mx-auto w-[180px] h-[101px] md:w-[240px] md:h-[135px] rounded overflow-hidden shadow">
+                              <iframe
+                                src={getYouTubeEmbedUrl(m.youtubeLink)}
+                                title={`Watch match ${m.id}`}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                                className="w-full h-full"
+                              />
+                            </div>
+                          ) : (
+                            <span className="text-gray-400">—</span>
+                          )}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -163,6 +211,35 @@ export default function MatchesPage() {
           );
         })
       )}
+      <Card>
+        <div className="mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold">Photos</h2>
+        </div>
+      </Card>
+      <div className="grid grid-cols-12 gap-6">
+        <Card className="col-span-12">
+          <div className="mb-2">
+            <h3 className="text-xl md:text-2xl font-bold">RUNNERS</h3>
+          </div>
+          <LightboxPhoto src={youngGemsPhoto} alt="Runners — YOUNG GEMS CC" caption="YOUNG GEMS CC" />
+        </Card>
+        <Card className="col-span-12">
+          <div className="mb-2">
+            <h3 className="text-xl md:text-2xl font-bold">WINNERS</h3>
+          </div>
+          <LightboxPhoto src={tigersPhoto} alt="Winners — TIGERS CC" caption="TIGERS CC" />
+        </Card>
+        <Card className="col-span-12">
+          <div className="mb-2">
+            <h3 className="text-xl md:text-2xl font-bold">Organizing Committee</h3>
+          </div>
+          <LightboxPhoto
+            src={ocPhoto}
+            alt="Organizing Committee"
+            caption="Mahdavia Julus Committee, Daira, Channapatna."
+          />
+        </Card>
+      </div>
     </div>
   );
 }

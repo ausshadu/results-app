@@ -18,6 +18,7 @@ export type Match = {
   matchWinner: Team;
   matchResult: string;
   matchTied: boolean;
+  youtubeLink?: string;
 };
 
 export const matches: Match[] = [
@@ -31,6 +32,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.SPARTANS_CRICKET,
     matchResult: "SPARTANS CRICKET WON BY 5 WICKETS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=aw1E6_4Y1DI&t=1704s",
   },
   {
     id: 2,
@@ -42,6 +44,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.ARMANIA_CC,
     matchResult: "ARMANIA CC WON BY 16 RUNS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=aw1E6_4Y1DI&t=7013s",
   },
   {
     id: 3,
@@ -53,6 +56,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.NEW_STAR_CC,
     matchResult: "NEW STAR CC WON BY 46 RUNS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=GiLCw0YU3L8&t=473s",
   },
   {
     id: 4,
@@ -64,6 +68,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.YOUNG_GEMS_CC,
     matchResult: "YOUNG GEMS CC WON BY 5 WICKETS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=GiLCw0YU3L8&t=6044s",
   },
   {
     id: 5,
@@ -75,6 +80,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.GM_STAR,
     matchResult: "GM STAR WON BY 17 RUNS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=GiLCw0YU3L8&t=11877s",
   },
   {
     id: 6,
@@ -86,6 +92,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.TIGERS_CC,
     matchResult: "TIGERS CC WON BY 7 WICKETS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=rtTsrtGwX-E&t=1740s",
   },
   {
     id: 7,
@@ -97,6 +104,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.YOUNG_GEMS_CC,
     matchResult: "YOUNG GEMS CC WON BY 9 WICKETS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=rtTsrtGwX-E&t=9074s",
   },
   {
     id: 8,
@@ -108,6 +116,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.TIGERS_CC,
     matchResult: "TIGERS CC WON BY 6 WICKETS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=rtTsrtGwX-E&t=13592s",
   },
   {
     id: 9,
@@ -119,6 +128,7 @@ export const matches: Match[] = [
     matchWinner: ALL_TEAMS.SPARTANS_CRICKET,
     matchResult: "SPARTANS CRICKET WON BY 8 WICKETS",
     matchTied: false,
+    youtubeLink: "https://www.youtube.com/watch?v=rtTsrtGwX-E&t=21954s",
   },
   {
     id: 10,

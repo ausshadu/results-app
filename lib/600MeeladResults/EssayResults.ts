@@ -72,6 +72,7 @@ export const FEMALE_JUNIOR: Result[] = [
     other_references: 4.5,
     paragraph_marks: 19,
     handwriting_marks: 2.5,
+    win_rank: 3,
   },
   {
     reg_number: "600M016",

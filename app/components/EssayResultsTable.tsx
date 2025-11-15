@@ -2,8 +2,13 @@
 
 import { Result } from "@/lib/600MeeladResults";
 import { useMemo, useState } from "react";
-import { Button, Card, TextInput } from "flowbite-react";
-import Link from "next/link";
+import { Card, TextInput } from "flowbite-react";
+import Image from "next/image";
+
+import firstIcon from "@/lib/600MeeladResults/icons/first.png";
+import secondIcon from "@/lib/600MeeladResults/icons/second.png";
+import thirdIcon from "@/lib/600MeeladResults/icons/third.png";
+import celebrate2Gif from "@/lib/600MeeladResults/icons/celebrate2.gif";
 
 type Row = Result & { category?: "Male" | "Female" | string };
 type SortKey =
@@ -49,6 +54,53 @@ function SortHeader({
     </button>
   );
 }
+
+const renderRemarks = (r: Result) => {
+  const rank = (r as Result).win_rank;
+  if (rank === 1) {
+    return (
+      <div className="relative flex items-center justify-center h-full">
+        <div
+          className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${celebrate2Gif.src})` }}
+        />
+        <span className="relative z-10 flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
+          <Image src={firstIcon} alt="First" width={36} height={36} />
+          <span className="text-xs">FIRST</span>
+        </span>
+      </div>
+    );
+  }
+  if (rank === 2) {
+    return (
+      <div className="relative flex items-center justify-center h-full">
+        <div
+          className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${celebrate2Gif.src})` }}
+        />
+        <span className="relative z-10 flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
+          <Image src={secondIcon} alt="Second" width={36} height={36} />
+          <span className="text-xs">SECOND</span>
+        </span>
+      </div>
+    );
+  }
+  if (rank === 3) {
+    return (
+      <div className="relative flex items-center justify-center h-full">
+        <div
+          className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${celebrate2Gif.src})` }}
+        />
+        <span className="relative z-10 flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
+          <Image src={thirdIcon} alt="Third" width={36} height={36} />
+          <span className="text-xs">THIRD</span>
+        </span>
+      </div>
+    );
+  }
+  return r.remarks;
+};
 
 export function EssayResultsTable({ results }: { results: Row[] }) {
   // Default sort by Reg No ascending
@@ -187,9 +239,9 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
                   onToggle={toggleSort}
                 />
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+              {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
                 View Essay
-              </th>
+              </th> */}
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
                 Remarks
               </th>
@@ -220,10 +272,10 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
                   {r.full_name}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
+                <td className="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-900 dark:text-gray-100">
                   {formatMarks(r.total_marks)}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                {/* <td className="px-6 py-4 whitespace-nowrap">
                   <Link
                     href={r.pdf_link}
                     className="link"
@@ -232,8 +284,8 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
                   >
                     View PDF
                   </Link>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap"></td>
+                </td> */}
+                <td className="p-0 text-center">{renderRemarks(r)}</td>
               </tr>
             ))}
           </tbody>

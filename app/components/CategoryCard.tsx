@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Card, Button } from "flowbite-react";
+import { Card } from "flowbite-react";
 
 export function CategoryCard({
   title,
@@ -17,14 +17,16 @@ export function CategoryCard({
   return (
     <Card className="hover:shadow-lg transition-shadow">
       <h3 className="text-lg font-semibold">{title}</h3>
-      {subtitle ? <p className="text-sm text-gray-600 dark:text-gray-400">{subtitle}</p> : null}
+      {subtitle ? (
+        <p className="text-sm text-gray-600 dark:text-gray-400">{subtitle}</p>
+      ) : null}
       <div className="flex items-center gap-2">
-        <Button color="light" as={Link} href={participantsHref} pill>
+        <Link href={participantsHref} className="link">
           Participants
-        </Button>
-        <Button color="primary" as={Link} href={resultsHref} pill>
+        </Link>
+        <Link href={resultsHref} className="link">
           Results
-        </Button>
+        </Link>
       </div>
     </Card>
   );

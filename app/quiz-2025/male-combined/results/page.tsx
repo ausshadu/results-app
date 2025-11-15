@@ -13,7 +13,7 @@ import {
 import firstPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/first.webp";
 import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/second.webp";
 import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/third.webp";
-import { Card, Button } from "flowbite-react";
+import { Card } from "flowbite-react";
 
 const metadata = {
   title: "Male • Combined — Results",
@@ -31,12 +31,12 @@ export default function Page() {
           This page has placeholder tables. Data will be added later.
         </p>
         <div className="flex flex-wrap gap-2">
-          <Button color="light" as={Link} href="/quiz-2025" pill>
+          <Link href="/quiz-2025" className="link">
             ← Back to Categories
-          </Button>
-          <Button color="primary" as={Link} href="/quiz-2025/male-combined/participants" pill>
+          </Link>
+          <Link href="/quiz-2025/male-combined/participants" className="link">
             View Participants →
-          </Button>
+          </Link>
         </div>
       </Card>
 

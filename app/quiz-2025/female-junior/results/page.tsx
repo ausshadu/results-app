@@ -9,7 +9,7 @@ import {
   Female_Juniors_Round2_GroupB,
   Female_Juniors_Round3_Final,
 } from "@/lib/600MeeladResults";
-import { Card, Button } from "flowbite-react";
+import { Card } from "flowbite-react";
 
 const metadata = {
   title: "Female • Junior — Results",
@@ -27,12 +27,12 @@ export default function Page() {
           This page has placeholder tables. Data will be added later.
         </p>
         <div className="flex flex-wrap gap-2">
-          <Button color="light" as={Link} href="/quiz-2025" pill>
+          <Link href="/quiz-2025" className="link">
             ← Back to Categories
-          </Button>
-          <Button color="primary" as={Link} href="/quiz-2025/female-junior/participants" pill>
+          </Link>
+          <Link href="/quiz-2025/female-junior/participants" className="link">
             View Participants →
-          </Button>
+          </Link>
         </div>
       </Card>
 

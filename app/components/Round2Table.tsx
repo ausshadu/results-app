@@ -3,7 +3,6 @@ import Image from "next/image";
 import firstIcon from "@/lib/600MeeladResults/icons/first.png";
 import secondIcon from "@/lib/600MeeladResults/icons/second.png";
 import thirdIcon from "@/lib/600MeeladResults/icons/third.png";
-import celebrate2Gif from "@/lib/600MeeladResults/icons/celebrate2.gif";
 import { Card } from "flowbite-react";
 
 export function Round2Table({
@@ -44,44 +43,26 @@ export function Round2Table({
     const rank = (r as FinalRoundScores).win_rank;
     if (rank === 1) {
       return (
-        <div className="relative flex items-center justify-center h-full">
-          <div
-            className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${celebrate2Gif.src})` }}
-          />
-          <span className="relative z-10 flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
-            <Image src={firstIcon} alt="First" width={36} height={36} />
-            <span className="text-xs">FIRST</span>
-          </span>
-        </div>
+        <span className="inline-flex flex-col items-center gap-1">
+          <Image src={firstIcon} alt="First" width={50} height={50} />
+          <span className="text-xs font-bold">FIRST</span>
+        </span>
       );
     }
     if (rank === 2) {
       return (
-        <div className="relative flex items-center justify-center h-full">
-          <div
-            className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${celebrate2Gif.src})` }}
-          />
-          <span className="relative z-10 flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
-            <Image src={secondIcon} alt="Second" width={36} height={36} />
-            <span className="text-xs">SECOND</span>
-          </span>
-        </div>
+        <span className="inline-flex flex-col items-center gap-1">
+          <Image src={secondIcon} alt="Second" width={50} height={50} />
+          <span className="text-xs font-bold">SECOND</span>
+        </span>
       );
     }
     if (rank === 3) {
       return (
-        <div className="relative flex items-center justify-center h-full">
-          <div
-            className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${celebrate2Gif.src})` }}
-          />
-          <span className="relative z-10 flex flex-col items-center gap-1 font-semibold text-white drop-shadow">
-            <Image src={thirdIcon} alt="Third" width={36} height={36} />
-            <span className="text-xs">THIRD</span>
-          </span>
-        </div>
+        <span className="inline-flex flex-col items-center gap-1">
+          <Image src={thirdIcon} alt="Third" width={50} height={50} />
+          <span className="text-xs font-bold">THIRD</span>
+        </span>
       );
     }
     return r.remarks;

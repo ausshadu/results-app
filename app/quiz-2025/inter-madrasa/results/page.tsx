@@ -13,7 +13,7 @@ import { Round1Table, Round2Table, WinnersGallery } from "@/app/components";
 import firstPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/first.webp";
 import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/second.webp";
 import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/inter_madrasa/third.jpeg";
-import { Card, Button } from "flowbite-react";
+import { Card } from "flowbite-react";
 
 const metadata = {
   title: "Inter Madrasa Results",
@@ -34,17 +34,12 @@ export default function Page() {
           scanned answer sheet.
         </p>
         <div className="flex flex-wrap gap-2">
-          <Button color="light" as={Link} href="/quiz-2025" pill>
+          <Link href="/quiz-2025" className="link">
             ← Back to Categories
-          </Button>
-          <Button
-            color="primary"
-            as={Link}
-            href="/quiz-2025/inter-madrasa/participants"
-            pill
-          >
+          </Link>
+          <Link href="/quiz-2025/inter-madrasa/participants" className="link">
             View Participants →
-          </Button>
+          </Link>
         </div>
       </Card>
 

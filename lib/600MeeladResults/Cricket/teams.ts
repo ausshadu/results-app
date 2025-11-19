@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import { Team } from "../Models";
 
 import gm_star from "@/lib/600MeeladResults/Cricket/jerseys/gm_star.png";
 import new_star from "@/lib/600MeeladResults/Cricket/jerseys/new_star.png";
@@ -12,15 +12,6 @@ import tigers from "@/lib/600MeeladResults/Cricket/jerseys/tigers.png";
 import yorkers from "@/lib/600MeeladResults/Cricket/jerseys/yorkers.png";
 import kirgaval from "@/lib/600MeeladResults/Cricket/jerseys/kirgaval.png";
 import hyderabad from "@/lib/600MeeladResults/Cricket/jerseys/hyderabad.png";
-
-export type Team = {
-  slug: string;
-  name: string;
-  location: string;
-  captain: string;
-  jerseyImage?: StaticImageData; // Image path can be updated later
-  teamMembers: string[];
-};
 
 export const ALL_TEAMS = {
   GM_STAR: {

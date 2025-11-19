@@ -42,6 +42,54 @@ export default function Cricket() {
             </Link>
           </div>
         </Card>
+
+        <Card className="hover:shadow-lg transition-shadow">
+          <h3 className="text-lg font-semibold">Best Batting</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            Top run scorers with best scores and team jerseys.
+          </p>
+          <div>
+            <Link href="/cricket-2025/best-batting" className="link">
+              View
+            </Link>
+          </div>
+        </Card>
+
+        <Card className="hover:shadow-lg transition-shadow">
+          <h3 className="text-lg font-semibold">Best Bowling</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            Best bowling figures with wickets, overs and runs.
+          </p>
+          <div>
+            <Link href="/cricket-2025/best-bowling" className="link">
+              View
+            </Link>
+          </div>
+        </Card>
+
+        <Card className="hover:shadow-lg transition-shadow">
+          <h3 className="text-lg font-semibold">Highest Boundries</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            Maximum sixes and fours by players.
+          </p>
+          <div>
+            <Link href="/cricket-2025/highest-boundries" className="link">
+              View
+            </Link>
+          </div>
+        </Card>
+
+        <Card className="hover:shadow-lg transition-shadow">
+          <h3 className="text-lg font-semibold">Points Table</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            Standings with played, wins, losses, points and NRR.
+          </p>
+          <div>
+            <Link href="/cricket-2025/points-table" className="link">
+              View
+            </Link>
+          </div>
+        </Card>
       </div>
     </div>
   );

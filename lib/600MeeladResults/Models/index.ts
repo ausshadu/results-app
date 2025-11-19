@@ -51,3 +51,65 @@ export type FinalRoundScores = Round2Scores & {
   participants?: string[];
   win_rank?: number;
 };
+
+export enum MatchType {
+  QUALIFIER = "QUALIFIER",
+  QUARTER_FINAL = "QUARTER_FINAL",
+  SEMI_FINAL = "SEMI_FINAL",
+  SUPER_OVER = "SUPER_OVER",
+  FINAL = "FINAL",
+}
+
+export type Match = {
+  id: number;
+  teamA: Team;
+  teamB: Team;
+  tossWonBy: Team;
+  electedTo: "bat" | "bowl";
+  matchType: MatchType;
+  matchWinner: Team;
+  matchResult: string;
+  matchTied: boolean;
+  youtubeLink?: string;
+};
+
+export type Team = {
+  slug: string;
+  name: string;
+  location: string;
+  captain: string;
+  jerseyImage?: StaticImageData; // Image path can be updated later
+  teamMembers: string[];
+};
+
+export interface BATTING_STATS {
+  Name: string;
+  Runs: number;
+  Team: Team;
+  Best: string;
+}
+
+export interface BOWLING_STATS {
+  Name: string;
+  Wickets: number;
+  Overs: number;
+  RunsGiven: number;
+  Team: Team;
+  Best: string;
+}
+
+export interface MAXIMUM_STATS {
+  Name: string;
+  Six: number;
+  Four: number;
+  Team: Team;
+}
+
+export interface POINTS_STATS {
+  team: Team;
+  played: number;
+  win: number;
+  lost: number;
+  points: number;
+  nrr: number;
+}

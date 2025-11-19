@@ -1,25 +1,5 @@
-import { ALL_TEAMS, Team } from "./teams";
-
-export enum MatchType {
-  QUALIFIER = "QUALIFIER",
-  QUARTER_FINAL = "QUARTER_FINAL",
-  SEMI_FINAL = "SEMI_FINAL",
-  SUPER_OVER = "SUPER_OVER",
-  FINAL = "FINAL",
-}
-
-export type Match = {
-  id: number;
-  teamA: Team;
-  teamB: Team;
-  tossWonBy: Team;
-  electedTo: "bat" | "bowl";
-  matchType: MatchType;
-  matchWinner: Team;
-  matchResult: string;
-  matchTied: boolean;
-  youtubeLink?: string;
-};
+import { Match, MatchType } from "../Models";
+import { ALL_TEAMS } from "./teams";
 
 export const matches: Match[] = [
   {

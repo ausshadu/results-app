@@ -9,10 +9,13 @@ type LightboxPhotoProps = {
   caption?: string;
 };
 
-export default function LightboxPhoto({ src, alt, caption }: LightboxPhotoProps) {
+export default function LightboxPhoto({
+  src,
+  alt,
+  caption,
+}: LightboxPhotoProps) {
   const [open, setOpen] = useState(false);
   const url = typeof src === "string" ? src : src.src;
-
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -21,7 +24,6 @@ export default function LightboxPhoto({ src, alt, caption }: LightboxPhotoProps)
     if (open) document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
-
 
   return (
     <>
@@ -67,7 +69,10 @@ export default function LightboxPhoto({ src, alt, caption }: LightboxPhotoProps)
               </button>
             </div>
 
-            <div className="flex items-center justify-center" style={{ height: "90vh" }}>
+            <div
+              className="flex items-center justify-center"
+              style={{ height: "90vh" }}
+            >
               <img
                 src={url}
                 alt={alt}

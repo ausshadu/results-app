@@ -2,10 +2,10 @@ import Link from "next/link";
 import { MaleCombinedParticipants } from "@/lib/600MeeladResults/Quiz2025/MaleCombined";
 import { Card } from "flowbite-react";
 
-const metadata = {
-  title: "Male • Combined — Participants",
-  description: "Participants list for Male • Combined category in Quiz 2025.",
-};
+// const metadata = {
+//   title: "Male • Combined — Participants",
+//   description: "Participants list for Male • Combined category in Quiz 2025.",
+// };
 
 export default function Page() {
   const participants = Object.values(MaleCombinedParticipants);
@@ -16,9 +16,7 @@ export default function Page() {
         <h1 className="text-2xl font-bold md:text-3xl">
           Male • Combined — Participants
         </h1>
-        <p className="text-sm">
-          List of all teams and their participants.
-        </p>
+        <p className="text-sm">List of all teams and their participants.</p>
         <div className="flex flex-wrap gap-2">
           <Link href="/quiz-2025" className="link">
             ← Back to Categories
@@ -43,12 +41,24 @@ export default function Page() {
           <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 text-sm">
             <thead className="bg-gray-50 dark:bg-gray-700">
               <tr className="text-left">
-                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Sl. No.</th>
-                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Group</th>
-                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Team Name</th>
-                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Participant 1</th>
-                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Participant 2</th>
-                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">Participant 3</th>
+                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                  Sl. No.
+                </th>
+                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                  Group
+                </th>
+                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                  Team Name
+                </th>
+                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                  Participant 1
+                </th>
+                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                  Participant 2
+                </th>
+                <th className="px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                  Participant 3
+                </th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
@@ -76,7 +86,10 @@ export default function Page() {
               ))}
               {participants.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-3 py-6 text-center text-gray-500 dark:text-gray-400">
+                  <td
+                    colSpan={6}
+                    className="px-3 py-6 text-center text-gray-500 dark:text-gray-400"
+                  >
                     No participants found.
                   </td>
                 </tr>

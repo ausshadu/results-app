@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
@@ -13,11 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const metadata: Metadata = {
-  title: "Deeni Events Results 2025",
-  description:
-    "Results for Quiz 2025 and Essay 2025 (Male/Female, Junior/Senior) with PDF links.",
-};
+// const metadata: Metadata = {
+//   title: "Deeni Events Results 2025",
+//   description:
+//     "Results for Quiz 2025 and Essay 2025 (Male/Female, Junior/Senior) with PDF links.",
+// };
 
 export default function RootLayout({
   children,

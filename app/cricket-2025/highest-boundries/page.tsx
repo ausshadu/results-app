@@ -23,7 +23,10 @@ function TeamCell({ team }: { team: Team }) {
           <div className="h-full w-full rounded bg-gray-200 dark:bg-gray-700" />
         )}
       </div>
-      <Link href={`/cricket-2025/teams/${team.slug}`} className="link font-medium">
+      <Link
+        href={`/cricket-2025/teams/${team.slug}`}
+        className="link font-medium"
+      >
         {team.name}
       </Link>
     </div>
@@ -67,7 +70,7 @@ export default function HighestBoundriesPage() {
         ...r,
         index: i, // preserve original order
       })),
-    []
+    [],
   );
 
   const [sortKey, setSortKey] = useState<SortKey>("index");
@@ -92,24 +95,25 @@ export default function HighestBoundriesPage() {
         sortKey === "index"
           ? a.index
           : sortKey === "Team"
-          ? a.Team.name
-          : sortKey === "Name"
-          ? a.Name
-          : sortKey === "Six"
-          ? a.Six
-          : a.Four;
+            ? a.Team.name
+            : sortKey === "Name"
+              ? a.Name
+              : sortKey === "Six"
+                ? a.Six
+                : a.Four;
       const bv =
         sortKey === "index"
           ? b.index
           : sortKey === "Team"
-          ? b.Team.name
-          : sortKey === "Name"
-          ? b.Name
-          : sortKey === "Six"
-          ? b.Six
-          : b.Four;
+            ? b.Team.name
+            : sortKey === "Name"
+              ? b.Name
+              : sortKey === "Six"
+                ? b.Six
+                : b.Four;
 
-      if (typeof av === "number" && typeof bv === "number") return (av - bv) * dirMul;
+      if (typeof av === "number" && typeof bv === "number")
+        return (av - bv) * dirMul;
       return String(av).localeCompare(String(bv)) * dirMul;
     });
     return copy;
@@ -118,7 +122,9 @@ export default function HighestBoundriesPage() {
   return (
     <div className="flex flex-col gap-6">
       <Card>
-        <h1 className="text-2xl font-bold md:text-3xl">Highest Boundries — Cricket 2025</h1>
+        <h1 className="text-2xl font-bold md:text-3xl">
+          Highest Boundries — Cricket 2025
+        </h1>
         <p className="text-sm">Players with maximum sixes and fours.</p>
         <Link href="/cricket-2025" className="link">
           ← Back to Cricket 2025

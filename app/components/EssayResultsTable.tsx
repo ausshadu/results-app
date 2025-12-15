@@ -93,7 +93,7 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
 
   const showCategory = useMemo(
     () => (results ?? []).some((r: Row) => typeof r.category === "string"),
-    [results]
+    [results],
   );
 
   const formatted = useMemo(() => {
@@ -147,7 +147,7 @@ export function EssayResultsTable({ results }: { results: Row[] }) {
     setSort((prev) =>
       prev.key === key
         ? { key, dir: prev.dir === "asc" ? "desc" : "asc" }
-        : { key, dir: "asc" }
+        : { key, dir: "asc" },
     );
   };
 

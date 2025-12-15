@@ -23,7 +23,10 @@ function TeamCell({ team }: { team: Team }) {
           <div className="h-full w-full rounded bg-gray-200 dark:bg-gray-700" />
         )}
       </div>
-      <Link href={`/cricket-2025/teams/${team.slug}`} className="link font-medium">
+      <Link
+        href={`/cricket-2025/teams/${team.slug}`}
+        className="link font-medium"
+      >
         {team.name}
       </Link>
     </div>
@@ -52,7 +55,9 @@ function SortHeader({
     >
       <span className="inline-flex items-center gap-1">
         {label}
-        <span className="text-[10px] opacity-60">{active ? (dir === "asc" ? "▲" : "▼") : "↕"}</span>
+        <span className="text-[10px] opacity-60">
+          {active ? (dir === "asc" ? "▲" : "▼") : "↕"}
+        </span>
       </span>
     </th>
   );
@@ -65,7 +70,7 @@ export default function BestBattingPage() {
         ...r,
         index: i, // preserve original order
       })),
-    []
+    [],
   );
 
   const [sortKey, setSortKey] = useState<SortKey>("index");
@@ -90,24 +95,25 @@ export default function BestBattingPage() {
         sortKey === "index"
           ? a.index
           : sortKey === "Team"
-          ? a.Team.name
-          : sortKey === "Name"
-          ? a.Name
-          : sortKey === "Runs"
-          ? a.Runs
-          : a.Best;
+            ? a.Team.name
+            : sortKey === "Name"
+              ? a.Name
+              : sortKey === "Runs"
+                ? a.Runs
+                : a.Best;
       const bv =
         sortKey === "index"
           ? b.index
           : sortKey === "Team"
-          ? b.Team.name
-          : sortKey === "Name"
-          ? b.Name
-          : sortKey === "Runs"
-          ? b.Runs
-          : b.Best;
+            ? b.Team.name
+            : sortKey === "Name"
+              ? b.Name
+              : sortKey === "Runs"
+                ? b.Runs
+                : b.Best;
 
-      if (typeof av === "number" && typeof bv === "number") return (av - bv) * dirMul;
+      if (typeof av === "number" && typeof bv === "number")
+        return (av - bv) * dirMul;
       return String(av).localeCompare(String(bv)) * dirMul;
     });
     return copy;
@@ -116,8 +122,12 @@ export default function BestBattingPage() {
   return (
     <div className="flex flex-col gap-6">
       <Card>
-        <h1 className="text-2xl font-bold md:text-3xl">Best Batting — Cricket 2025</h1>
-        <p className="text-sm">Top batting performances with runs and best score.</p>
+        <h1 className="text-2xl font-bold md:text-3xl">
+          Best Batting — Cricket 2025
+        </h1>
+        <p className="text-sm">
+          Top batting performances with runs and best score.
+        </p>
         <Link href="/cricket-2025" className="link">
           ← Back to Cricket 2025
         </Link>

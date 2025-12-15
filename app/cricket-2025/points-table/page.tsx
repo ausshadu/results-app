@@ -23,7 +23,10 @@ function TeamCell({ team }: { team: Team }) {
           <div className="h-full w-full rounded bg-gray-200 dark:bg-gray-700" />
         )}
       </div>
-      <Link href={`/cricket-2025/teams/${team.slug}`} className="link font-medium">
+      <Link
+        href={`/cricket-2025/teams/${team.slug}`}
+        className="link font-medium"
+      >
         {team.name}
       </Link>
     </div>
@@ -52,7 +55,9 @@ function SortHeader({
     >
       <span className="inline-flex items-center gap-1">
         {label}
-        <span className="text-[10px] opacity-60">{active ? (dir === "asc" ? "▲" : "▼") : "↕"}</span>
+        <span className="text-[10px] opacity-60">
+          {active ? (dir === "asc" ? "▲" : "▼") : "↕"}
+        </span>
       </span>
     </th>
   );
@@ -65,7 +70,7 @@ export default function PointsTablePage() {
         ...r,
         index: i, // preserve original order
       })),
-    []
+    [],
   );
 
   const [sortKey, setSortKey] = useState<SortKey>("index");
@@ -90,32 +95,33 @@ export default function PointsTablePage() {
         sortKey === "index"
           ? a.index
           : sortKey === "Team"
-          ? a.team.name
-          : sortKey === "played"
-          ? a.played
-          : sortKey === "win"
-          ? a.win
-          : sortKey === "lost"
-          ? a.lost
-          : sortKey === "points"
-          ? a.points
-          : a.nrr;
+            ? a.team.name
+            : sortKey === "played"
+              ? a.played
+              : sortKey === "win"
+                ? a.win
+                : sortKey === "lost"
+                  ? a.lost
+                  : sortKey === "points"
+                    ? a.points
+                    : a.nrr;
       const bv =
         sortKey === "index"
           ? b.index
           : sortKey === "Team"
-          ? b.team.name
-          : sortKey === "played"
-          ? b.played
-          : sortKey === "win"
-          ? b.win
-          : sortKey === "lost"
-          ? b.lost
-          : sortKey === "points"
-          ? b.points
-          : b.nrr;
+            ? b.team.name
+            : sortKey === "played"
+              ? b.played
+              : sortKey === "win"
+                ? b.win
+                : sortKey === "lost"
+                  ? b.lost
+                  : sortKey === "points"
+                    ? b.points
+                    : b.nrr;
 
-      if (typeof av === "number" && typeof bv === "number") return (av - bv) * dirMul;
+      if (typeof av === "number" && typeof bv === "number")
+        return (av - bv) * dirMul;
       return String(av).localeCompare(String(bv)) * dirMul;
     });
     return copy;
@@ -124,8 +130,12 @@ export default function PointsTablePage() {
   return (
     <div className="flex flex-col gap-6">
       <Card>
-        <h1 className="text-2xl font-bold md:text-3xl">Points Table — Cricket 2025</h1>
-        <p className="text-sm">Teams standings with matches played, wins, losses, points and NRR.</p>
+        <h1 className="text-2xl font-bold md:text-3xl">
+          Points Table — Cricket 2025
+        </h1>
+        <p className="text-sm">
+          Teams standings with matches played, wins, losses, points and NRR.
+        </p>
         <Link href="/cricket-2025" className="link">
           ← Back to Cricket 2025
         </Link>

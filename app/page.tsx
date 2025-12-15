@@ -11,10 +11,11 @@ export default function Home() {
         <Image
           src="/bismillah_black.png"
           alt="Bismillah"
-          width={400}
-          height={120}
+          width={0}
+          height={0}
+          style={{ width: 400, height: "auto" }}
           priority
-          className="h-auto w-[260px] sm:w-[320px] md:w-[400px] dark:invert"
+          className="h-auto w-65 sm:w-[320px] md:w-100 dark:invert"
         />
       </div>
       <Card>
@@ -41,7 +42,9 @@ export default function Home() {
         </Card>
         <Card className="hover:shadow-lg transition-shadow">
           <h3 className="text-lg font-semibold">Cricket 2025</h3>
-          <p className="text-sm">12 Teams • 5 cities • Nail biting tournament • 1 winner</p>
+          <p className="text-sm">
+            12 Teams • 5 cities • Nail biting tournament • 1 winner
+          </p>
           <Link href="/cricket-2025" className="link">
             View
           </Link>

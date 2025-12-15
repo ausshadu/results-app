@@ -1,21 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Card } from "flowbite-react";
-import {
-  matches,
-  MatchType,
-  Match,
-} from "@/lib/600MeeladResults/Cricket/matches";
-import { Team } from "@/lib/600MeeladResults/Cricket/teams";
+import { matches } from "@/lib/600MeeladResults/Cricket/matches";
 import youngGemsPhoto from "@/lib/600MeeladResults/Cricket/photos/TeamYoungGems.jpg";
 import tigersPhoto from "@/lib/600MeeladResults/Cricket/photos/TeamTigers.jpg";
 import ocPhoto from "@/lib/600MeeladResults/Cricket/photos/TeamOrganizingCommittee.jpg";
 import LightboxPhoto from "@/app/components/LightboxPhoto";
+import { Match, MatchType, Team } from "@/lib/600MeeladResults/Models";
 
 function TeamCell({ team }: { team: Team }) {
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="relative h-[120px] w-[120px] md:h-[200px] md:w-[200px]">
+      <div className="relative h-30 w-30 md:h-50 md:w-50">
         {team.jerseyImage ? (
           <Image
             src={team.jerseyImage}
@@ -221,17 +217,27 @@ export default function MatchesPage() {
           <div className="mb-2">
             <h3 className="text-xl md:text-2xl font-bold">RUNNERS</h3>
           </div>
-          <LightboxPhoto src={youngGemsPhoto} alt="Runners — YOUNG GEMS CC" caption="YOUNG GEMS CC" />
+          <LightboxPhoto
+            src={youngGemsPhoto}
+            alt="Runners — YOUNG GEMS CC"
+            caption="YOUNG GEMS CC"
+          />
         </Card>
         <Card className="col-span-12">
           <div className="mb-2">
             <h3 className="text-xl md:text-2xl font-bold">WINNERS</h3>
           </div>
-          <LightboxPhoto src={tigersPhoto} alt="Winners — TIGERS CC" caption="TIGERS CC" />
+          <LightboxPhoto
+            src={tigersPhoto}
+            alt="Winners — TIGERS CC"
+            caption="TIGERS CC"
+          />
         </Card>
         <Card className="col-span-12">
           <div className="mb-2">
-            <h3 className="text-xl md:text-2xl font-bold">Organizing Committee</h3>
+            <h3 className="text-xl md:text-2xl font-bold">
+              Organizing Committee
+            </h3>
           </div>
           <LightboxPhoto
             src={ocPhoto}

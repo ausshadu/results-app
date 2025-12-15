@@ -23,14 +23,24 @@ function TeamCell({ team }: { team: Team }) {
           <div className="h-full w-full rounded bg-gray-200 dark:bg-gray-700" />
         )}
       </div>
-      <Link href={`/cricket-2025/teams/${team.slug}`} className="link font-medium">
+      <Link
+        href={`/cricket-2025/teams/${team.slug}`}
+        className="link font-medium"
+      >
         {team.name}
       </Link>
     </div>
   );
 }
 
-type SortKey = "index" | "Team" | "Name" | "Wickets" | "Overs" | "RunsGiven" | "Best";
+type SortKey =
+  | "index"
+  | "Team"
+  | "Name"
+  | "Wickets"
+  | "Overs"
+  | "RunsGiven"
+  | "Best";
 type SortDir = "asc" | "desc";
 
 function SortHeader({
@@ -52,7 +62,9 @@ function SortHeader({
     >
       <span className="inline-flex items-center gap-1">
         {label}
-        <span className="text-[10px] opacity-60">{active ? (dir === "asc" ? "▲" : "▼") : "↕"}</span>
+        <span className="text-[10px] opacity-60">
+          {active ? (dir === "asc" ? "▲" : "▼") : "↕"}
+        </span>
       </span>
     </th>
   );
@@ -65,7 +77,7 @@ export default function BestBowlingPage() {
         ...r,
         index: i, // preserve original order
       })),
-    []
+    [],
   );
 
   const [sortKey, setSortKey] = useState<SortKey>("index");
@@ -90,32 +102,33 @@ export default function BestBowlingPage() {
         sortKey === "index"
           ? a.index
           : sortKey === "Team"
-          ? a.Team.name
-          : sortKey === "Name"
-          ? a.Name
-          : sortKey === "Wickets"
-          ? a.Wickets
-          : sortKey === "Overs"
-          ? a.Overs
-          : sortKey === "RunsGiven"
-          ? a.RunsGiven
-          : a.Best;
+            ? a.Team.name
+            : sortKey === "Name"
+              ? a.Name
+              : sortKey === "Wickets"
+                ? a.Wickets
+                : sortKey === "Overs"
+                  ? a.Overs
+                  : sortKey === "RunsGiven"
+                    ? a.RunsGiven
+                    : a.Best;
       const bv =
         sortKey === "index"
           ? b.index
           : sortKey === "Team"
-          ? b.Team.name
-          : sortKey === "Name"
-          ? b.Name
-          : sortKey === "Wickets"
-          ? b.Wickets
-          : sortKey === "Overs"
-          ? b.Overs
-          : sortKey === "RunsGiven"
-          ? b.RunsGiven
-          : b.Best;
+            ? b.Team.name
+            : sortKey === "Name"
+              ? b.Name
+              : sortKey === "Wickets"
+                ? b.Wickets
+                : sortKey === "Overs"
+                  ? b.Overs
+                  : sortKey === "RunsGiven"
+                    ? b.RunsGiven
+                    : b.Best;
 
-      if (typeof av === "number" && typeof bv === "number") return (av - bv) * dirMul;
+      if (typeof av === "number" && typeof bv === "number")
+        return (av - bv) * dirMul;
       return String(av).localeCompare(String(bv)) * dirMul;
     });
     return copy;
@@ -124,8 +137,13 @@ export default function BestBowlingPage() {
   return (
     <div className="flex flex-col gap-6">
       <Card>
-        <h1 className="text-2xl font-bold md:text-3xl">Best Bowling — Cricket 2025</h1>
-        <p className="text-sm">Top bowling performances with wickets, overs, runs conceded and best figures.</p>
+        <h1 className="text-2xl font-bold md:text-3xl">
+          Best Bowling — Cricket 2025
+        </h1>
+        <p className="text-sm">
+          Top bowling performances with wickets, overs, runs conceded and best
+          figures.
+        </p>
         <Link href="/cricket-2025" className="link">
           ← Back to Cricket 2025
         </Link>

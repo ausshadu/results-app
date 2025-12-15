@@ -51,8 +51,8 @@ export default function WinnersGallery({
                     i === 0
                       ? "First place"
                       : i === 1
-                      ? "Second place"
-                      : "Third place"
+                        ? "Second place"
+                        : "Third place"
                   }
                   width={40}
                   height={40}
@@ -72,18 +72,18 @@ export default function WinnersGallery({
       </Card>
 
       {openIndex !== null && (
-      <div
-        className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center"
-        onClick={() => setOpenIndex(null)}
-      >
-        <Image
-          src={items[openIndex].src}
-          alt={items[openIndex].alt}
-          className="max-w-full max-h-full object-contain"
-          onClick={(e) => e.stopPropagation()}
-        />
-      </div>
-    )}
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center"
+          onClick={() => setOpenIndex(null)}
+        >
+          <Image
+            src={items[openIndex].src}
+            alt={items[openIndex].alt}
+            className="max-w-full max-h-full object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </>
   );
 }

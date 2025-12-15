@@ -16,7 +16,8 @@ export default function Page() {
       <Card>
         <h1 className="text-2xl font-bold md:text-3xl">Seniors — Essay 2025</h1>
         <p className="text-sm">
-          Combined results list for Seniors (Male & Female). Click View PDF to open the scanned answer sheet.
+          Combined results list for Seniors (Male & Female). Click View PDF to
+          open the scanned answer sheet.
         </p>
         <Link href="/essay-2025" className="link">
           ← Back to Categories

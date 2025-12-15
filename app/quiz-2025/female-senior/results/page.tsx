@@ -9,10 +9,10 @@ import {
 } from "@/lib/600MeeladResults";
 import { Card } from "flowbite-react";
 
-const metadata = {
-  title: "Female • Senior — Results",
-  description: "Results page for Female • Senior (empty for now).",
-};
+// const metadata = {
+//   title: "Female • Senior — Results",
+//   description: "Results page for Female • Senior (empty for now).",
+// };
 
 export default function Page() {
   return (

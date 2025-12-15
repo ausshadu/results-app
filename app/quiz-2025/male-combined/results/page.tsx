@@ -15,10 +15,10 @@ import secondPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/se
 import thirdPhoto from "@/lib/600MeeladResults/Quiz2025/photos/male_combined/third.webp";
 import { Card } from "flowbite-react";
 
-const metadata = {
-  title: "Male • Combined — Results",
-  description: "Results page for Male • Combined (empty for now).",
-};
+// const metadata = {
+//   title: "Male • Combined — Results",
+//   description: "Results page for Male • Combined (empty for now).",
+// };
 
 export default function Page() {
   return (

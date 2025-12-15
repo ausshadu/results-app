@@ -72,7 +72,9 @@ export function Round2Table({
     <Card>
       <div className="flex items-center justify-between mb-3">
         <h2 className="text-xl font-semibold">{title}</h2>
-        <span className="text-sm text-gray-500 dark:text-gray-400">Teams: {data.length}</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400">
+          Teams: {data.length}
+        </span>
       </div>
 
       <div className="overflow-x-auto">
@@ -80,7 +82,10 @@ export function Round2Table({
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
               {columns.map((c) => (
-                <th key={c} className={`px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 ${c === "Team Name" ? "text-left" : "text-center"}`}>
+                <th
+                  key={c}
+                  className={`px-3 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 ${c === "Team Name" ? "text-left" : "text-center"}`}
+                >
                   {c}
                 </th>
               ))}
@@ -143,9 +148,7 @@ export function Round2Table({
                 <td className="px-3 py-2 whitespace-nowrap font-mono font-bold text-center text-gray-900 dark:text-gray-100">
                   {renderScore(r.total)}
                 </td>
-                <td className="p-0 text-center">
-                  {renderRemarks(r)}
-                </td>
+                <td className="p-0 text-center">{renderRemarks(r)}</td>
               </tr>
             ))}
           </tbody>

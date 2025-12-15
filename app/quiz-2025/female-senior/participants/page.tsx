@@ -4,10 +4,10 @@ import Link from "next/link";
 import { FemaleSeniorParticipants } from "@/lib/600MeeladResults/Quiz2025/FemaleSeniors";
 import { Card } from "flowbite-react";
 
-const metadata = {
-  title: "Female • Senior — Participants",
-  description: "Participants list for Female • Senior category in Quiz 2025.",
-};
+// const metadata = {
+//   title: "Female • Senior — Participants",
+//   description: "Participants list for Female • Senior category in Quiz 2025.",
+// };
 
 export default function Page() {
   const participants = Object.values(FemaleSeniorParticipants);
@@ -23,10 +23,7 @@ export default function Page() {
           <Link href="/quiz-2025" className="link">
             ← Back to Categories
           </Link>
-          <Link
-            href="/quiz-2025/female-senior/results"
-            className="link"
-          >
+          <Link href="/quiz-2025/female-senior/results" className="link">
             View Results →
           </Link>
         </div>

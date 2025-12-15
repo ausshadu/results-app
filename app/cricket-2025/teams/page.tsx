@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Card } from "flowbite-react";
-import { getTeams, type Team } from "@/lib/600MeeladResults/Cricket";
+import { getTeams } from "@/lib/600MeeladResults/Cricket";
+import { Team } from "@/lib/600MeeladResults/Models";
 
 export default function TeamsPage() {
   const teams: Team[] = getTeams();

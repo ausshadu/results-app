@@ -35,7 +35,9 @@ export default async function TeamPage({ params }: TeamPageProps) {
         </div>
         <div className="text-center">
           <h1 className="text-4xl font-bold md:text-5xl mb-2">{team.name}</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">{team.location}</p>
+          <p className="text-lg text-gray-600 dark:text-gray-400">
+            {team.location}
+          </p>
         </div>
       </div>
 
@@ -59,7 +61,9 @@ export default async function TeamPage({ params }: TeamPageProps) {
               {/* Captain Info */}
               <div className="text-center w-full">
                 <h2 className="text-lg font-semibold mb-2">Captain</h2>
-                <p className="text-base font-medium text-gray-900 dark:text-gray-100">{team.captain}</p>
+                <p className="text-base font-medium text-gray-900 dark:text-gray-100">
+                  {team.captain}
+                </p>
               </div>
             </div>
           </div>
@@ -68,14 +72,16 @@ export default async function TeamPage({ params }: TeamPageProps) {
         {/* Team Members - 8 columns */}
         <div className="col-span-12 lg:col-span-8">
           <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow">
-            <h2 className="text-xl font-semibold mb-4">Team Members ({team.teamMembers.length})</h2>
+            <h2 className="text-xl font-semibold mb-4">
+              Team Members ({team.teamMembers.length})
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {team.teamMembers.map((member, idx) => (
                 <div
                   key={idx}
                   className="flex items-center gap-3 bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-3"
                 >
-                  <span className="text-sm font-medium text-gray-500 dark:text-gray-400 min-w-[2rem]">
+                  <span className="text-sm font-medium text-gray-500 dark:text-gray-400 min-w-8">
                     {idx + 1}.
                   </span>
                   <span className="text-sm font-medium text-gray-900 dark:text-gray-100">

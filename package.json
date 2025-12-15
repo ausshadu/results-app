@@ -6,8 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check": "prettier --check .",
+    "fix": "prettier --write ."
   },
+  "pre-commit": [
+    "fix"
+  ],
   "dependencies": {
     "flowbite": "4.0.1",
     "flowbite-react": "^0.12.10",

@@ -71,7 +71,7 @@ export default function TeamsPage() {
                       alt={`${team.name} jersey`}
                       width={100}
                       height={100}
-                      className="h-16 w-16 md:h-[100px] md:w-[100px] object-contain rounded"
+                      className="h-16 w-16 md:h-25 md:w-25 object-contain rounded"
                     />
                   </td>
                   <td className="px-6 py-4">

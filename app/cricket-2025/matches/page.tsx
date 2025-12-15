@@ -185,7 +185,7 @@ export default function MatchesPage() {
                         <td className="px-4 py-3">{formatMatchResult(m)}</td>
                         <td className="px-4 py-3">
                           {m.youtubeLink ? (
-                            <div className="mx-auto w-[180px] h-[101px] md:w-[240px] md:h-[135px] rounded overflow-hidden shadow">
+                            <div className="mx-auto w-45 h-[101px] md:w-60 md:h-[135px] rounded overflow-hidden shadow">
                               <iframe
                                 src={getYouTubeEmbedUrl(m.youtubeLink)}
                                 title={`Watch match ${m.id}`}

@@ -37,7 +37,7 @@ export default function LightboxPhoto({
           <img
             src={url}
             alt={alt}
-            className="w-full h-auto object-contain md:object-cover md:h-[600px] cursor-zoom-in"
+            className="w-full h-auto object-contain md:object-cover md:h-150 cursor-zoom-in"
           />
         </button>
         {caption ? (

@@ -15,7 +15,7 @@ export default function Home() {
           height={0}
           style={{ width: 400, height: "auto" }}
           priority
-          className="h-auto w-65 sm:w-[320px] md:w-100 dark:invert"
+          className="h-auto w-65 sm:w-80 md:w-100 dark:invert"
         />
       </div>
       <Card>

@@ -10,7 +10,7 @@ import { useMemo, useState } from "react";
 function TeamCell({ team }: { team: Team }) {
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="relative h-[100px] w-[100px] md:h-[140px] md:w-[140px]">
+      <div className="relative h-25 w-25 md:h-35 md:w-35">
         {team.jerseyImage ? (
           <Image
             src={team.jerseyImage}
